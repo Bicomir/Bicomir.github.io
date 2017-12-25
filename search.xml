@@ -3,13 +3,9 @@
   <entry>
     <title><![CDATA[my first blog]]></title>
     <url>%2F2017%2F09%2F04%2Fmy-first-blog%2Findex%2F</url>
-    <content type="text"><![CDATA[#This is my first blog. ##Hello World!]]></content>
-      <categories>
-        <category>Thinking</category>
-      </categories>
+    <content type="text"><![CDATA[#This is my first blog. #这是搭建好的]]></content>
       <tags>
         <tag>test</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>

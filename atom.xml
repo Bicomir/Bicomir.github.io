@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-04T08:56:55.436Z</updated>
+  <updated>2017-10-11T07:06:29.034Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,26 +20,22 @@
     <link href="http://yoursite.com/2017/09/04/my-first-blog/index/"/>
     <id>http://yoursite.com/2017/09/04/my-first-blog/index/</id>
     <published>2017-09-04T08:54:48.000Z</published>
-    <updated>2017-09-04T08:56:55.436Z</updated>
+    <updated>2017-10-11T07:06:29.034Z</updated>
     
     <content type="html"><![CDATA[<p>#This is my first blog.</p>
-<p>##Hello World!</p>
+<p>#这是搭建好的</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;#This is my first blog.&lt;/p&gt;
-&lt;p&gt;##Hello World!&lt;/p&gt;
+&lt;p&gt;#这是搭建好的&lt;/p&gt;
 
     
     </summary>
     
-      <category term="Thinking" scheme="http://yoursite.com/categories/Thinking/"/>
-    
     
       <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
