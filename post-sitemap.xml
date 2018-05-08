@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/05/08/markdown%E5%85%A5%E9%97%A8-1/</loc>
+        <lastmod>2018-05-08T02:51:39.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/06/Markdown%E5%85%A5%E9%97%A8-0/</loc>
         <lastmod>2018-05-06T09:19:36.128Z</lastmod>
         <changefreq>weekly</changefreq>
