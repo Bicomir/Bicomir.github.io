@@ -95,6 +95,12 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
@@ -117,7 +123,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|IIosevka:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|IIosevka:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -802,7 +808,7 @@ hello world
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">Markdown[^1]  </div><div class="line"></div><div class="line">[^1]: Markdown是一种纯文本标记语言</div><div class="line">#### 22.锚点</div><div class="line">**代码** </div><div class="line">&gt; 注: 只有标题支持锚点， 跳转目录方括号后 保持空格</div><div class="line"></div><div class="line">#### 23.定义型列表</div><div class="line">&gt; 注: 解释型定义</div></pre></td></tr></table></figure>
 <p>Markdown<br>:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个<code>:</code> + <code>Tab</code> 或 四个空格</p>
 <p>代码块定义<br>:   代码块定义……<br>        var a = 10;         // 保持空一行与 递进缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">**演示**  </div><div class="line"></div><div class="line">Markdown </div><div class="line">:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个`:` + `Tab` 或 四个空格</div><div class="line"></div><div class="line">代码块定义</div><div class="line">:   代码块定义…… </div><div class="line">    </div><div class="line">        var a = 10;  </div><div class="line"></div><div class="line">#### 24.自动邮箱链接 </div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
-<p><a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#120;&#120;&#120;&#64;&#x6f;&#117;&#116;&#x6c;&#111;&#x6f;&#x6b;&#46;&#99;&#111;&#x6d;">&#120;&#120;&#120;&#64;&#x6f;&#117;&#116;&#x6c;&#111;&#x6f;&#x6b;&#46;&#99;&#111;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
+<p><a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#120;&#x78;&#120;&#x40;&#111;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#x2e;&#x63;&#x6f;&#109;">&#120;&#x78;&#120;&#x40;&#111;&#x75;&#x74;&#x6c;&#x6f;&#x6f;&#107;&#x2e;&#x63;&#x6f;&#109;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
 <p>flow // 流程<br>st=&gt;start: 开始|past:&gt; <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> // 开始 e=&gt;end: 结束    // 结束<br>c1=&gt;condition: 条件1:&gt;<a href="http://www.baidu.com[_parent]//判断条件" target="_blank" rel="external">http://www.baidu.com[_parent]//判断条件</a> c2=&gt;condition: 条件2   // 判断条件<br>c3=&gt;condition: 条件3        // 判断条件<br>io=&gt;inputoutput: 输出      // 输出<br>//—————-以上为定义参数————————-</p>
 <p>//—————-以下为连接参数————————-<br>// 开始-&gt;判断条件1为no-&gt;判断条件2为no-&gt;判断条件3为no-&gt;输出-&gt;结束<br>st-&gt;c1(yes,right)-&gt;c2(yes,right)-&gt;c3(yes,right)-&gt;io-&gt;e c1(no)-&gt;e // 条件1不满足-&gt;结束<br>c2(no)-&gt;e // 条件2不满足-&gt;结束<br>c3(no)-&gt;e // 条件3不满足-&gt;结束 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 26.时序图</div><div class="line">**代码**</div></pre></td></tr></table></figure>
@@ -829,6 +835,52 @@ hello world
     
   </div>
   
+    
+      
+      <div>
+        
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/05/08/markdown入门-1/">markdown入门_1</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Bomir 的个人博客">Bomir</a></p>
+  <p><span>发布时间:</span>2018年05月08日 - 10:05</p>
+  <p><span>最后更新:</span>2018年05月08日 - 11:05</p>
+  <p><span>原始链接:</span><a href="/2018/05/08/markdown入门-1/" title="markdown入门_1">http://yoursite.com/2018/05/08/markdown入门-1/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/08/markdown入门-1/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+        
+      </div>
+
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Bomir wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客!</div>
+</div>
+
+      </div>
     
 
     
