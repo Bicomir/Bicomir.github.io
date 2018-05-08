@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
     <url>
-        <loc>http://yoursite.com/tags/test/</loc>
-        <lastmod>2017-10-11T07:06:29.034Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
+        <loc>http://yoursite.com</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/markdown/</loc>
+        <loc>http://yoursite.com/categories/markdown/</loc>
         <lastmod>2018-05-08T06:47:21.980Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
