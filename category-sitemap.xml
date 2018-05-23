@@ -77,15 +77,15 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/Jquery/</loc>
-        <lastmod>2018-05-23T11:54:17.324Z</lastmod>
+        <loc>http://yoursite.com/categories/markdown/</loc>
+        <lastmod>2018-05-23T11:56:33.860Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/markdown/</loc>
-        <lastmod>2018-05-23T11:56:33.860Z</lastmod>
+        <loc>http://yoursite.com/categories/Jquery/</loc>
+        <lastmod>2018-05-23T11:56:45.009Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

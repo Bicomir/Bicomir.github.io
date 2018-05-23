@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/</loc>
+        <lastmod>2018-05-23T11:56:45.009Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/06/Markdown%E5%85%A5%E9%97%A8-0/</loc>
         <lastmod>2018-05-23T11:56:33.860Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,8 +23,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/</loc>
-        <lastmod>2018-05-23T11:54:17.324Z</lastmod>
+        <loc>http://yoursite.com/2018/05/08/markdown%E5%85%A5%E9%97%A8-1/</loc>
+        <lastmod>2018-05-23T11:54:04.145Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -105,14 +113,6 @@
     <url>
         <loc>http://yoursite.com/2018/05/06/AngularJs/</loc>
         <lastmod>2018-05-23T11:44:26.404Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/05/08/markdown%E5%85%A5%E9%97%A8-1/</loc>
-        <lastmod>2018-05-23T11:38:56.625Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
