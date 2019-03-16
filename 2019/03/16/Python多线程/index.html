@@ -154,17 +154,17 @@
 
 
 
-<meta name="description" content="title: Python多线程date: 2019-03-16 17:17:14tags: pythoncategories: python并发copyright: truetop: 100 Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一">
+<meta name="description" content="Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。 也就是说所有的操作都做完，才返回给用户。(会给人一种程序还在进行，卡死的感觉)，事情需要一件一件的做，等前一件做完了才能做下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wallis">
-<meta property="og:url" content="http://yoursite.com/2019/03/16/Python多进程和多线程/index.html">
+<meta property="og:title" content="Python多线程">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/Python多线程/index.html">
 <meta property="og:site_name" content="Wallis">
-<meta property="og:description" content="title: Python多线程date: 2019-03-16 17:17:14tags: pythoncategories: python并发copyright: truetop: 100 Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一">
+<meta property="og:description" content="Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。 也就是说所有的操作都做完，才返回给用户。(会给人一种程序还在进行，卡死的感觉)，事情需要一件一件的做，等前一件做完了才能做下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T06:37:38.998Z">
+<meta property="og:updated_time" content="2019-03-16T06:46:31.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wallis">
-<meta name="twitter:description" content="title: Python多线程date: 2019-03-16 17:17:14tags: pythoncategories: python并发copyright: truetop: 100 Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一">
+<meta name="twitter:title" content="Python多线程">
+<meta name="twitter:description" content="Python多线程1. 同步和异步概念和区别​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？ 同步(Sync) ​    同步的思想就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。 也就是说所有的操作都做完，才返回给用户。(会给人一种程序还在进行，卡死的感觉)，事情需要一件一件的做，等前一件做完了才能做下">
 
 
 
@@ -194,13 +194,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/16/Python多进程和多线程/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/16/Python多线程/"/>
 
 
 
 
 
-  <title> | Wallis</title>
+  <title>Python多线程 | Wallis</title>
   
 
 
@@ -403,7 +403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/Python多进程和多线程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/Python多线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bomir">
@@ -420,7 +420,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Python多线程</h1>
         
 
         <div class="post-meta">
@@ -432,7 +432,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T14:37:48+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T14:45:16+08:00">
                 2019-03-16
               </time>
             
@@ -464,7 +464,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,336
+                  4,314
                 </span>
               
 
@@ -501,8 +501,7 @@
       
 
       
-        <p>title: Python多线程<br>date: 2019-03-16 17:17:14<br>tags: python<br>categories: python并发<br>copyright: true<br>top: 100</p>
-<h3 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h3><h4 id="1-同步和异步概念和区别"><a href="#1-同步和异步概念和区别" class="headerlink" title="1. 同步和异步概念和区别"></a>1. 同步和异步概念和区别</h4><p>​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？</p>
+        <h3 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h3><h4 id="1-同步和异步概念和区别"><a href="#1-同步和异步概念和区别" class="headerlink" title="1. 同步和异步概念和区别"></a>1. 同步和异步概念和区别</h4><p>​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？</p>
 <p><strong>同步(Sync)</strong></p>
 <p>​    同步的思想就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。 <strong>也就是说</strong>所有的操作都做完，才返回给用户。(会给人一种程序还在进行，卡死的感觉)，事情需要一件一件的做，等前一件做完了才能做下一件事。</p>
 <p>​    举例:B/S模式中的表单提交，具体过程是：客户端提交请求-&gt;等待服务器处理-&gt;处理完毕返回，在这个过程中客户端（浏览器）不能做其他事。 </p>

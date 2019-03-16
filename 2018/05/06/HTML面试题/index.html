@@ -675,7 +675,7 @@
 <li>SM:用于描述文档或者文档某个部分的细节 ~ 默认属性为 open~</li>
 <li>ps:配合 summary 一起使用</li>
 </ul>
-<h3 id="10-link和-import的区别"><a href="#10-link和-import的区别" class="headerlink" title="==10. link和@import的区别?=="></a>==10. link和@import的区别?==</h3><p>XML/HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">'stylesheet'</span> <span class="attr">rev</span>=<span class="string">'stylesheet'</span> <span class="attr">href</span>=<span class="string">'CSS文件 '</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">media</span>=<span class="string">'all'</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">media</span>=<span class="string">'screen'</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">@<span class="keyword">import</span> url(<span class="string">'CSS文件 '</span>);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="10-link和-import的区别"><a href="#10-link和-import的区别" class="headerlink" title="==10. link和@import的区别?=="></a>==10. link和@import的区别?==</h3><p>XML/HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">'stylesheet'</span> <span class="attr">rev</span>=<span class="string">'stylesheet'</span> <span class="attr">href</span>=<span class="string">'CSS文件 '</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">media</span>=<span class="string">'all'</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">media</span>=<span class="string">'screen'</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">@import url('CSS文件 ');</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>两者都是外部引用CSS的方式，但是存在一定的区别：</p>
 <ul>
 <li>区别1： link 是 XHTML 标签，除了加载 CSS 外，还可以定义 RSS 等其他事务； @import 属于 CSS 范畴，只能加载 CSS 。</li>
@@ -931,8 +931,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/面试300题/" rel="next" title="前端面试300题">
-                <i class="fa fa-chevron-left"></i> 前端面试300题
+              <a href="/2018/05/06/前端学习资料/" rel="next" title="前端学习资料">
+                <i class="fa fa-chevron-left"></i> 前端学习资料
               </a>
             
           </div>
@@ -941,8 +941,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/06/http/" rel="prev" title="http">
-                http <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/JQuery面试题总结/" rel="prev" title="JQuery">
+                JQuery <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
