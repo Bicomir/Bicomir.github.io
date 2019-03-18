@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,9 +48,13 @@
   
   
     
+      
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
 
 
 
@@ -79,7 +83,9 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -131,7 +137,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
@@ -179,7 +187,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Muse',
     version: '5.1.2',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -244,7 +252,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
       
   </div>
 
@@ -427,7 +435,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">web服务器纵览</h1>
+          <h2 class="post-title" itemprop="name headline">web服务器纵览</h2>
         
 
         <div class="post-meta">
@@ -617,7 +625,7 @@
 <p>​    直接通过在站点配置文件中为location配置uwsgi_pass,即可将Nginx与uWSGI集成，建立一个基于Nginx+Python的正式站点。针对如下uWSGI接口有：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line">socket = 127.0.0.1： 3011</div><div class="line">wsgi_file = webapp.py</div></pre></td></tr></table></figure>
 <p>​    Nginx的站点配置文件为：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">&#125;</div><div class="line"><span class="meta">#</span># 此处改为服务器的真实IP</div><div class="line">	server_name 121.12.134.11;</div><div class="line">location /&#123;</div><div class="line">    ## 此处IP与Port配置必须与uwsgi接口中参数相同</div><div class="line">    uwsgi_pass http://127.0.0.1:3011;</div><div class="line">&#125;</div><div class="line">'''</div><div class="line">可以为一个uWSGI配置多个Nginx Server和location，这样就可以实现多域名访问同一个python程序。</div><div class="line">'''</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">&#125;</div><div class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 此处改为服务器的真实IP</span></span></div><div class="line">	server_name 121.12.134.11;</div><div class="line">location /&#123;</div><div class="line">    ## 此处IP与Port配置必须与uwsgi接口中参数相同</div><div class="line">    uwsgi_pass http://127.0.0.1:3011;</div><div class="line">&#125;</div><div class="line">'''</div><div class="line">可以为一个uWSGI配置多个Nginx Server和location，这样就可以实现多域名访问同一个python程序。</div><div class="line">'''</div></pre></td></tr></table></figure>
 <h3 id="3-建立安全的HTTPS网站"><a href="#3-建立安全的HTTPS网站" class="headerlink" title="3.建立安全的HTTPS网站"></a>3.建立安全的HTTPS网站</h3><p>​    大多数的HTTP站点的协议与数据以明文方式在网络上传输，而HTTPS（HyperText Transfer Protocol over Secure Socket Layer ）是以安全为目标的HTTP通道，即在HTTP下加入SSL层，通过SSL达到数据加密及身份认证的功能。目前大多数银行、证券、交通的网站均以HTTPS方式构建。</p>
 <p>​    OpenSSL是一个强大的免费Socket层密码库，蕴含了主要的密码算法、常用的密钥和证书封装管理功能以及SSL协议。目前大多数网站通过OpenSSL工具搭建HTTPS站点，其步骤如下。</p>
 <ul>
@@ -629,7 +637,7 @@
 <p>​       如下记录在Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-124-generic x86_64)下使用OpenSSL的方法，以及Nginx在Linux下的证书配置方式。类似Linux其他发行版、Windows方法类似。</p>
 <p>​      <strong>1）在服务器中安装OpenSSL工具包</strong></p>
 <p>​    通过如下两条命令安装OpenSSL：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>sudo apt-get install openssl</div><div class="line"><span class="meta">#</span>sudo apt-get install libssl-dev</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">sudo apt-get install openssl</span></div><div class="line"><span class="meta">#</span><span class="bash">sudo apt-get install libssl-dev</span></div></pre></td></tr></table></figure>
 <pre><code>命令运行成功后，OpenSSL命令和配置文件将被安装到Linux系统目录中。
 </code></pre><ul>
 <li><p>OpenSSL命令：/usr/bin/openssl。</p>
@@ -639,7 +647,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">通过如下步骤生成CA证书ca.crt、服务器密钥文件server.key和服务器证书server.crt:</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>生成CA密钥</div><div class="line">openssl genrsa -out ca.key 2048</div><div class="line"></div><div class="line"><span class="meta">#</span>生成CA证书，days参数以天为单位设置证书的有效期。在本过程中会要求输入证书的所在地、公司名、站点名等</div><div class="line">openssl req -x509 -new -nodes -key ca.key -days 365 -out ca.crt</div><div class="line"></div><div class="line"><span class="meta">#</span>生成服务器证书RSA的密钥对</div><div class="line">openssl genrsa -out server.key 2048</div><div class="line"></div><div class="line"><span class="meta">#</span>生成服务器端证书ca.crt</div><div class="line">openssl x509 -req -in server.csr -CA ca.crt -CAKey ca.key -CAcreateserial -out server.crt -days 365</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash">生成CA密钥</span></div><div class="line">openssl genrsa -out ca.key 2048</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash">生成CA证书，days参数以天为单位设置证书的有效期。在本过程中会要求输入证书的所在地、公司名、站点名等</span></div><div class="line">openssl req -x509 -new -nodes -key ca.key -days 365 -out ca.crt</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash">生成服务器证书RSA的密钥对</span></div><div class="line">openssl genrsa -out server.key 2048</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash">生成服务器端证书ca.crt</span></div><div class="line">openssl x509 -req -in server.csr -CA ca.crt -CAKey ca.key -CAcreateserial -out server.crt -days 365</div></pre></td></tr></table></figure>
 <p>​    上述命令生成服务器端证书时，需要在Common Name(CN)字段中如实输入站点的访问地址。即设若要访问www.abc.com进行访问，则必须定义CN=www.abc.com；如果通过IP地址访问，则需设置CN为具体的IP地址。</p>
 <p>​        <strong>3）配置Nginx HTTPS服务器</strong> </p>
 <p>​    在站点配置文件/etc/nginx/sites-enabled/default中添加如下server段，可以定义一个基于HTTPS的接口，该接口的服务器端程序仍旧为uWSGI接口127.0.0.1:3011。</p>
@@ -869,7 +877,7 @@ var jiathis_config={
               alt="Bomir" />
           
             <p class="site-author-name" itemprop="name">Bomir</p>
-            <p class="site-description motion-element" itemprop="description">Imagination is more important than knowledge.</p>
+            <p class="site-description motion-element" itemprop="description"></p>
         </div>
 
         <nav class="site-state motion-element">
@@ -1095,7 +1103,7 @@ var jiathis_config={
 
   <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.2</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
 -->
 
 
@@ -1156,25 +1164,25 @@ var jiathis_config={
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
 
   
-  <script type="text/javascript" src="true"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 
 
   
@@ -1188,13 +1196,6 @@ var jiathis_config={
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
-
-
 
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
