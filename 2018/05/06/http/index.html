@@ -183,7 +183,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
@@ -332,6 +332,16 @@
               <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
             
             站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
           </a>
         </li>
       
@@ -610,8 +620,8 @@
 
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Bomir wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客!</div>
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-relation.jpg" alt="Bomir wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信号，订阅我的博客!</div>
 </div>
 
       </div>
@@ -667,8 +677,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/CSS面试题/" rel="next" title="CSS面试">
-                <i class="fa fa-chevron-left"></i> CSS面试
+              <a href="/2018/05/06/实习面试总结/" rel="next" title="前端实习总结">
+                <i class="fa fa-chevron-left"></i> 前端实习总结
               </a>
             
           </div>
@@ -677,8 +687,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/06/hello-world/" rel="prev" title="helloworld">
-                helloworld <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/06/CSS面试题/" rel="prev" title="CSS面试">
+                CSS面试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -993,13 +1003,19 @@ var jiathis_config={
 
 
 
-
-
-<div class="theme-info">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="busuanzi-count">
+  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>  
+  <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户：<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
   <span class="post-count">博客全站共:65.9k字</span>
 </div>
-
 
         
 
@@ -1016,6 +1032,8 @@ var jiathis_config={
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
