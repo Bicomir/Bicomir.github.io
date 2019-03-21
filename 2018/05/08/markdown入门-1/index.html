@@ -226,11 +226,14 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
   
     
   
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
@@ -280,16 +283,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -316,6 +309,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -829,7 +832,7 @@ hello world
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">Markdown[^1]  </div><div class="line"></div><div class="line">[^1]: Markdown是一种纯文本标记语言</div><div class="line">#### 22.锚点</div><div class="line">**代码** </div><div class="line">&gt; 注: 只有标题支持锚点， 跳转目录方括号后 保持空格</div><div class="line"></div><div class="line">#### 23.定义型列表</div><div class="line">&gt; 注: 解释型定义</div></pre></td></tr></table></figure>
 <p>Markdown<br>:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个<code>:</code> + <code>Tab</code> 或 四个空格</p>
 <p>代码块定义<br>:   代码块定义……<br>        var a = 10;         // 保持空一行与 递进缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">**演示**  </div><div class="line"></div><div class="line">Markdown </div><div class="line">:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个`:` + `Tab` 或 四个空格</div><div class="line"></div><div class="line">代码块定义</div><div class="line">:   代码块定义…… </div><div class="line">    </div><div class="line">        var a = 10;  </div><div class="line"></div><div class="line">#### 24.自动邮箱链接 </div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
-<p><a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x78;&#120;&#120;&#64;&#111;&#x75;&#x74;&#108;&#111;&#111;&#107;&#46;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#64;&#111;&#x75;&#x74;&#108;&#111;&#111;&#107;&#46;&#x63;&#111;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
+<p><a href="&#109;&#97;&#x69;&#x6c;&#x74;&#111;&#x3a;&#120;&#120;&#x78;&#x40;&#111;&#117;&#116;&#108;&#x6f;&#111;&#107;&#46;&#x63;&#x6f;&#109;">&#120;&#120;&#x78;&#x40;&#111;&#117;&#116;&#108;&#x6f;&#111;&#107;&#46;&#x63;&#x6f;&#109;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
 <p>flow // 流程<br>st=&gt;start: 开始|past:&gt; <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> // 开始 e=&gt;end: 结束    // 结束<br>c1=&gt;condition: 条件1:&gt;<a href="http://www.baidu.com[_parent]//判断条件" target="_blank" rel="external">http://www.baidu.com[_parent]//判断条件</a> c2=&gt;condition: 条件2   // 判断条件<br>c3=&gt;condition: 条件3        // 判断条件<br>io=&gt;inputoutput: 输出      // 输出<br>//—————-以上为定义参数————————-</p>
 <p>//—————-以下为连接参数————————-<br>// 开始-&gt;判断条件1为no-&gt;判断条件2为no-&gt;判断条件3为no-&gt;输出-&gt;结束<br>st-&gt;c1(yes,right)-&gt;c2(yes,right)-&gt;c3(yes,right)-&gt;io-&gt;e c1(no)-&gt;e // 条件1不满足-&gt;结束<br>c2(no)-&gt;e // 条件2不满足-&gt;结束<br>c3(no)-&gt;e // 条件3不满足-&gt;结束 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 26.时序图</div><div class="line">**代码**</div></pre></td></tr></table></figure>
@@ -856,52 +859,6 @@ hello world
     
   </div>
   
-    
-      
-      <div>
-        
-        
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
-  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/05/08/markdown入门-1/">markdown入门_1</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 Bomir 的个人博客">Bomir</a></p>
-  <p><span>发布时间:</span>2018年05月08日 - 10:05</p>
-  <p><span>最后更新:</span>2018年05月23日 - 19:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/08/markdown入门-1/" title="markdown入门_1">http://yoursite.com/2018/05/08/markdown入门-1/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/08/markdown入门-1/"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-    clipboard.on('success', $(function(){
-      $(".fa-clipboard").click(function(){
-        swal({   
-          title: "",   
-          text: '复制成功',   
-          html: false,
-          timer: 500,   
-          showConfirmButton: false
-        });
-      });
-    }));  
-</script>
-
-        
-      </div>
-
-      <div>
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat-relation.jpg" alt="Bomir wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信号，订阅我的博客!</div>
-</div>
-
-      </div>
     
 
     
@@ -954,8 +911,8 @@ hello world
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/06/Markdown入门-0/" rel="next" title="Markdown入门_0">
-                <i class="fa fa-chevron-left"></i> Markdown入门_0
+              <a href="/2018/05/06/JS面试题汇总/" rel="next" title="JS面试题">
+                <i class="fa fa-chevron-left"></i> JS面试题
               </a>
             
           </div>
@@ -985,31 +942,32 @@ hello world
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-<span class="jiathis_txt">分享到：</span>
-<a class="jiathis_button_fav">收藏夹</a>
-<a class="jiathis_button_copy">复制网址</a>
-<a class="jiathis_button_email">邮件</a>
-<a class="jiathis_button_weixin">微信</a>
-<a class="jiathis_button_qzone">QQ空间</a>
-<a class="jiathis_button_tqq">腾讯微薄</a>
-<a class="jiathis_button_douban">豆瓣</a>
-<a class="jiathis_button_share">一键分享</a>
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
 
-<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-var jiathis_config={
-  data_track_clickback:true,
-  summary:"",
-  shortUrl:false,
-  hideMore:false
-}
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
-<!-- JiaThis Button END -->
+
       
     </div>
   </div>
@@ -1074,7 +1032,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1096,7 +1054,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1261,7 +1219,7 @@ var jiathis_config={
 
 <div class="copyright" >
   
-  &copy; 
+  &copy;  2017 &mdash; 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i> 
@@ -1905,7 +1863,7 @@ var jiathis_config={
 
 
   
-  
+
   <!-- next主题中加入动态背景 -->
 <div class="bg_content">
   <canvas id="canvas"></canvas>

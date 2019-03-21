@@ -220,11 +220,14 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
   
   
     
   
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
 
   <div class="container sidebar-position-left ">
     <div class="headband"></div>
@@ -274,16 +277,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -310,6 +303,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -395,6 +398,34 @@
 
       <h3 class="post-title">
         
+            <a class="post-title-link" href="/2018/05/06/面试300题/" itemprop="url">
+              
+                <span itemprop="name">前端面试300题</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-06T17:17:14+08:00"
+              content="2018-05-06" >
+          05-06
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
             <a class="post-title-link" href="/2018/05/06/前端面试题目/" itemprop="url">
               
                 <span itemprop="name">前端面试题</span>
@@ -426,34 +457,6 @@
             <a class="post-title-link" href="/2018/05/06/前端学习资料/" itemprop="url">
               
                 <span itemprop="name">前端学习资料</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-06T17:17:14+08:00"
-              content="2018-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/06/面试300题/" itemprop="url">
-              
-                <span itemprop="name">前端面试300题</span>
               
             </a>
         
@@ -526,7 +529,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -548,7 +551,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -697,7 +700,7 @@
 
 <div class="copyright" >
   
-  &copy; 
+  &copy;  2017 &mdash; 
   <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i> 
@@ -1326,7 +1329,7 @@
 
 
   
-  
+
   <!-- next主题中加入动态背景 -->
 <div class="bg_content">
   <canvas id="canvas"></canvas>
