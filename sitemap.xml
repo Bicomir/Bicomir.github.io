@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/guestbook/index.html</loc>
+    
+    <lastmod>2019-08-17T10:35:09.451Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/04/03/%E6%B5%85%E8%B0%88Tornado/</loc>
     
     <lastmod>2019-04-03T10:04:59.385Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2019-03-21T10:02:16.488Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/guestbook/index.html</loc>
-    
-    <lastmod>2019-03-21T08:57:07.159Z</lastmod>
     
   </url>
   
