@@ -144,7 +144,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端面试," />
+  <meta name="keywords" content="笔试面试," />
 
 
 
@@ -163,14 +163,14 @@
 
 
 <meta name="description" content="==1. 如何解决跨域问题==JSONP：原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。 由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行">
-<meta name="keywords" content="前端面试">
+<meta name="keywords" content="笔试面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试题">
 <meta property="og:url" content="http://yoursite.com/2018/05/06/前端面试题目/index.html">
 <meta property="og:site_name" content="Wallis">
 <meta property="og:description" content="==1. 如何解决跨域问题==JSONP：原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。 由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-03T09:14:00.602Z">
+<meta property="og:updated_time" content="2019-08-17T13:36:36.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试题">
 <meta name="twitter:description" content="==1. 如何解决跨域问题==JSONP：原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。 由于同源策略的限制，XmlHttpRequest只允许请求当前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后在服务端输出JSON数据并执行">
@@ -1081,8 +1081,7 @@
 </ul>
 <h2 id="67-如何删除一个cookie"><a href="#67-如何删除一个cookie" class="headerlink" title="==67. 如何删除一个cookie=="></a>==67. 如何删除一个cookie==</h2><p><strong>1. 将时间设为当前时间往前一点。</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">date.setDate(date.getDate() - <span class="number">1</span>);<span class="comment">//真正的删除</span></div></pre></td></tr></table></figure>
-<p><strong>2.expires的设置</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie = <span class="string">'user='</span>+ <span class="built_in">encodeURIComponent</span>(<span class="string">'name'</span>)  + <span class="string">';expires = '</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p><strong>2.expires的设置</strong><br>​<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie = <span class="string">'user='</span>+ <span class="built_in">encodeURIComponent</span>(<span class="string">'name'</span>)  + <span class="string">';expires = '</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
 <h2 id="68-，和，标签"><a href="#68-，和，标签" class="headerlink" title="==68. ，和，标签=="></a>==68. <strong>，<em>和<b>，<i>标签==</h2><ul>
 <li><strong> 标签和 <em> 标签一样，用于强调文本，但它强调的程度更强一些。</li>
 <li>em 是 斜体强调标签，更强烈强调，表示内容的强调点。相当于html元素中的 <i>…</i>;</li>
@@ -1273,7 +1272,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端面试/" rel="tag"><i class="fa fa-tag"></i> 前端面试</a>
+            <a href="/tags/笔试面试/" rel="tag"><i class="fa fa-tag"></i> 笔试面试</a>
           
         </div>
       
@@ -1425,7 +1424,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1620,7 +1619,7 @@
       <i class="fa fa-eye"></i>
       访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
     </span>
-  <span class="post-count">博客全站共:72.4k字</span>
+  <span class="post-count">博客全站共:72.3k字</span>
 </div>
 
         
