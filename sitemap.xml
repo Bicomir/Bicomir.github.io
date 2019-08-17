@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/08/17/HTTP-0/</loc>
+    
+    <lastmod>2019-08-17T10:58:28.683Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/guestbook/index.html</loc>
     
     <lastmod>2019-08-17T10:35:09.451Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2019-04-03T09:02:31.770Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/05/06/http/</loc>
-    
-    <lastmod>2019-04-03T09:02:13.385Z</lastmod>
     
   </url>
   
