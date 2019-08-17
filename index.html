@@ -394,6 +394,744 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/Fiddler抓包工具总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/17/Fiddler抓包工具总结/" itemprop="url">Fiddler抓包工具总结</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-17T21:03:54+08:00">
+                2019-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/debug工具/" itemprop="url" rel="index">
+                    <span itemprop="name">debug工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/17/Fiddler抓包工具总结/" class="leancloud_visitors" data-flag-title="Fiddler抓包工具总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,466
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  20
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-Fiddler介绍"><a href="#1-Fiddler介绍" class="headerlink" title="1. Fiddler介绍"></a>1. Fiddler介绍</h3><p>Fiddler（中文名称：小提琴）是一个HTTP的调试代理，以代理服务器的方式，监听系统的Http网络数据流动，Fiddler可以也可以让你检查所有的HTTP通讯，设置断点，以及Fiddle所有的“进出”的数据（我一般用来抓包）,Fiddler还包含一个简单却功能强大的基于JScript .NET事件脚本子系统，它可以支持众多的HTTP调试任务。</p>
+<p>Fiddler官方网站提供了大量的帮助文档和视频教程,这是学习Fiddler的最好资料。</p>
+<ul>
+<li><a href="https://link.jianshu.com/?t=http://www.telerik.com/fiddler" target="_blank" rel="external">Fiddler_官方网站</a></li>
+<li><a href="https://link.jianshu.com/?t=http://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler" target="_blank" rel="external">Fiddler_官方文档</a></li>
+<li><a href="https://link.jianshu.com/?t=https://www.youtube.com/playlist?list=PLvmaC-XMqeBbw72l2G7FG7CntDTErjbHc" target="_blank" rel="external">Fiddler_官方视频</a></li>
+<li><a href="https://link.jianshu.com/?t=http://www.telerik.com/fiddler/add-ons" target="_blank" rel="external">Fiddler_官方插件</a></li>
+</ul>
+<h4 id="1-1-工作原理"><a href="#1-1-工作原理" class="headerlink" title="1.1 工作原理"></a>1.1 工作原理</h4><p><img src="https://upload-images.jianshu.io/upload_images/947566-f51654e6f0018748.jpg" alt=""></p>
+<p>其工作原理是，Fiddler是以代理WEB服务器的形式工作的,浏览器与服务器之间通过建立TCP连接以HTTP协议进行通信，浏览器默认通过自己发送HTTP请求到服务器，它使用代理地址:127.0.0.1, 端口:8888. 当Fiddler开启会自动设置代理， 退出的时候它会自动注销代理，这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。解决的办法是重新启动下Fiddler。</p>
+<h5 id="1-1-1-HTTP协议简介"><a href="#1-1-1-HTTP协议简介" class="headerlink" title="1.1.1 HTTP协议简介"></a>1.1.1 HTTP协议简介</h5><p>​    <strong>什么是HTTP协议</strong></p>
+<p>​    一般协议是指计算机通信网络中两台计算机之间进行通信所必须共同遵守的规定或规则，超文本传输协议(HTTP)是一种通信协议，它允许将超文本标记语言(HTML)文档从Web服务器传送到客户端的浏览器，目前我们使用的是HTTP/1.1 版本。</p>
+<p>​    <strong>URL详解</strong></p>
+<p>​    URL(Uniform Resource Locator)地址用于描述一个网络上的资源, 基本格式如下：</p>
+<p>​    <code>schema://host[:port#]/path/.../[?query-string][#anchor]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">scheme</td>
+<td style="text-align:center">指定低层使用的协议(例如：http, https, ftp)</td>
+</tr>
+<tr>
+<td style="text-align:center">host</td>
+<td style="text-align:center">HTTP服务器的IP地址或者域名</td>
+</tr>
+<tr>
+<td style="text-align:center">port#</td>
+<td style="text-align:center">HTTP服务器的默认端口是80，这种情况下端口号可以省略。如果使用了别的端口，必须指明，例如 <a href="http://www.test.com:8080/" target="_blank" rel="external">http://www.test.com:8080/</a></td>
+</tr>
+<tr>
+<td style="text-align:center">path</td>
+<td style="text-align:center">访问资源的路径</td>
+</tr>
+<tr>
+<td style="text-align:center">query-string</td>
+<td style="text-align:center">发送给http服务器的数据</td>
+</tr>
+<tr>
+<td style="text-align:center">anchor</td>
+<td style="text-align:center">锚</td>
+</tr>
+</tbody>
+</table>
+<p><strong>HTTP消息的结构</strong></p>
+<ul>
+<li>Request</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/625782c8gw1elx0ltfr7mj20by05edg3.jpg" alt=""></p>
+<p>先看Request 消息的结构, Request 消息分为3部分，第一部分叫Request line, 第二部分叫Request header, 第三部分是body. header和body之间有个空行.</p>
+<p>第一行中的Method表示请求方法,比如”POST”,”GET”, Path-to-resoure表示请求的资源， Http/version-number 表示HTTP协议的版本号,当使用的是”GET” 方法的时候， body是为空的.</p>
+<p><img src="http://ww1.sinaimg.cn/large/625782c8gw1emair58kcjj20in0kf78d.jpg" alt=""></p>
+<ul>
+<li>Response</li>
+</ul>
+<p><img src="http://ww3.sinaimg.cn/large/625782c8gw1elx0q9770cj20by05ewen.jpg" alt=""></p>
+<p>再看Response消息的结构, 和Request消息的结构基本一样。 同样也分为三部分,第一部分叫Response line, 第二部分叫Response header，第三部分是body. header和body之间也有个空行.</p>
+<p><img src="http://ww4.sinaimg.cn/large/625782c8gw1emair5tfn8j20k00ketf5.jpg" alt=""></p>
+<h5 id="1-1-2-常见状态码"><a href="#1-1-2-常见状态码" class="headerlink" title="1.1.2 常见状态码"></a>1.1.2 常见状态码</h5><p>Response 消息中的第一行叫做状态行，由HTTP协议版本号， 状态码， 状态消息 三部分组成。<br>状态码用来告诉HTTP客户端,HTTP服务器是否产生了预期的Response.<br>HTTP/1.1中定义了5类状态码， 状态码由三位数字组成，第一个数字定义了响应的类别。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">状态码</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1XX</td>
+<td style="text-align:center">提示信息，表示请求已被成功接收，继续处理</td>
+</tr>
+<tr>
+<td style="text-align:center">2XX</td>
+<td style="text-align:center">成功，表示请求已被成功接收，理解，接受</td>
+</tr>
+<tr>
+<td style="text-align:center">3XX</td>
+<td style="text-align:center">重定向，要完成请求必须进行更进一步的处理</td>
+</tr>
+<tr>
+<td style="text-align:center">4XX</td>
+<td style="text-align:center">客户端错误，请求有语法错误或请求无法实现</td>
+</tr>
+<tr>
+<td style="text-align:center">5XX</td>
+<td style="text-align:center">服务器端错误，服务器未能实现合法的请求</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>200 OK</li>
+</ul>
+<p>最常见的就是成功响应状态码200了， 这表明该请求被成功地完成，所请求的资源发送回客户端</p>
+<ul>
+<li>302 Found</li>
+</ul>
+<p>重定向，新的URL会在response 中的Location中返回，浏览器将会自动使用新的URL发出新的Request.例如在IE中输入， <a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>. HTTP服务器会返回302， IE取到Response中Location header的新URL, 又重新发送了一个Request.</p>
+<p><img src="http://ww3.sinaimg.cn/large/625782c8gw1emair6wcxyj20od0gs0xe.jpg" alt=""></p>
+<ul>
+<li>304 Not Modified</li>
+</ul>
+<p>代表上次的文档已经被缓存了， 还可以继续使用，例如打开博客园首页, 发现很多Response 的status code 都是304<br>[提示：　如果你不想使用本地缓存可以用Ctrl+F5 强制刷新页面]</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/625782c8gw1emair7mre2j20l40eugqe.jpg" alt=""></p>
+<ul>
+<li>400 Bad Request 客户端请求与语法错误，不能被服务器所理解</li>
+<li>403 Forbidden 服务器收到请求，但是拒绝提供服务</li>
+<li>404 Not Found</li>
+</ul>
+<p><img src="http://ww4.sinaimg.cn/mw690/625782c8gw1emair8nbagj20k50lsaek.jpg" alt=""></p>
+<ul>
+<li>500 Internal Server Error 服务器发生了不可预期的错误</li>
+<li>503 Server Unavailable 服务器当前不能处理客户端的请求，一段时间后可能恢复正常</li>
+</ul>
+<h4 id="1-2-主界面"><a href="#1-2-主界面" class="headerlink" title="1.2 主界面"></a>1.2 主界面</h4><p>Fiddler的主界面分为 工具面板、会话面板、监控面板、状态面板，下面进行逐一进行介绍。</p>
+<h5 id="1-2-1-工具面板"><a href="#1-2-1-工具面板" class="headerlink" title="1.2.1 工具面板"></a>1.2.1 工具面板</h5><p><img src="http://ww4.sinaimg.cn/large/625782c8gw1elq2p3w79lj20zd00w0tj.jpg" alt=""></p>
+<ul>
+<li>说明</li>
+</ul>
+<p>注释、重新请求、删除会话、继续执行、流模式/缓冲模式、解码、保留会话、监控指定进程、寻找、保存会话、切图、计时、打开浏览器、清除IE缓存、编码/解码工具、弹出控制监控面板、MSDN、帮助</p>
+<ul>
+<li>两种模式</li>
+</ul>
+<p>分为缓冲模式和流模式这两种。</p>
+<p><strong>缓冲模式(Buffering Mode)</strong></p>
+<p>Fiddler直到HTTP响应完成时才将数据返回给应用程序。可以控制响应，修改响应数据。但是时序图有时候会出现异常.</p>
+<p><strong>流模式(Streaming Mode)</strong></p>
+<p>Fiddler会即时将HTTP响应的数据返回给应用程序。更接近真实浏览器的性能。时序图更准确。但是不能控制响应.</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/625782c8gw1elqz09yarbj20n708zwf0.jpg" alt=""></p>
+<h5 id="1-2-2-会话面板"><a href="#1-2-2-会话面板" class="headerlink" title="1.2.2 会话面板"></a>1.2.2 会话面板</h5><p><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234158609-143657944.png" alt=""></p>
+<p>下面是会话面板横栏的含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">抓取HTTP Request的顺序，从1开始，以此递增</td>
+</tr>
+<tr>
+<td style="text-align:center">Result</td>
+<td style="text-align:center">HTTP状态码</td>
+</tr>
+<tr>
+<td style="text-align:center">Protocol</td>
+<td style="text-align:center">请求使用的协议，如HTTP/HTTPS/FTP等</td>
+</tr>
+<tr>
+<td style="text-align:center">Host</td>
+<td style="text-align:center">请求地址的主机名</td>
+</tr>
+<tr>
+<td style="text-align:center">URL</td>
+<td style="text-align:center">请求资源的位置</td>
+</tr>
+<tr>
+<td style="text-align:center">Body</td>
+<td style="text-align:center">该请求的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">Caching</td>
+<td style="text-align:center">请求的缓存过期时间或者缓存控制值</td>
+</tr>
+<tr>
+<td style="text-align:center">Content-Type</td>
+<td style="text-align:center">请求响应的类型</td>
+</tr>
+<tr>
+<td style="text-align:center">Process</td>
+<td style="text-align:center">发送此请求的进程：进程ID</td>
+</tr>
+<tr>
+<td style="text-align:center">Comments</td>
+<td style="text-align:center">允许用户为此回话添加备注</td>
+</tr>
+<tr>
+<td style="text-align:center">Custom</td>
+<td style="text-align:center">允许用户设置自定义值</td>
+</tr>
+</tbody>
+</table>
+<p>会话面板左侧栏的图标含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">图标</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234159468-1047137951.gif" alt=""></td>
+<td style="text-align:center">请求已经发往服务器</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234200047-1757509080.gif" alt=""></td>
+<td style="text-align:center">已从服务器下载响应结果</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234201406-1416873112.gif" alt=""></td>
+<td style="text-align:center">请求从断点处暂停</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234202375-1737717316.gif" alt=""></td>
+<td style="text-align:center">响应从断点处暂停</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234202812-1354392122.gif" alt=""></td>
+<td style="text-align:center">请求使用 HTTP 的 HEAD 方法，即响应没有内容（Body）</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234203515-1304170577.png" alt=""></td>
+<td style="text-align:center">请求使用 HTTP 的 POST 方法</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234204531-965189067.gif" alt=""></td>
+<td style="text-align:center">请求使用 HTTP 的 CONNECT 方法，使用 HTTPS 协议建立连接隧道</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234205547-1927498766.gif" alt=""></td>
+<td style="text-align:center">响应是 HTML 格式</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234206203-722749081.gif" alt=""></td>
+<td style="text-align:center">响应是一张图片</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234207000-575730385.gif" alt=""></td>
+<td style="text-align:center">响应是脚本格式</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234207625-740567358.gif" alt=""></td>
+<td style="text-align:center">响应是 CSS 格式</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234208297-916097140.gif" alt=""></td>
+<td style="text-align:center">响应是 XML 格式</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234209640-1298497869.png" alt=""></td>
+<td style="text-align:center">响应是 JSON 格式</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234210172-1709733575.png" alt=""></td>
+<td style="text-align:center">响应是一个音频文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234210703-1810906238.png" alt=""></td>
+<td style="text-align:center">响应是一个视频文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234211297-1181901939.png" alt=""></td>
+<td style="text-align:center">响应是一个 SilverLight</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234213515-1617989240.png" alt=""></td>
+<td style="text-align:center">响应是一个 FLASH</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234214140-838447913.png" alt=""></td>
+<td style="text-align:center">响应是一个字体</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234214828-810550242.gif" alt=""></td>
+<td style="text-align:center">普通响应成功</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234215406-1088186512.gif" alt=""></td>
+<td style="text-align:center">响应是 HTTP/300、301、302、303 或 307 重定向</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234216015-2008519780.gif" alt=""></td>
+<td style="text-align:center">响应是 HTTP/304（无变更）：使用缓存文件</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234216531-1803780843.gif" alt=""></td>
+<td style="text-align:center">响应需要客户端证书验证</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234217078-1617370921.gif" alt=""></td>
+<td style="text-align:center">服务端错误</td>
+</tr>
+<tr>
+<td style="text-align:center"><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160119000324093-1538967179.gif" alt=""></td>
+<td style="text-align:center">会话被客户端、Fiddler 或者服务端终止</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-2-3-监控面板"><a href="#1-2-3-监控面板" class="headerlink" title="1.2.3 监控面板"></a>1.2.3 监控面板</h5><p><img src="https://upload-images.jianshu.io/upload_images/947566-2a17b3b31567aae5.jpg" alt=""></p>
+<ul>
+<li><strong>统计报表</strong></li>
+</ul>
+<ol>
+<li>请求总数、请求包大小、响应包大小；</li>
+<li>请求起始时间、响应结束时间、握手时间、等待时间、路由时间、<code>TCP/IP</code>传输时间；</li>
+<li><code>HTTP</code>状态码统计；</li>
+<li>返回的各种类型数据的大小统计以及饼图展现。</li>
+</ol>
+<p><img src="http://ww2.sinaimg.cn/large/625782c8gw1elpm8svukoj215n0p0tf2.jpg" alt=""></p>
+<ul>
+<li><strong>时间轴</strong></li>
+</ul>
+<p>每个网络请求都会经历域名解析、建立连接、发送请求、接受数据等阶段。把多个请求以时间作为 X 轴，用图表的形式展现出来，就形成了瀑布图。在<code>Fiddler</code> 中，只要在左侧选中一些请求，右侧选择<code>Timeline</code>标签，就可以看到这些请求的瀑布图。</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/625782c8gw1elquvn14bbj20go05iweu.jpg" alt=""></p>
+<p>初看上图，心中不免有几个问题？</p>
+<ol>
+<li>图标的 Y 轴上显示的是简化后的 URL。为什么有些是绿色的，有些是黑色的？</li>
+<li>为什么第一个请求用阴影线来表示，其它请求却都是实心的？</li>
+<li>请求条的不同颜色分别代表什么？</li>
+<li>每个请求中的黑色竖线表示什么？</li>
+<li>请求后面的图标（如闪电和软盘）代表了什么？</li>
+<li>每个请求前面两个小圆圈是什么，为什么有的是红色，有的是绿色？</li>
+</ol>
+<p>答案是：</p>
+<ol>
+<li>绿色的请求表示这是一个“有条件的请求”。HTTP 协议定义了 5 个条件请求头部，最常见的两个是“If-Modified-Since”和“If-None-Match”。服务器根据这两个头部来验证本地缓存是否过期，如果过期则正常返回资源的最新版本；否则仅返回 304 Not Modified，浏览器继续使用本地缓存。包含条件请求头部的请求用绿色显示，否则用黑色。</li>
+<li>有阴影线的请求是缓冲模式下的请求，实心的是流模式下的请求。Fiddler 提供了缓冲（Buffering）和流（Streaming）两种抓包模式：缓冲模式下，Fiddler 会在响应完成时才将数据返回给应用程序（通常是浏览器），这种模式下可以控制响应，方便地修改响应内容；流模式下，Fiddler 会实时返回响应数据给浏览器，但没办法控制响应。一般使用流模式，瀑布图会更真实一些。这两种模式可以通过 Fiddler 的工具栏选择。特别的，通过 Fiddler 的“AutoResponder”功能返回的响应，只能是缓冲模式。</li>
+<li>请求条的不同颜色对应着不同类型的响应，根据响应头的 MIME Type 来归类。如浅绿色表示图片类型的响应；深绿色是 JavaScript；紫色是 CSS；其它都是蓝色。</li>
+<li>请求中的黑色竖线，表示的是浏览器收到服务端响应的第一个字节这一时刻。这个时间受 DNS 解析、建立连接、发送请求、等待服务端响应等步骤的影响。</li>
+<li>请求条后面的图标表示响应的某些特征。如软盘图标表示这个响应正文从本地获得，也就是说服务端返回了 304；闪电表示这是 Fiddler 的“AutoResponder”的响应；向下的箭头表示响应是 302，需要重定向；红色感叹号说明这个请求有错误发生（状态码是 4XX 或 5XX）。特别的，如果请求条后面有一个红色的X，说明服务端响应完这个请求之后，断开了连接。出现这种情况一般有两种可能：HTTP/1.0 的响应中没有 Connection: Keep-Alive；或者是 HTTP/1.1 的响应中包含了 Connection: close。使用持久连接可以省去建立连接的开销，也可以减小 TCP 慢启动和其它拥塞控制机制带来的影响，总之是好处多多。</li>
+<li>请求前面的红色圆圈表示这个连接是新建的，绿色表示是复用的。上面的圆圈表示的是浏览器到 Fiddler 的连接，下面的圆圈是 Fiddler 到服务端的连接。</li>
+</ol>
+<h5 id="1-2-4-状态面板"><a href="#1-2-4-状态面板" class="headerlink" title="1.2.4 状态面板"></a>1.2.4 状态面板</h5><ul>
+<li>控制台</li>
+</ul>
+<p>Fiddler的左下角有一个命令行工具叫做QuickExec,允许你直接输入命令。</p>
+<p>常见的命令有：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">help</td>
+<td style="text-align:center">打开官方的使用页面介绍，所有的命令都会列出来</td>
+</tr>
+<tr>
+<td style="text-align:center">cls</td>
+<td style="text-align:center">清屏 (Ctrl+x 也可以清屏)</td>
+</tr>
+<tr>
+<td style="text-align:center">select</td>
+<td style="text-align:center">选择会话的命令</td>
+</tr>
+<tr>
+<td style="text-align:center">?.png</td>
+<td style="text-align:center">用来选择png后缀的图片</td>
+</tr>
+<tr>
+<td style="text-align:center">bpu</td>
+<td style="text-align:center">截获request</td>
+</tr>
+<tr>
+<td style="text-align:center">bpafter</td>
+<td style="text-align:center">截获response</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-3-Request消息的结构"><a href="#1-3-Request消息的结构" class="headerlink" title="1.3 Request消息的结构"></a>1.3 Request消息的结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/947566-1733be471914d8af.png" alt=""></p>
+<h4 id="1-4-Response消息的结构"><a href="#1-4-Response消息的结构" class="headerlink" title="1.4 Response消息的结构"></a>1.4 Response消息的结构</h4><p><img src="https://upload-images.jianshu.io/upload_images/947566-f94b5d9daa376a92.png" alt=""></p>
+<h4 id="1-5-常用功能"><a href="#1-5-常用功能" class="headerlink" title="1.5 常用功能"></a>1.5 常用功能</h4><h5 id="1-5-1-监听https"><a href="#1-5-1-监听https" class="headerlink" title="1.5.1 监听https"></a>1.5.1 监听https</h5><p>Fiddler不仅能监听HTTP请求而且默认情况下也能捕获到HTTPS请求，Tool -&gt; Fiddler Option -&gt; HTTPS下面进行设置，勾选上“Decrypt HTTPS traffic”，如果不必监听服务器端得证书错误可以勾上“Ignore server certification errors”，也可以跳过几个指定的HOST来缩小或者扩大监听范围。</p>
+<p><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160118234229250-1993071078.png" alt=""></p>
+<h5 id="1-5-2-Host切换"><a href="#1-5-2-Host切换" class="headerlink" title="1.5.2 Host切换"></a>1.5.2 Host切换</h5><p>Tools-&gt;Hosts,</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/625782c8gw1elxmd4jcc3j20jd0ddn24.jpg" alt=""></p>
+<h5 id="1-5-3-模拟各类场景"><a href="#1-5-3-模拟各类场景" class="headerlink" title="1.5.3 模拟各类场景"></a>1.5.3 模拟各类场景</h5><ul>
+<li><p>通过GZIP压缩，测试性能</p>
+</li>
+<li><p>模拟Agent测试，查看服务端是否对不同客户端定制响应</p>
+</li>
+<li><p>模拟慢速网络，测试页面的容错性</p>
+</li>
+<li><p>禁用缓存，方便调试一些静态文件或测试服务端响应情况</p>
+</li>
+<li><p>根据一些场景自定义规则</p>
+</li>
+<li><p>低网速模拟</p>
+<p>有时出于兼容性考虑或者对某处进行性能优化，在低网速下往往能较快发现问题所在也容易发现性能瓶颈，可惜其他调试工具没能提供低网速环境，而强大的Fiddler考虑到了这一点，能够进行低网速模拟设置Rules &gt; Performance &gt; Stimulate Modem Speeds。</p>
+</li>
+</ul>
+<p><img src="http://ww4.sinaimg.cn/mw690/625782c8gw1elqyjdzz1aj212b0lcqbw.jpg" alt=""></p>
+<h5 id="1-5-4-Compare-对比文本"><a href="#1-5-4-Compare-对比文本" class="headerlink" title="1.5.4 Compare(对比文本)"></a>1.5.4 Compare(对比文本)</h5><p>有时候两个请求比较相似，想找出区别，可以下载插件winziff，下载地址是</p>
+<p><a href="http://www.grigsoft.com/download-windiff.htm，下载以后，放到tools-" target="_blank" rel="external">http://www.grigsoft.com/download-windiff.htm，下载以后，放到tools-</a> fiddler option tool文件夹下，</p>
+<p>设置好路径就可以使用了。</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/625782c8gw1elqvkwthjgj20uf0n1jw8.jpg" alt=""></p>
+<h5 id="1-5-5-Composer-构造器"><a href="#1-5-5-Composer-构造器" class="headerlink" title="1.5.5 Composer(构造器)"></a>1.5.5 Composer(构造器)</h5><p>​        请求构造顾名思义就是我们可以模拟请求，也就是说我们可以借助Fiddler的Composer 在不改动开发环境实际代码的情况下修改请求中的参数值并且方便的重新调用一次该请求，然后相比较2次请求响应有何具体不同。任何一个请求参数只要是合法的取值再次调用后都会有相应的响应，那么你想要的任意一个合法请求组合自然也能够按照你的意愿构造出来，然后再次调用以及查看返回数据，十分方便！</p>
+<p>​    Composer允许自定义请求发送到服务器，可以手动创建一个新的请求，也可以在会话表中，拖拽一个现有的请求，Parsed模式下你只需要提供简单的URLS地址即可（也可以在RequestBody定制一些属性，如模拟浏览器User-Agent）。</p>
+<h5 id="1-5-6-Filters-过滤监控"><a href="#1-5-6-Filters-过滤监控" class="headerlink" title="1.5.6 Filters(过滤监控)"></a>1.5.6 Filters(过滤监控)</h5><p>​        对一个重新载入的页面进行抓包，如果包的条目过多而你需要关注的就那么几项的话，可以使用Fiddler的过滤器Filters进行抓包，那么抓包时只会抓取你希望抓到的那些包。切换到Filters标签勾选Use filter，以便激活过滤器，这样下面的各种过滤方式就可以进行选择了。</p>
+<ul>
+<li><p><img src="http://ww3.sinaimg.cn/mw690/625782c8gw1elqxfq4wl8j20gi06ljsd.jpg" alt=""></p>
+</li>
+<li></li>
+</ul>
+<p><img src="http://ww4.sinaimg.cn/mw690/625782c8gw1elqxfps7xwj20e404074n.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">选项1</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">No zone filter</td>
+<td style="text-align:center">不设置hosts过滤</td>
+</tr>
+<tr>
+<td style="text-align:center">Show Only Intranet Hosts</td>
+<td style="text-align:center">只显示内网HOST</td>
+</tr>
+<tr>
+<td style="text-align:center">Show Only Internet Hosts</td>
+<td style="text-align:center">只显示外网HOST</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>选项2</strong></th>
+<th style="text-align:center"><strong>解释</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">No Host Filter</td>
+<td style="text-align:center">不设置hosts过滤</td>
+</tr>
+<tr>
+<td style="text-align:center">Hide The Following Hosts</td>
+<td style="text-align:center">隐藏过滤到的域名</td>
+</tr>
+<tr>
+<td style="text-align:center">Show Only The Following Hosts</td>
+<td style="text-align:center">只显示过滤到的域名</td>
+</tr>
+<tr>
+<td style="text-align:center">Flag The Following Hosts</td>
+<td style="text-align:center">标记过滤到的域名</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-5-7-AutoResponder-请求重定向"><a href="#1-5-7-AutoResponder-请求重定向" class="headerlink" title="1.5.7 AutoResponder(请求重定向)"></a>1.5.7 AutoResponder(请求重定向)</h5><p>所谓请求无非就是需要调用到的一些资源(包括JS、CSS和图片等)，所谓重定向就是将页面原本需要调用的资源指向其他资源(你能够控制的资源或者可以引用到的资源)。</p>
+<p>(1)你可以将前台服务器的诸多或者某个资源在本地做个副本，如果正常网络访问环境下该资源出现了BUG而导致开发环境崩溃时，可以先将这个资源的请求重定向到本地副本，这样就可以继续进行开发调试你的页面，从而大量节省资源维护的等待时间。</p>
+<p>(2)你也可以将多人同时维护的某个JS文件复制一份出来在本地，当你的开发调试收到他人调试代码干扰时，可以将这个JS的调用重定向到本地无干扰的JS文件，进行无干扰开发，功能开发完成并调试OK之后再将你的代码小心合入到开发环境中，这样就可以避免受到他人干扰专心搞你的模块开发，也就是说能够将JS文件脱离开发环境却不影响线上调试。</p>
+<p>(3)你还可以将样式文件或者图片指向本地如果需要的话。开发过程中的很多页面其实都是惨不忍睹的，究其原因很大程度上是因为缺少对应的样式文件或者没有图片资源，所以样式文件和图片的重定向会对美感稍有要求的开发人员带来福音。</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/625782c8gw1elqy1v4k8qj20ds051my1.jpg" alt=""></p>
+<h4 id="1-6-插件介绍"><a href="#1-6-插件介绍" class="headerlink" title="1.6 插件介绍"></a>1.6 插件介绍</h4><h5 id="1-6-1-Format"><a href="#1-6-1-Format" class="headerlink" title="1.6.1 Format"></a>1.6.1 Format</h5><p><img src="http://ww1.sinaimg.cn/mw690/625782c8gw1elxlq1u81sj20nj0akdp3.jpg" alt=""></p>
+<h5 id="1-6-2-Script"><a href="#1-6-2-Script" class="headerlink" title="1.6.2 Script"></a>1.6.2 Script</h5><ul>
+<li>Fiddler Script 是用JScript.NET语言写的，<a href="http://msdn.microsoft.com/zh-cn/library/cc435359(VS.71" target="_blank" rel="external">JScript.NET</a>.aspx)</li>
+<li>在这个方法中修改Request的内容， 我们用得最多,</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeRequest</span>(<span class="params">oSession: Session</span>)</span></div></pre></td></tr></table></figure>
+<ul>
+<li>在这个方法中修改修改Response的内容</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeResponse</span>(<span class="params">oSession: Session</span>)</span></div></pre></td></tr></table></figure>
+<ul>
+<li>在IP Main方法中添加</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FiddlerObject.UI.lvSessions.AddBoundColumn(<span class="string">"HostIP"</span>, <span class="number">50</span>, <span class="string">"x-hostIP"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>请求，响应延迟 在OnBeforeRequest 添加</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">oSession[<span class="string">"request-trickle-delay"</span>]  = <span class="string">"3000"</span>; </div><div class="line">oSession[<span class="string">"response-trickle-delay"</span>] = <span class="string">"3000"</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>我们可以控制Session在Fiddler中显示的样式，把这段脚本放在OnBeforeRequest(oSession: Session) 方法下，并且点击”Save script”, 这样所有的cnblogs的会话都会显示红色.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (oSession.HostnameIs(<span class="string">"www.cnblogs.com"</span>)) &#123;</div><div class="line">           oSession[<span class="string">"ui-color"</span>] = <span class="string">"red"</span>;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Fiddler Script中修改Cookie<br>Cookie其实就是request 中的一个header,注意:FiddlerScript不能直接删除或者编辑单独的一个cookie， 你需要用replace方法或者正则表达式的方法去操作cookie的string</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeRequest</span>(<span class="params">oSession: Session</span>) </span></div><div class="line"><span class="function"></span>&#123; </div><div class="line">     <span class="keyword">if</span> (oSession.HostnameIs(<span class="string">'www.example.com'</span>)</div><div class="line">       &amp;&amp; oSession.uriContains(<span class="string">'pagewithCookie'</span>) </div><div class="line">       &amp;&amp; oSession.oRequest.headers.Contains(<span class="string">"Cookie"</span>)) </div><div class="line">     &#123; </div><div class="line">         <span class="keyword">var</span> sCookie = oSession.oRequest[<span class="string">"Cookie"</span>]; </div><div class="line">         </div><div class="line">         <span class="comment">// 用replace方法或者正则表达式的方法去操作cookie的string</span></div><div class="line">         sCookie = sCookie.Replace(<span class="string">"cookieName="</span>, <span class="string">"ignoreme="</span>); </div><div class="line">         oSession.oRequest[<span class="string">"Cookie"</span>] = sCookie; </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>删除所有的cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oSession.oRequest.headers.Remove(<span class="string">"Cookie"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>新建cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oSession.oRequest.headers.Add(<span class="string">"Cookie"</span>, <span class="string">"username=testname;testpassword=P@ssword1"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>Fiddler Script中修改Request 中的body</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">OnBeforeRequest</span>(<span class="params">oSession: Session</span>) </span></div><div class="line"><span class="function"></span>&#123; </div><div class="line">    <span class="keyword">if</span>(oSession.uriContains(<span class="string">"http://www.cnblogs.com/"</span>))</div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 获取Request中的body字符串</span></div><div class="line">        <span class="keyword">var</span> strBody=oSession.GetRequestBodyAsString();</div><div class="line">        </div><div class="line">        <span class="comment">// 用正则表达式或者replace方法去修改string</span></div><div class="line">        strBody=strBody.replace(<span class="string">"1111"</span>,<span class="string">"2222"</span>);</div><div class="line">        </div><div class="line">        <span class="comment">// 弹个对话框检查下修改后的body               </span></div><div class="line">        FiddlerObject.alert(strBody);</div><div class="line">        </div><div class="line">        <span class="comment">// 将修改后的body，重新写回Request中</span></div><div class="line">        oSession.utilSetRequestBody(strBody);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://visualstudiogallery.msdn.microsoft.com/872d27ee-38c7-4a97-98dc-0d8a431cc2ed" target="_blank" rel="external">Vs插件</a></p>
+<h5 id="1-6-3-三方插件"><a href="#1-6-3-三方插件" class="headerlink" title="1.6.3 三方插件"></a>1.6.3 三方插件</h5><ul>
+<li>.NET可以开发</li>
+<li>插件管理</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/mw690/625782c8gw1elxmgvvx07j20fi0ad77q.jpg" alt=""></p>
+<p>可供Fiddler使用的第三方插件地址如下：<br><a href="http://pan.baidu.com/s/1mgocpBi" target="_blank" rel="external">http://pan.baidu.com/s/1mgocpBi</a><br><a href="http://fiddler.com/add-ons" target="_blank" rel="external">http://fiddler.com/add-ons</a></p>
+<h4 id="1-7-浏览器抓包方式"><a href="#1-7-浏览器抓包方式" class="headerlink" title="1.7 浏览器抓包方式"></a>1.7 浏览器抓包方式</h4><h5 id="1-7-1-IE"><a href="#1-7-1-IE" class="headerlink" title="1.7.1 IE"></a>1.7.1 IE</h5><p><img src="http://ww3.sinaimg.cn/large/625782c8gw1elxk7795z1j20mv0k9n1s.jpg" alt=""></p>
+<h5 id="1-7-2-FireFox"><a href="#1-7-2-FireFox" class="headerlink" title="1.7.2 FireFox"></a>1.7.2 FireFox</h5><p><img src="http://ww4.sinaimg.cn/large/625782c8gw1elxk76hc62j20v00cudl8.jpg" alt=""></p>
+<h5 id="1-7-3-Chrome"><a href="#1-7-3-Chrome" class="headerlink" title="1.7.3 Chrome"></a>1.7.3 Chrome</h5><p><img src="http://ww2.sinaimg.cn/large/625782c8gw1elxk75frokj20hx0f6ac4.jpg" alt=""></p>
+<h5 id="1-7-4-Visual-Studio"><a href="#1-7-4-Visual-Studio" class="headerlink" title="1.7.4 Visual Studio"></a>1.7.4 Visual Studio</h5><p>我们会用Visual Studio来开发ASP.NET网站的时候也需要用Fiddler来分析HTTP, 默认的时候Fiddler是不能嗅探到localhost的网站。在localhost后面加个点号，Fiddler就能嗅探到。</p>
+<p>例如：原本ASP.NET的地址是 <a href="http://localhost:2391/Default.aspx，" target="_blank" rel="external">http://localhost:2391/Default.aspx，</a> 加个点号后，变成 <a href="http://localhost.:2391/Default.aspx" target="_blank" rel="external">http://localhost.:2391/Default.aspx</a> 就可以了。</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/625782c8gw1elxke97x0zj20gk0da40f.jpg" alt=""></p>
+<h4 id="1-8-移动端抓包"><a href="#1-8-移动端抓包" class="headerlink" title="1.8 移动端抓包"></a>1.8 移动端抓包</h4><p>Fiddler不但能截获各种浏览器发出的HTTP请求, 也可以截获各种智能手机发出的HTTP/HTTPS请求。</p>
+<p>Fiddler能捕获IOS,Andriod,WinPhone,设备发出的请求，同理，也可以截获IPad, MacBook的等设备发出的HTTP/HTTPS。</p>
+<p>前提条件是：安装Fiddler的机器，跟Iphone 在同一个网络里， 否则IPhone不能把HTTP发送到Fiddler的机器上来。</p>
+<p>具体操作步骤如下：</p>
+<ul>
+<li>Fiddler设置</li>
+</ul>
+<p>打开Fiddler，Tools-》Fiddler Options。(配置完记得要重启Fiddler)</p>
+<p>选中“Allow remote computers to connect”，是允许别的机器把HTTP/HTTPS请求发送到Fiddler上来</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/625782c8gw1elxkl6mft1j20fi0ad406.jpg" alt=""></p>
+<ul>
+<li><p>获取Fiddler所在机器IP</p>
+</li>
+<li><p>安装Fiddler证书</p>
+<p>这一步是为了让Fiddler能捕获HTTPS请求。 如果你只需要截获HTTP请求， 可以忽略这一步，首先要知道Fiddler所在的机器的IP地址：假如我安装了Fiddler的机器的IP地址是:192.168.1.104<br>打开手机的浏览器, 访问 <a href="http://192.168.1.104:8888，" target="_blank" rel="external">http://192.168.1.104:8888，</a> 点”FiddlerRoot certificate” 然后安装证书。</p>
+<p>再打开手机, 找到你的网络连接， 打开HTTP代理， 输入Fiddler所在机器的IP地址(比如:192.168.1.104) 以及Fiddler的端口号8888</p>
+</li>
+</ul>
+<p>另一种方式是通过WiFi，理解Fiddler抓取移动端的数据包，看看下面这张图；</p>
+<p><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160120124738422-909023754.png" alt=""></p>
+<p>​    可以看出，移动端的数据包都是需要走WiFi出去的，因此我们可以把电脑热点打开，将手机连上电脑，Fiddler开启代理后，让这些数据通过Fiddler，Fiddler就可以抓到这些包，然后发给路由器。</p>
+<p><img src="https://images2015.cnblogs.com/blog/626593/201601/626593-20160120124739218-1083286524.png" alt=""></p>
+<h4 id="1-9-推荐书籍"><a href="#1-9-推荐书籍" class="headerlink" title="1.9 推荐书籍"></a>1.9 推荐书籍</h4><ul>
+<li>《Fiddler调试权威指南》</li>
+</ul>
+<p>​        这本书是Fiddler的开发者Eric Lawrence编写的一本权威的参考指南。全书分为10章和4个附录，从认识Fiddler开始，介绍了基本技巧和概念、配置选项、Inspectors、扩展、数据流导入导出、FiddlerScript和FiddlerCore等主题；附录部分还给出了故障排除和命令行等有用的参考信息。</p>
+<p>​    它适合Web开发人员和Web测试人员阅读参考，也适合想要学习和掌握Fiddler的读者阅读。通过《Fiddler调试权威指南》，你将学会如何利用Fiddler调试Web相关的应用，掌握如何调试HTTPS数据流，学会如何在流行的设备上使用Fiddler，甚至掌握更多高级的扩展功能。</p>
+<h4 id="1-10-其他同类抓包工具"><a href="#1-10-其他同类抓包工具" class="headerlink" title="1.10 其他同类抓包工具"></a>1.10 其他同类抓包工具</h4><p>​    同类的工具有 : HttpWatch, Firebug,Chrome自带调试工具，WireShark</p>
+<h4 id="1-11-总结"><a href="#1-11-总结" class="headerlink" title="1.11 总结"></a>1.11 总结</h4><ul>
+<li>Fiddler能记录所有客户端和服务器的<code>HTTP</code>和<code>HTTPS</code>请求，允许你监视、设置断点，甚至修改输入输出数据，Fiddler包含了一个强大的基于事件脚本的子系统，并且能使用<code>.NET</code>语言进行扩展；</li>
+<li>你对<code>HTTP</code>协议越了解，你就能越掌握Fiddler的使用方法，你越使用Fiddler,就越能帮助你了解<code>HTTP</code>协议，两者关系紧密、相辅相成；</li>
+<li>强大图形呈现，拖拽操作，丰富的插件。</li>
+<li>使用Fiddler无论对<code>Coder</code>还是<code>Tester</code>来说，都是非常有用的工具。</li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="https://www.cnblogs.com/yyhh/p/5140852.html" target="_blank" rel="external">Fiddler抓包工具总结</a></li>
+<li><a href="https://www.cnblogs.com/FounderBox/p/4653588.html?utm_source=tuicool" target="_blank" rel="external">Fiddler教程</a></li>
+<li><a href="https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddler" target="_blank" rel="external">Fiddler官方教程</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+  </div>
+  
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2197,7 +2935,7 @@ hello world
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">Markdown[^1]  </div><div class="line"></div><div class="line">[^1]: Markdown是一种纯文本标记语言</div><div class="line">#### 22.锚点</div><div class="line">**代码** </div><div class="line">&gt; 注: 只有标题支持锚点， 跳转目录方括号后 保持空格</div><div class="line"></div><div class="line">#### 23.定义型列表</div><div class="line">&gt; 注: 解释型定义</div></pre></td></tr></table></figure>
 <p>Markdown<br>:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个<code>:</code> + <code>Tab</code> 或 四个空格</p>
 <p>代码块定义<br>:   代码块定义……<br>        var a = 10;         // 保持空一行与 递进缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">**演示**  </div><div class="line"></div><div class="line">Markdown </div><div class="line">:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个`:` + `Tab` 或 四个空格</div><div class="line"></div><div class="line">代码块定义</div><div class="line">:   代码块定义…… </div><div class="line">    </div><div class="line">        var a = 10;  </div><div class="line"></div><div class="line">#### 24.自动邮箱链接 </div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
-<p><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x78;&#120;&#x78;&#x40;&#111;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#46;&#99;&#111;&#x6d;">&#x78;&#120;&#x78;&#x40;&#111;&#117;&#x74;&#108;&#111;&#111;&#x6b;&#46;&#99;&#111;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
+<p><a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#58;&#120;&#120;&#120;&#64;&#x6f;&#x75;&#116;&#108;&#111;&#111;&#x6b;&#x2e;&#x63;&#111;&#x6d;">&#120;&#120;&#120;&#64;&#x6f;&#x75;&#116;&#108;&#111;&#111;&#x6b;&#x2e;&#x63;&#111;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
 <p>flow // 流程<br>st=&gt;start: 开始|past:&gt; <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> // 开始 e=&gt;end: 结束    // 结束<br>c1=&gt;condition: 条件1:&gt;<a href="http://www.baidu.com[_parent]//判断条件" target="_blank" rel="external">http://www.baidu.com[_parent]//判断条件</a> c2=&gt;condition: 条件2   // 判断条件<br>c3=&gt;condition: 条件3        // 判断条件<br>io=&gt;inputoutput: 输出      // 输出<br>//—————-以上为定义参数————————-</p>
 <p>//—————-以下为连接参数————————-<br>// 开始-&gt;判断条件1为no-&gt;判断条件2为no-&gt;判断条件3为no-&gt;输出-&gt;结束<br>st-&gt;c1(yes,right)-&gt;c2(yes,right)-&gt;c3(yes,right)-&gt;io-&gt;e c1(no)-&gt;e // 条件1不满足-&gt;结束<br>c2(no)-&gt;e // 条件2不满足-&gt;结束<br>c3(no)-&gt;e // 条件3不满足-&gt;结束 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 26.时序图</div><div class="line">**代码**</div></pre></td></tr></table></figure>
@@ -2207,947 +2945,6 @@ hello world
 <p>注: 生成侧边栏一般是插入JS，再就是模板,<br>总体来说，很是麻烦，效果一般，不作详解。</p>
 <h2 id="作者仓库：i5ting-ztree-toc"><a href="#作者仓库：i5ting-ztree-toc" class="headerlink" title="作者仓库：i5ting_ztree_toc"></a>作者仓库：i5ting_ztree_toc</h2><h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><hr>
 </blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-    
-  </div>
-  
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/实习面试总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bomir">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wjq1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wallis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/实习面试总结/" itemprop="url">前端实习总结</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/实习面试总结/" class="leancloud_visitors" data-flag-title="前端实习总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,056
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="百度一面："><a href="#百度一面：" class="headerlink" title="百度一面："></a>百度一面：</h2><ol>
-<li>内联元素与块级元素的区别，inline-block特性，<img>标签为什么可以定义大小。</li>
-<li>对css刻度的理解？em和rem的区别？若line-height为100%是什么情况？若line-height为1.5无单位是什么情况？</li>
-<li>call和apply的区别？（记不清问没问）</li>
-<li>顺序插入n个<a>标签，然后点击某个<a>弹出它的序号？如何创建元素？如何插入元素？注意闭包的同时如何能对其进行优化？（优化没答上来）</a></a></li>
-<li>事件流？IE下是事件冒泡还是事件捕捉？addEventListener和attachEvent？</li>
-<li>用原生就是实现文档中对类的获取如同Jquery中的$(.abcd)?本题中回答时判断dom中的类与传入的类名是否相同时用了indexOf，被指出不对，应用正则表达式？可惜正则不会。。。。</li>
-<li>如何实现不同页面的通信</li>
-<li>localStorage与sessionStorage的异同。</li>
-<li>若由a界面调到b界面再从b界面点击确定调到c界面，如何点击浏览器中的后退按钮直接返回到a界面。（不会）</li>
-<li>说出几种水平垂直居中的方法。（这个问题一面二面都问了）</li>
-<li>link和@import的区别</li>
-</ol>
-<h2 id="百度二面："><a href="#百度二面：" class="headerlink" title="百度二面："></a>百度二面：</h2><ol>
-<li>简单介绍下项目，说明项目中遇到的难点是如何解决的。</li>
-<li>做项目会切图一般选择什么格式的图。这里gg了，回答是png因为png可以使图片透明？问什么时候选择jpg？哪个是无损压缩哪个是有损压缩。ps：平时我都是看心情的好吗</li>
-<li>CSS优先级</li>
-<li>说出几种水平垂直居中的方法。（这个问题一面二面都问了）</li>
-<li>如何设计一个单页面应用</li>
-<li>对路由的理解</li>
-<li>H5的新特性？回答了新增了哪些元素，移除了哪些元素。</li>
-<li>然后回答了新增了Web存储API，问sessionStorage和 localStorage 的区别？如果baike.baidu.com和www.baidu.com能否共享sessionStorage？能否共享localStorage？baidu.com与www.baidu.com能否共享localStorage？localStorage的存储时间是多久？存储大小？sessionStorage存储大小是多少？cookie存储量？</li>
-<li>继续h5新特性，说了新增canvas API。问canvas绘图与svg绘图有何区别？</li>
-<li>继续h5新特性，说了websocket。问websocket与http的区别？websocket与socket有什么关系？</li>
-<li>继续h5新特性，audio与vedio里一般选择什么格式的音频或视频？</li>
-<li>终于结束H5新特性了？问get和post的区别？</li>
-<li>说了get有可能会传状态码304，post会传200。问状态码301和302的区别，什么情况下会是301什么情况是302。</li>
-<li>如果是get请求http如何判断返回的是304，或是200。（Etag）</li>
-<li>刚说http时说了请求头，问有没有请求体，请求体里放的是什么？这时脑子一抽回答没有，就问那文件上传怎么上传？</li>
-<li>最后问他问题的时候问了请求体的问题，他回答说是有请求体的，比如在文件上传的时候请求头里会有一个参数，然后请求体里是二进制文件。</li>
-<li>浏览器缓存机制</li>
-</ol>
-<h2 id="阿里一面："><a href="#阿里一面：" class="headerlink" title="阿里一面："></a>阿里一面：</h2><p>感觉要挂</p>
-<ol>
-<li>介绍自己前端情况</li>
-<li>git的相关命令，如何解决冲突</li>
-<li>对闭包的理解</li>
-<li>盒模型</li>
-<li>BFC</li>
-<li>事件模型</li>
-<li>事件代理</li>
-<li>在线测评中如何使用事件代理</li>
-<li>知道哪些设计模式、设计原则</li>
-<li>在项目中遇到冲突，如何解决</li>
-<li>前端哪个方向发展</li>
-<li>受到批评，心理状态</li>
-</ol>
-<h2 id="阿里二面"><a href="#阿里二面" class="headerlink" title="阿里二面"></a>阿里二面</h2><p>一面竟然没挂，杀入二面，但感觉二面会挂</p>
-<ol>
-<li>介绍一下英语比赛项目</li>
-<li>介绍下长连接</li>
-<li>如何实现长连接</li>
-<li>如何实现轮询</li>
-<li>setTimeout与setInterval区别</li>
-<li>递归调用 setTimeout 与setInterval有何区别</li>
-<li>最新的项目用到哪些前端框架</li>
-<li>还学过哪些语言，对那种了解较深</li>
-<li>设计模式</li>
-<li>阅读过jquery源码？介绍源码</li>
-<li>压力大的时候心理状态</li>
-<li>如何判断一个数字</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-    
-  </div>
-  
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/Markdown入门_0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bomir">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wjq1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wallis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/Markdown入门_0/" itemprop="url">Markdown入门_0</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/Markdown入门_0/" class="leancloud_visitors" data-flag-title="Markdown入门_0">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,192
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Markdown——入门指南-补充版"><a href="#Markdown——入门指南-补充版" class="headerlink" title="Markdown——入门指南(补充版)"></a>Markdown——入门指南(补充版)</h2><h4 id="导语："><a href="#导语：" class="headerlink" title="导语："></a>导语：</h4><blockquote>
-<p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的 HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。</p>
-</blockquote>
-<h3 id="一，认识-Markdown"><a href="#一，认识-Markdown" class="headerlink" title="一，认识 Markdown"></a>一，认识 Markdown</h3><hr>
-<p>在刚才的导语里提到，Markdown 是一种用来写作的轻量级「标记语言」，它用简洁的语法代替排版，而不像一般我们用的字处理软件 Word 或 Pages 有大量的排版、字体设置。它使我们专心于码字，用「标记」语法，来代替常见的排版格式。例如此文从内容到格式，甚至插图，键盘就可以通通搞定了。目前来看，支持 Markdown 语法的编辑器有很多，包括很多网站（例如简书）也支持了 Markdown 的文字录入。Markdown 从写作到完成，导出格式随心所欲，你可以导出 HTML 格式的文件用来网站发布，也可以十分方便的导出 PDF 格式，这种格式写出的简历更能得到 HR 的好感。甚至可以利用 CloudApp 这种云服务工具直接上传至网页用来分享你的文章，全球最大的轻博客平台 Tumblr，也支持 Mou 这类 Markdown 工具的直接上传。</p>
-<h3 id="Markdown-官方文档"><a href="#Markdown-官方文档" class="headerlink" title="Markdown 官方文档"></a>Markdown 官方文档</h3><p>这里可以看到官方的 Markdown 语法规则文档，当然，后文我也会用自己的方式阐述这些语法的具体用法。</p>
-<blockquote>
-<p>创始人 John Gruber 的 Markdown 语法说明<br>Markdown 中文版语法说明</p>
-</blockquote>
-<h3 id="使用-Markdown-的优点"><a href="#使用-Markdown-的优点" class="headerlink" title="使用 Markdown 的优点"></a>使用 Markdown 的优点</h3><p>专注你的文字内容而不是排版样式，安心写作。<br>轻松的导出 HTML、PDF 和本身的 .md 文件。<br>纯文本内容，兼容所有的文本编辑器与字处理软件。<br>随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。<br>可读、直观、学习成本低。</p>
-<h3 id="使用-Markdown-的误区"><a href="#使用-Markdown-的误区" class="headerlink" title="使用 Markdown 的误区"></a>使用 Markdown 的误区</h3><p>We believe that writing is about content, about what you want to say – not about fancy formatting.<br>我们坚信写作写的是内容，所思所想，而不是花样格式。<br>— Ulysses for Mac<br>Markdown 旨在简洁、高效，也由于 Markdown 的易读易写，人们用不同的编程语言实现了多个版本的解析器和生成器，这就导致了目前不同的 Markdown 工具集成了不同的功能（基础功能大致相同），例如流程图与时序图，复杂表格与复杂公式的呈现，虽然功能的丰富并没有什么本质的缺点，但终归有些背离初衷，何况在编写的过程中很费神，不如使用专业的工具撰写来的更有效率，所以如果你需实现复杂功能，专业的图形界面工具会更加方便。当然，如果你对折腾这些不同客户端对 Markdown 的定制所带来高阶功能感到愉悦的话，那也是无可厚非的。</p>
-<h3 id="我该用什么工具？"><a href="#我该用什么工具？" class="headerlink" title="我该用什么工具？"></a>我该用什么工具？</h3><p>Mou for Mac<br>Mou for Mac<br>在 Mac OS X 上，我强烈建议你用 Mou 这款免费且十分好用的 Markdown 编辑器，它支持实时预览，既左边是你编辑 Markdown 语言，右边会实时的生成预览效果。不仅如此，Mou 还有一些有趣的偏好设置（Preference），例如主题（Themes）与样式（CSS），它们可以配置出定制化的文本编辑效果与导出效果，如果你对自带的主题与样式不满意还可以到 GitHub 上搜索其它爱好者为 Mou 编写的更多主题样式，导入的方式可以在偏好设置的 Themes 或 CSS 选项中 选择 reload。</p>
-<p>如果你从事文字工作，我强烈建议你购买 Ulysses for Mac，这款软件入围了苹果 Mac App Store 的 The Best of 2013。它支持更多的写作格式、多文档的支持。Mou，iA writer 这些软件都是基于单文档的管理方式，而 Ulysses 支持 Folder、Filter 的管理，一个 Folder 里面可以创建多个 Sheet，Sheet 之间也可以进行 Combine 处理。</p>
-<p>Mac 上一些 Markdown 编辑器<br>Mac 上一些 Markdown 编辑器<br>由于笔者很少接触 Windows，Windows 下的 Markdown 没有过多涉猎，经朋友介绍，有两款还算不错，一款叫做 MarkdownPad ，另一款叫做 MarkPad。</p>
-<p>iOS 端很多 app 早已经支持了 Markdown 录入，例如 Drafts，Day One，iA writer 等，另外 Ulysses for iPad 现在已经上架，可以说是 iOS 平台最好的编辑器了。</p>
-<p>在 Web端，我强烈推荐简书这款产品，上面有无数热爱文字的人在不停的创造，分享。在 Web 端使用 Markdown 没有比简书更舒服的地方了，同样支持左右两栏的实时预览，字体优雅，简洁。</p>
-<p>简书的编辑预览模式<br>简书的编辑预览模式</p>
-<h3 id="二，Markdown-语法的简要规则"><a href="#二，Markdown-语法的简要规则" class="headerlink" title="二，Markdown 语法的简要规则"></a>二，Markdown 语法的简要规则</h3><p>标题是每篇文章都需要也是最常用的格式，在 Markdown 中，如果一段文字被定义为标题，只要在这段文字前加 # 号即可。</p>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>以此类推，总共六级标题，建议在井号后加一个空格，这是最标准的 Markdown 语法。<br>补充：除了在前段加上“＃”还可以是在底部加上“＝”</p>
-<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>熟悉 HTML 的同学肯定知道有序列表与无序列表的区别，在 Markdown 下，列表的显示只需要在文字前加上 - 或 * 即可变为无序列表，有序列表则直接在文字前加1. 2. 3. 符号要和文字之间加上一个字符的空格。<br>无序列表与有序列表</p>
-<h5 id="无序列表："><a href="#无序列表：" class="headerlink" title="无序列表："></a>无序列表：</h5><ul>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ul>
-<p>补充：无序列表出了加上“＊”还可以是“＋”或者“－”<br>无序列表的第二个示例(建议：一个文档中只是用一种无序列表的表示方式）</p>
-<ul>
-<li>1</li>
-</ul>
-<ul>
-<li>2</li>
-<li>3</li>
-</ul>
-<h5 id="有序列表："><a href="#有序列表：" class="headerlink" title="有序列表："></a>有序列表：</h5><ol>
-<li>1</li>
-<li>2</li>
-<li>3</li>
-</ol>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>如果你需要引用一小段别处的句子，那么就要用引用的格式。</p>
-<p>例如这样<br>只需要在文本前加入 &gt; 这种尖括号（大于号）即可</p>
-<blockquote>
-<p>这里是引用</p>
-</blockquote>
-<h3 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h3><p>插入链接与插入图片的语法很像，区别在一个 !号</p>
-<p>图片为：<img src="图片地址" alt="文字"></p>
-<p>链接为：<a href="链接地址">文字</a></p>
-<p>插入图片的地址需要图床，这里推荐围脖图床修复计划 与 CloudApp 的服务，生成URL地址即可。</p>
-<h3 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h3><p>Markdown 的粗体和斜体也非常简单，用两个 <em> 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法。</p>
-<p>斜体示例：<em>这里是斜体</em></p>
-<h4 id="补充：当然也可以加下划线“-”"><a href="#补充：当然也可以加下划线“-”" class="headerlink" title="补充：当然也可以加下划线“_”"></a>补充：当然也可以加下划线“_”</h4><p>斜体示例：<em>这里也是斜体</em></p>
-<h4 id="补充：当然从斜体我们也能思考得出加粗的另一种示例"><a href="#补充：当然从斜体我们也能思考得出加粗的另一种示例" class="headerlink" title="补充：当然从斜体我们也能思考得出加粗的另一种示例"></a>补充：当然从斜体我们也能思考得出加粗的另一种示例</h4><p>加粗示例：<strong>这里是加粗</strong><br>加粗示例：<strong>这里是加粗</strong></p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表格是我觉得 Markdown 比较累人的地方，例子如下：</p>
-<table>
-<thead>
-<tr>
-<th>Tables</th>
-<th style="text-align:center">Are</th>
-<th style="text-align:right">Cool</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col 3 is</td>
-<td style="text-align:center">right-aligned</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td>col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td>zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
-</table>
-<p>这种语法生成的表格如下：</p>
-<p>Tables        Are        Cool</p>
-<p>col 3 is    right-aligned    $1600<br>col 2 is    centered    $12<br>zebra stripes    are neat    $1</p>
-<h3 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h3><p>如果你是个程序猿，需要在文章里优雅的引用代码框，在 Markdown下实现也非常简单，只需要用两个 ` 把中间的代码包裹起来。图例：</p>
-<p><code>&lt;a href=&quot;www.baidu.com&quot;&gt;article&lt;/a&gt;</code></p>
-<p>使用 tab 键即可缩进。当用到大片的代码的时候需要使用tab加四个空格</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code>`&lt;html&gt;
-&lt;table border=&quot;1&quot; cellpadding=&quot;10&quot;&gt;
-    &lt;tr&gt;
-        &lt;td&gt;row1 cell1&lt;/td&gt;
-        &lt;td&gt;row1 cell2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&amp;nbsp&lt;/td&gt;
-        &lt;td&gt;row2 cell2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-&lt;/table&gt;
-&lt;/html&gt;`        
-</code></pre><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>分割线的语法只需要三个 * 号，例如：</p>
-<p>到这里，Markdown 的基本语法在日常的使用中基本就没什么大问题了，只要多加练习，配合好用的工具，写起东西来肯定会行云流水。更多的语法规则，其实 Mou 的 Help 文档栗子很好，当你第一次使用 Mou 时，就会显示该文档。可以用来对用的查找和学习。</p>
-<h3 id="引用-1"><a href="#引用-1" class="headerlink" title="引用"></a>引用</h3><p>当我写一段话的时候我先在底部标注一下［1］的链接是什么意思的时候，再次撰写的时候就可以直接在需要链接的部分添加［1］即可：<br>演示如下：<br>这是链接<a href="http://www.baidu.com/" title="baidu" target="_blank" rel="external">百度</a> 这是<a href="http://google.com/" title="google" target="_blank" rel="external">谷歌</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-    
-  </div>
-  
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/AngularJs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bomir">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wjq1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wallis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/AngularJs/" itemprop="url">AngularJs简述</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/AngularJs/" class="leancloud_visitors" data-flag-title="AngularJs简述">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  617
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-angular-的数据绑定采用什么机制？详述原理"><a href="#1-angular-的数据绑定采用什么机制？详述原理" class="headerlink" title="1. angular 的数据绑定采用什么机制？详述原理"></a>1. angular 的数据绑定采用什么机制？详述原理</h3><p>脏检查机制。</p>
-<p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>
-<p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</p>
-<p>举个栗子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button ng-click=&quot;val=val+1&quot;&gt;increase 1&lt;/button&gt;</div></pre></td></tr></table></figure>
-<p>click 时会产生一次更新的操作（至少触发两次 $digest 循环）</p>
-<p>按下按钮<br>浏览器接收到一个事件，进入到 angular context<br>$digest 循环开始执行，查询每个 $watch 是否变化<br>由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环<br>新的 $digest 循环未检测到变化<br>浏览器拿回控制器，更新 $scope.val 新值对应的 dom<br>$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</p>
-<h3 id="2-factory、service-和-provider-是什么关系？"><a href="#2-factory、service-和-provider-是什么关系？" class="headerlink" title="2. factory、service 和 provider 是什么关系？"></a>2. factory、service 和 provider 是什么关系？</h3><p>factory</p>
-<p>把 service 的方法和数据放在一个对象里，并返回这个对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">app.factory(&apos;FooService&apos;, function()&#123;</div><div class="line">    return &#123;</div><div class="line">        target: &apos;factory&apos;,</div><div class="line">        sayHello: function()&#123;</div><div class="line">            return &apos;hello &apos; + this.target;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>service</p>
-<p>通过构造函数方式创建 service，返回一个实例化对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.service(&apos;FooService&apos;, function()&#123;</div><div class="line">    var self = this;</div><div class="line">    this.target = &apos;service&apos;;</div><div class="line">    this.sayHello = function()&#123;</div><div class="line">        return &apos;hello &apos; + self.target;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>provider</p>
-<p>创建一个可通过 config 配置的 service，$get 中返回的，就是用 factory 创建 service 的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">app.provider(&apos;FooService&apos;, function()&#123;</div><div class="line">    this.configData = &apos;init data&apos;;</div><div class="line">    this.setConfigData = function(data)&#123;</div><div class="line">        if(data)&#123;</div><div class="line">            this.configData = data;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    this.$get = function()&#123;</div><div class="line">        var self = this;</div><div class="line">        return &#123;</div><div class="line">            target: &apos;provider&apos;,</div><div class="line">            sayHello: function()&#123;</div><div class="line">                return self.configData + &apos; hello &apos; + this.target;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 此处注入的是 FooService 的 provider</div><div class="line">app.config(function(FooServiceProvider)&#123;</div><div class="line">    FooServiceProvider.setConfigData(&apos;config data&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，返回其 $get 中定义的内容。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写，你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-    
-  </div>
-  
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/JQuery面试题总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bomir">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wjq1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wallis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/JQuery面试题总结/" itemprop="url">JQuery</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/JQuery面试题总结/" class="leancloud_visitors" data-flag-title="JQuery">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  131
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-jQuery-extend-和jQuery-fn-extend"><a href="#1-jQuery-extend-和jQuery-fn-extend" class="headerlink" title="==1. jQuery extend()和jQuery.fn.extend()=="></a>==1. jQuery extend()和jQuery.fn.extend()==</h3><ol>
-<li><p>两者调用方式不同：</p>
-<pre><code>jQuery.extend(),一般由传入的全局函数来调用，主要是用来拓展个全局函数，如$.init()，$.ajax();
-
-jQuery.fn.extend(),一般由具体的实例对象来调用，可以用来拓展个选择器，例如$.fn.each();
-</code></pre></li>
-<li><p>两者的主要功能作用不同：</p>
-<pre><code>jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。
-
-jQuery.fn.extend(object);给jQuery对象添加方法
-</code></pre></li>
-<li><p>大部分插件都是用jQuery.fn.extend()</p>
-</li>
-</ol>
 
           
         
@@ -3666,6 +3463,607 @@ jQuery.fn.extend(object);给jQuery对象添加方法
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/AngularJs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/06/AngularJs/" itemprop="url">AngularJs简述</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
+                2018-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/06/AngularJs/" class="leancloud_visitors" data-flag-title="AngularJs简述">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  617
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-angular-的数据绑定采用什么机制？详述原理"><a href="#1-angular-的数据绑定采用什么机制？详述原理" class="headerlink" title="1. angular 的数据绑定采用什么机制？详述原理"></a>1. angular 的数据绑定采用什么机制？详述原理</h3><p>脏检查机制。</p>
+<p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>
+<p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</p>
+<p>举个栗子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button ng-click=&quot;val=val+1&quot;&gt;increase 1&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>click 时会产生一次更新的操作（至少触发两次 $digest 循环）</p>
+<p>按下按钮<br>浏览器接收到一个事件，进入到 angular context<br>$digest 循环开始执行，查询每个 $watch 是否变化<br>由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环<br>新的 $digest 循环未检测到变化<br>浏览器拿回控制器，更新 $scope.val 新值对应的 dom<br>$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</p>
+<h3 id="2-factory、service-和-provider-是什么关系？"><a href="#2-factory、service-和-provider-是什么关系？" class="headerlink" title="2. factory、service 和 provider 是什么关系？"></a>2. factory、service 和 provider 是什么关系？</h3><p>factory</p>
+<p>把 service 的方法和数据放在一个对象里，并返回这个对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">app.factory(&apos;FooService&apos;, function()&#123;</div><div class="line">    return &#123;</div><div class="line">        target: &apos;factory&apos;,</div><div class="line">        sayHello: function()&#123;</div><div class="line">            return &apos;hello &apos; + this.target;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>service</p>
+<p>通过构造函数方式创建 service，返回一个实例化对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.service(&apos;FooService&apos;, function()&#123;</div><div class="line">    var self = this;</div><div class="line">    this.target = &apos;service&apos;;</div><div class="line">    this.sayHello = function()&#123;</div><div class="line">        return &apos;hello &apos; + self.target;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>provider</p>
+<p>创建一个可通过 config 配置的 service，$get 中返回的，就是用 factory 创建 service 的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">app.provider(&apos;FooService&apos;, function()&#123;</div><div class="line">    this.configData = &apos;init data&apos;;</div><div class="line">    this.setConfigData = function(data)&#123;</div><div class="line">        if(data)&#123;</div><div class="line">            this.configData = data;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    this.$get = function()&#123;</div><div class="line">        var self = this;</div><div class="line">        return &#123;</div><div class="line">            target: &apos;provider&apos;,</div><div class="line">            sayHello: function()&#123;</div><div class="line">                return self.configData + &apos; hello &apos; + this.target;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 此处注入的是 FooService 的 provider</div><div class="line">app.config(function(FooServiceProvider)&#123;</div><div class="line">    FooServiceProvider.setConfigData(&apos;config data&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，返回其 $get 中定义的内容。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写，你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+  </div>
+  
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/06/hello-world/" itemprop="url">HelloWorld</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
+                2018-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hello/" itemprop="url" rel="index">
+                    <span itemprop="name">hello</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/06/hello-world/" class="leancloud_visitors" data-flag-title="HelloWorld">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  78
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+  </div>
+  
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/JQuery面试题总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/06/JQuery面试题总结/" itemprop="url">JQuery</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
+                2018-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/06/JQuery面试题总结/" class="leancloud_visitors" data-flag-title="JQuery">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  131
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-jQuery-extend-和jQuery-fn-extend"><a href="#1-jQuery-extend-和jQuery-fn-extend" class="headerlink" title="==1. jQuery extend()和jQuery.fn.extend()=="></a>==1. jQuery extend()和jQuery.fn.extend()==</h3><ol>
+<li><p>两者调用方式不同：</p>
+<pre><code>jQuery.extend(),一般由传入的全局函数来调用，主要是用来拓展个全局函数，如$.init()，$.ajax();
+
+jQuery.fn.extend(),一般由具体的实例对象来调用，可以用来拓展个选择器，例如$.fn.each();
+</code></pre></li>
+<li><p>两者的主要功能作用不同：</p>
+<pre><code>jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。
+
+jQuery.fn.extend(object);给jQuery对象添加方法
+</code></pre></li>
+<li><p>大部分插件都是用jQuery.fn.extend()</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+  </div>
+  
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -3719,7 +4117,7 @@ jQuery.fn.extend(object);给jQuery对象添加方法
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -3730,7 +4128,7 @@ jQuery.fn.extend(object);给jQuery对象添加方法
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -3741,7 +4139,7 @@ jQuery.fn.extend(object);给jQuery对象添加方法
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -3920,7 +4318,7 @@ jQuery.fn.extend(object);给jQuery对象添加方法
       <i class="fa fa-eye"></i>
       访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
     </span>
-  <span class="post-count">博客全站共:67.0k字</span>
+  <span class="post-count">博客全站共:72.5k字</span>
 </div>
 
         
