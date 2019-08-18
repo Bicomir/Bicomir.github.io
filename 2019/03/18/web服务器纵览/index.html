@@ -1,5 +1,1217 @@
-<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet"><script></script><style>.pace .pace-progress{background:#9400d3;height:3px}.pace .pace-progress-inner{box-shadow:0 0 10px #9400d3,0 0 5px #9400d3}.pace .pace-activity{border-top-color:#9400d3;border-left-color:#9400d3}</style><meta name="theme-color" content="#222"><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css"><link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|IIosevka:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css"><meta name="keywords" content="web server,"><link rel="alternate" href="/atom.xml" title="Wallis" type="application/atom+xml"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2"><meta name="description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建"><meta name="keywords" content="web server"><meta property="og:type" content="article"><meta property="og:title" content="web服务器纵览"><meta property="og:url" content="http://yoursite.com/2019/03/18/web服务器纵览/index.html"><meta property="og:site_name" content="Wallis"><meta property="og:description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png"><meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/08/mvc_pattern_uml_diagram.jpg"><meta property="og:image" content="http://a3.qpic.cn/psb?/V11LBpl80UoTHW/Y09f64qra1tZo7bDu3bewbNiAHXlH4*.mHEj6M7RhWA!/m/dL4AAAAAAAAAnull&bo=tAL.AQAAAAARB3k!&rf=photolist&t=5"><meta property="og:image" content="http://m.qpic.cn/psb?/V11LBpl80UoTHW/cUYa.3fv0UIrm3YQQSjxsPlsVMVdELpbNPNdTQpTKp8!/b/dL4AAAAAAAAA&bo=oQGTAaEBkwEDByI!&rf=viewer_4"><meta property="og:image" content="http://m.qpic.cn/psb?/V11LBpl80UoTHW/dlvFIkYEGBlrUqtBDLNDV*Z.u9ez1g3jeOxgRNcT7p0!/b/dLkAAAAAAAAA&bo=LgG8AQAAAAADB7A!&rf=viewer_4"><meta property="og:updated_time" content="2019-08-17T13:34:56.610Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="web服务器纵览"><meta name="twitter:description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建"><meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Muse",version:"5.1.2",sidebar:{position:"left",display:"post",offset:12,offset_float:12,b2t:!1,scrollpercent:!0,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://yoursite.com/2019/03/18/web服务器纵览/"><title>web服务器纵览 | Wallis</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><link rel="stylesheet" href="/dist/APlayer.min.css"><div id="aplayer"></div><script type="text/javascript" src="/dist/APlayer.min.js"></script><script type="text/javascript" src="/dist/music.js"></script><div class="container sidebar-position-left page-post-detail"><div class="headband"></div> <a href="https://github.com/Bicomir"><img style="position:absolute;top:0;right:0;border:0" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Wallis</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-comment"></i><br> 留言</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/web服务器纵览/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Bomir"><meta itemprop="description" content><meta itemprop="image" content="/uploads/wjq1.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Wallis"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">web服务器纵览</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T19:21:41+08:00">2019-03-18</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span></span> <span id="/2019/03/18/web服务器纵览/" class="leancloud_visitors" data-flag-title="web服务器纵览"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数&#58;</span><span class="leancloud-visitors-count"></span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">3,518</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">15</span></div></div></header><div class="post-body" itemprop="articleBody"><h3 id="web框架概览"><a href="#web框架概览" class="headerlink" title="web框架概览"></a>web框架概览</h3><p><strong>1）网络框架及MVC架构</strong></p><p>​ MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。</p><p>注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。</p><ul><li><p><img src="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png" alt="MVC结构">实现：创建一个作为模型的Student模型对象。StudentView是一个把学生详细信息输出到控制台的视图类，StudentController是负责存储数据到Student对象中的控制类，并相应地更新视图StudentView。MVCPatternDemo是使用StudentController来演示MVC模式用法的演示类。</p><p><img src="http://www.runoob.com/wp-content/uploads/2014/08/mvc_pattern_uml_diagram.jpg" alt></p></li><li><p>模型（Model），用于封装与应用程序业务逻辑相关数据的处理，Model层是Web应用程序中处理应用程序的数据逻辑部分。换言之，模型表示企业数据和业务规则（大白话就是后端接口，用于业务处理）。</p></li><li><p>视图（View），负责数据的展示与呈现。</p></li><li><p>控制器（Controller），负责接受用户的输入并调用模型和视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。（可以看做是View的反向实现）</p><p><img src="http://a3.qpic.cn/psb?/V11LBpl80UoTHW/Y09f64qra1tZo7bDu3bewbNiAHXlH4*.mHEj6M7RhWA!/m/dL4AAAAAAAAAnull&amp;bo=tAL.AQAAAAARB3k!&amp;rf=photolist&amp;t=5" alt></p><p>当前的主流服务器都实现了主流语言的可调用接口标准，有如下标准。</p><ol><li><p>CGI（Common Gateway Interface），CGI规范允许Web服务器执行外部程序，并将它们的输出发送给Wb服务器，CGI将Web的一组简单的静态超媒体文档变成一个完整的新交互式媒体。</p></li><li><p>ISAPI（Internet Server Application Program Interface）是微软提供的一套面向Web服务的API接口，它能实现CGI提供的全部功能，并在此基础上进行了扩展（比如提供了过滤应用程序的接口）。</p></li><li><p>WSGI（Web Server Gateway Interface）是一套专门为Python语言制定的网络服务器标准接口。Python Web框架均以WSGI为基础构建。</p><p><img src="http://m.qpic.cn/psb?/V11LBpl80UoTHW/cUYa.3fv0UIrm3YQQSjxsPlsVMVdELpbNPNdTQpTKp8!/b/dL4AAAAAAAAA&amp;bo=oQGTAaEBkwEDByI!&amp;rf=viewer_4" alt></p></li></ol><p>​ 一般来说，最简单的服务器端程序可以是直接读取某文件或返回固定的网页内容；稍复杂一些的服务端程序需要处理客户端通过HTTP、URL、HTML传入的参数、动态的执行逻辑代码、在数据库或者缓存中读写数据等一系列操作，才能最终生成调用结果。</p><p>​ Web服务器是连接用户浏览器和Python服务器端程序的中间节点，在网站建立的过程中有着重要的作用。目前主流的Web服务器包括Nginx、Apache、lighthttpd、IIS等。Python服务端程序在Linux使用最广泛的是Nginx。</p><p><strong>2）WSGI接口</strong></p><p>​ WSGI是将Python服务器端程序连接到Web服务器的通用协议。由于WSGI的通用性，出现了独立的WSGI程序，例如uWSGI和Apache的mod_wsgi。</p><p><img src="http://m.qpic.cn/psb?/V11LBpl80UoTHW/dlvFIkYEGBlrUqtBDLNDV*Z.u9ez1g3jeOxgRNcT7p0!/b/dLkAAAAAAAAA&amp;bo=LgG8AQAAAAADB7A!&amp;rf=viewer_4" alt></p><p>​ 由上图可知，WSGI的接口可分为两种：一个是与Web服务器接口，另一个是与服务器端程序的接口。WSGI Server与Web服务器的接口包括uwsgi、fastcgi等，服务器端程序的开发者无需学习此部分的详细内容，相反更应该关注WSGI与服务器端程序的接口。</p><p>​ 虽然WSGI的设计目标是连接标准的Web服务器（Nginx，apache）与服务器端程序，但WSGI Server本身也可作为Web服务器运行（但WSGI性能方面不佳，WSGI Server一般只用于测试使用，不能用于正式运行）。</p></li></ul><h3 id="Linux-Nginx-uWSGI配-置"><a href="#Linux-Nginx-uWSGI配-置" class="headerlink" title="Linux+Nginx+uWSGI配 置"></a>Linux+Nginx+uWSGI配 置</h3><p>​ Nginx是Python在Linux环境下的首选Web服务器之一（通常作为高性能http和反向代理服务器，广泛运用于天猫、美团、腾讯等大厂），以下演示在Ubuntu Linux中演示Nginx的安装与配置方法。</p><p><strong>1) 安装Nginx</strong></p><p>在Ubuntu Linux中可以通过如下命令安装Nginx：</p><p><code>sudo apt-get install nginx</code></p><p>安装程序把Nginx以服务的形式安装在系统中，相关的程序及文件路径如下。</p><ul><li>程序文件：放在/usr/sbin/nginx目录中。</li><li>全局配置文件：/etc/nginx/nginx.conf。</li><li>访问日志文件：/var/log/nginx/access.log。</li><li>错误日志文件：/var/log/nginx/err.log。</li><li>站点配置文件：/etc/nginx/sites-enabled/default。</li></ul><p>安装好了，用如下命令启动Nginx服务器：</p><p><code>sudo service nginx start</code></p><p>停止Nginx服务器：</p><p><code>sudo service nginx stop</code></p><p> 查看Nginx服务的状态：</p><p><code>sudo service nginx status</code></p><p>重启Nginx服务器：</p><p><code>sudo service nginx restart</code></p><p><strong>2) Nginx配置文件</strong></p><p>​ Nginx安装后会以默认方式启动，在开发调试的过程中可能需要调整Nginx的运行参数，这些运行参数会通过全局配置文件(nginx.conf)和站点配置文件(sites-enabled)进行设置，对全局配置文件(/etc/nginx/nginx.conf)中的关键可设置参数解析如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">user www-data;								 ##定义运行Nginx的用户</span><br><span class="line">worker_processes 4;							 ##Nginx进程数，应设置与系统CPU数量相等的数值</span><br><span class="line">worker_rlimit_nofile 65535;                  ##每个Nginx进程可以打开的最大文件数</span><br><span class="line">events&#123;</span><br><span class="line">    worker_connections 768;                  ##每个Nginx进程允许的最大客户端连接数</span><br><span class="line">    </span><br><span class="line">    #在Nginx接到一个新连接通知后调用accept()来接受尽量多的连接</span><br><span class="line">    multi_accept off;</span><br><span class="line">&#125;</span><br><span class="line">http&#123;</span><br><span class="line">    ##</span><br><span class="line">    # Basic Settings</span><br><span class="line">    ##</span><br><span class="line">    sendfile on;							  ##是否允许文件上传</span><br><span class="line">    client_header_buffer_size 32K;			  ##上传文件大小限制</span><br><span class="line">    tcp_nopush on;							  ##防止网络拥塞</span><br><span class="line">    tcp_nodelay on;                           ##防止网络拥塞</span><br><span class="line">    keepalive_timeout 65;					  ##允许客户端长连接最大秒数</span><br><span class="line">    </span><br><span class="line">    ##Nginx散列表大小。本值越大，占用的内存空间越大，但路由速度很快</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line">    </span><br><span class="line">    access_log /var/log/nginx/access.log;	  ##访问日志文件路径名</span><br><span class="line">    error_log  /var/log/nginx/error.log;      ##错误日志文件路径名</span><br><span class="line">    </span><br><span class="line">    ## 如下两条用include命令加载站点配置文件</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">    include /etc/ngigx/sites-enabled/*; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​ 在每个Nginx服务器中可以运行多个Web站点。每个站点的配置通过站点配置文件设置。每个站点应该以一个单独的配置文件存放在/etc/nginx/sites-enabled目录中，默认站点的配置文件名为/etc/nginx/sites-default，对其中关键内容的解析如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ##配置站点监听的端口</span><br><span class="line">    listen 80;</span><br><span class="line">    </span><br><span class="line">    root /usr/share/nginx/html;				  ##配置HTTP根页面目录</span><br><span class="line">    index index.html index.htm;				  ##配置HTTP根目录中的默认页面</span><br><span class="line">    </span><br><span class="line">    #站点监听的IP地址，默认的localhost只可用于本机访问，一般需要将其更改为真实IP</span><br><span class="line">    sever_name localhost;</span><br><span class="line">    </span><br><span class="line">    ##location用于配置URL的转发接口</span><br><span class="line">    location /user/&#123;</span><br><span class="line">        ##此处配置http://server_name/user/的转发地址</span><br><span class="line">        proxy_pass http://127.0.0.1:8080;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    #错误页面配置，如下配置定义HTTP 404错误的显示页面 /404.html</span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>3) 安装uWSGI及配置</strong></p><p>​ uWSGI是WSGI在Linux中的一种实现，这样开发者无需自己编写WSGI Server。使用pip命令可以直接安装uWSGI。</p><p><code>pip install uwsgi</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">wjq@Ubuntu:~/TornadoWork/tornado_0/temp/cha5$ uwsgi --http-socket :9090 --plugin python --wsgi-file webapp.py</span><br><span class="line">open("./python_plugin.so"): No such file or directory [core/utils.c line 3724]</span><br><span class="line">!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!</span><br><span class="line">*** Starting uWSGI 2.0.18 (64bit) on [Sat Mar 16 11:23:32 2019] ***</span><br><span class="line">compiled with version: 4.8.4 on 16 March 2019 02:33:42</span><br><span class="line">os: Linux-4.4.0-124-generic #148~14.04.1-Ubuntu SMP Thu May 3 07:26:53 UTC 2018</span><br><span class="line">nodename: Ubuntu</span><br><span class="line">machine: x86_64</span><br><span class="line">clock source: unix</span><br><span class="line">detected number of CPU cores: 2</span><br><span class="line">current working directory: /home/wjq/TornadoWork/tornado_0/temp/cha5</span><br><span class="line">detected binary path: /usr/local/bin/uwsgi</span><br><span class="line">!!! no internal routing support, rebuild with pcre support !!!</span><br><span class="line">*** WARNING: you are running uWSGI without its master process manager ***</span><br><span class="line">your processes number limit is 11929</span><br><span class="line">your memory page size is 4096 bytes</span><br><span class="line">detected max file descriptor number: 1024</span><br><span class="line">lock engine: pthread robust mutexes</span><br><span class="line">thunder lock: disabled (you can enable it with --thunder-lock)</span><br><span class="line">uwsgi socket 0 bound to TCP address :9090 fd 3</span><br><span class="line">Python version: 2.7.12 (default, Jul 18 2016, 15:07:05)  [GCC 4.8.4]</span><br><span class="line">*** Python threads support is disabled. You can enable it with --enable-threads ***</span><br><span class="line">Python main interpreter initialized at 0x1a33880</span><br><span class="line">your server socket listen backlog is limited to 100 connections</span><br><span class="line">your mercy for graceful operations on workers is 60 seconds</span><br><span class="line">mapped 72920 bytes (71 KB) for 1 cores</span><br><span class="line">*** Operational MODE: single process ***</span><br><span class="line">WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1a33880 pid: 4554 (default app)</span><br><span class="line">*** uWSGI is running in multiple interpreter mode ***</span><br><span class="line">spawned uWSGI worker 1 (and the only) (pid: 4554, cores: 1)</span><br><span class="line">[pid: 4554|app: 0|req: 1/1] 59.68.29.48 () &#123;32 vars in 590 bytes&#125; [Sat Mar 16 11:47:29 2019] GET / =&gt; generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br><span class="line">[pid: 4554|app: 0|req: 2/2] 59.68.29.48 () &#123;32 vars in 571 bytes&#125; [Sat Mar 16 11:47:30 2019] GET /favicon.ico =&gt; generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br><span class="line">[pid: 4554|app: 0|req: 3/3] 59.68.29.48 () &#123;32 vars in 571 bytes&#125; [Sat Mar 16 11:47:38 2019] GET /favicon.ico =&gt; generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br></pre></td></tr></table></figure><p>​ <code>uwsgi --http-socket :9090 --plugin python --wsgi-file webapp.py</code></p><p>​ 启动时用-http参数指定了监听端口，用–wsgi-file指定了服务端的程序名。如上所示，uWSGI在启动的过程中会输出系统的一些环境信息：服务器名、进程数限制、服务器硬件配置、最大文件句柄数等。除了在uWSGI 启动命令行提供配置参数，uWSGI 还允许通过一个配置文件设置这些配置参数，比如可以编写如下配置文件，保存在文件名uwsgi.ini中：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">http = 9090</span><br><span class="line">wsgi-file = webapp.py</span><br></pre></td></tr></table></figure><p>​ 启动uWSGI时直接指定配置文件即可。</p><p><code>uwsgi uwsgi.ini</code></p><p>除了http和wsgi-file参数，uWSGI还有许多其他参数，常用的如下。</p><ul><li><p>socket: 以WSGI的Socket方式运行，并指定连接地址和端口。该Socket接口是uWSGI与其他Web服务器（Nginx/Apache）等进行对接的方式。</p></li><li><p>chdir: 指定uWSGI 启动后的当前目录。</p></li><li><p>processes: 指定启动服务器端程序的进程数。</p></li><li><p>threads: 指定每个服务器端程序的线程数。即服务器端的总线程数为processes * threads。</p></li><li><p>uid: 指定运行uWSGI的Linux用户id。</p><p>举例，如下配置文件用于以Socket方式启动一个uWSGI服务器，并配置了进程和线程数。</p></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">socket = 127.0.0.1: 3011</span><br><span class="line">wsgi-file = webapp.py</span><br><span class="line">processes = 4</span><br><span class="line">threads = 3</span><br></pre></td></tr></table></figure><p><strong>4) 集成Nginx与uWSGI</strong></p><p>​ 直接通过在站点配置文件中为location配置uwsgi_pass,即可将Nginx与uWSGI集成，建立一个基于Nginx+Python的正式站点。针对如下uWSGI接口有：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">socket = 127.0.0.1： 3011</span><br><span class="line">wsgi_file = webapp.py</span><br></pre></td></tr></table></figure><p>​ Nginx的站点配置文件为：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 此处改为服务器的真实IP</span></span></span><br><span class="line">	server_name 121.12.134.11;</span><br><span class="line">location /&#123;</span><br><span class="line">    ## 此处IP与Port配置必须与uwsgi接口中参数相同</span><br><span class="line">    uwsgi_pass http://127.0.0.1:3011;</span><br><span class="line">&#125;</span><br><span class="line">'''</span><br><span class="line">可以为一个uWSGI配置多个Nginx Server和location，这样就可以实现多域名访问同一个python程序。</span><br><span class="line">'''</span><br></pre></td></tr></table></figure><h3 id="建立安全的HTTPS网站"><a href="#建立安全的HTTPS网站" class="headerlink" title="建立安全的HTTPS网站"></a>建立安全的HTTPS网站</h3><p>​ 大多数的HTTP站点的协议与数据以明文方式在网络上传输，而HTTPS（HyperText Transfer Protocol over Secure Socket Layer ）是以安全为目标的HTTP通道，即在HTTP下加入SSL层，通过SSL达到数据加密及身份认证的功能。目前大多数银行、证券、交通的网站均以HTTPS方式构建。</p><p>​ OpenSSL是一个强大的免费Socket层密码库，蕴含了主要的密码算法、常用的密钥和证书封装管理功能以及SSL协议。目前大多数网站通过OpenSSL工具搭建HTTPS站点，其步骤如下。</p><ul><li>在服务器中安装OpenSSL工具包。</li><li>生成SSL密钥和证书。</li><li>将证书配置到Web服务器。</li><li>在客户端安装CA证书。</li></ul><p>​ 如下记录在Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-124-generic x86_64)下使用OpenSSL的方法，以及Nginx在Linux下的证书配置方式。类似Linux其他发行版、Windows方法类似。</p><p>​ <strong>1）在服务器中安装OpenSSL工具包</strong></p><p>​ 通过如下两条命令安装OpenSSL：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">sudo apt-get install openssl</span></span><br><span class="line"><span class="meta">#</span><span class="bash">sudo apt-get install libssl-dev</span></span><br></pre></td></tr></table></figure><pre><code>命令运行成功后，OpenSSL命令和配置文件将被安装到Linux系统目录中。
-</code></pre><ul><li><p>OpenSSL命令：/usr/bin/openssl。</p></li><li><p>配置文件：/usr/lib/ssl/*。</p><p><strong>2）生成SSL密钥和证书</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过如下步骤生成CA证书ca.crt、服务器密钥文件server.key和服务器证书server.crt:</span><br></pre></td></tr></table></figure></li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">生成CA密钥</span></span><br><span class="line">openssl genrsa -out ca.key 2048</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成CA证书，days参数以天为单位设置证书的有效期。在本过程中会要求输入证书的所在地、公司名、站点名等</span></span><br><span class="line">openssl req -x509 -new -nodes -key ca.key -days 365 -out ca.crt</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成服务器证书RSA的密钥对</span></span><br><span class="line">openssl genrsa -out server.key 2048</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成服务器端证书ca.crt</span></span><br><span class="line">openssl x509 -req -in server.csr -CA ca.crt -CAKey ca.key -CAcreateserial -out server.crt -days 365</span><br></pre></td></tr></table></figure><p>​ 上述命令生成服务器端证书时，需要在Common Name(CN)字段中如实输入站点的访问地址。即设若要访问<a href="http://www.abc.com进行访问，则必须定义CN=www.abc.com；如果通过IP地址访问，则需设置CN为具体的IP地址。" target="_blank" rel="noopener">www.abc.com进行访问，则必须定义CN=www.abc.com；如果通过IP地址访问，则需设置CN为具体的IP地址。</a></p><p>​ <strong>3）配置Nginx HTTPS服务器</strong></p><p>​ 在站点配置文件/etc/nginx/sites-enabled/default中添加如下server段，可以定义一个基于HTTPS的接口，该接口的服务器端程序仍旧为uWSGI接口127.0.0.1:3011。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    listen					443;				#HTTPS服务端口</span><br><span class="line">    server_name				0.0.0.0;	        #本机上的所有IP地址</span><br><span class="line">    ssl						on;					#</span><br><span class="line">    ssl_certificate			/etc/nginx/ssl/server.crt;</span><br><span class="line">    ssl_certificate_key		/etc/nginx/ssl/server.key;</span><br><span class="line"></span><br><span class="line">location \ &#123;</span><br><span class="line">    uwsgi_pass http://127.0.0.1:3011;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>​ 其中需要注意的参数ssl_certificate和ssl_certificate_key需要分别指定生成的服务器证书和服务器密钥的全路径文件名。到此，我们就可以使用浏览器访问服务器的443端口进行HTTPS加密通信了。</p></div><div><div><div style="text-align:center;color:#8e388e;font-size:14px">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div></div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div>坚持原创技术分享，您的支持将鼓励我继续创作！</div> <button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'> <span>Donate</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"> <img id="wechat_qr" src="/images/wechat.png" alt="Bomir WeChat Pay"><p>WeChat Pay</p></div><div id="alipay" style="display:inline-block"> <img id="alipay_qr" src="/images/alipay.jpg" alt="Bomir Alipay"><p>Alipay</p></div></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/web-server/" rel="tag"><i class="fa fa-tag"></i> web server</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2019/03/16/Python多线程/" rel="next" title="Python多线程"><i class="fa fa-chevron-left"></i> Python多线程</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/2019/04/03/浅谈Tornado/" rel="prev" title="浅谈Tornado">浅谈Tornado<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"><script>window._bd_share_config={common:{bdText:"",bdMini:"1",bdMiniList:!1,bdPic:""},image:{viewList:["tsina","douban","sqq","qzone","weixin","twi","fbook"],viewText:"分享到：",viewSize:"16"},slide:{bdImg:"5",bdPos:"left",bdTop:"100"}}</script><script>with(document)(getElementsByTagName("head")[0]||body).appendChild(createElement("script")).src="/static/api/js/share.js?v=89860593.js?cdnversion="+~(-new Date/36e5)</script></div></div></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80MzI2NC8xOTgwNw=="></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview"> 站点概览</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/uploads/wjq1.jpg" alt="Bomir"><p class="site-author-name" itemprop="name">Bomir</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">21</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">8</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">17</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/Bicomir" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="https://twitter.com/Bicomir" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i> Twitter</a></span><span class="links-of-author-item"><a href="http://weibo.com/" target="_blank" title="微博"><i class="fa fa-fw fa-weibo"></i> 微博</a></span><span class="links-of-author-item"><a href="http://douban.com/" target="_blank" title="豆瓣"><i class="fa fa-fw fa-spinner"></i> 豆瓣</a></span><span class="links-of-author-item"><a href="http://www.zhihu.com/" target="_blank" title="知乎"><i class="fa fa-fw fa-crosshairs"></i> 知乎</a></span><span class="links-of-author-item"><a href="http://www.jianshu.com/" target="_blank" title="简书"><i class="fa fa-fw fa-heartbeat"></i> 简书</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class="links-of-blogroll-title"><i class="fa fa-fw fa-globe"></i> Links</div><ul class="links-of-blogroll-list"><li class="links-of-blogroll-item"> <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a></li><li class="links-of-blogroll-item"> <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a></li><li class="links-of-blogroll-item"> <a href="http://bit.baidu.com/" title="百度技术学院" target="_blank">百度技术学院</a></li><li class="links-of-blogroll-item"> <a href="https://www.liaoxuefeng.com/" title="廖雪峰的官方网站" target="_blank">廖雪峰的官方网站</a></li><li class="links-of-blogroll-item"> <a href="https://www.w3cschool.cn/manual" title="W3Cschool参考手册" target="_blank">W3Cschool参考手册</a></li></ul></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#web框架概览"><span class="nav-number">1.</span> <span class="nav-text">web框架概览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-Nginx-uWSGI配-置"><span class="nav-number">2.</span> <span class="nav-text">Linux+Nginx+uWSGI配 置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立安全的HTTPS网站"><span class="nav-number">3.</span> <span class="nav-text">建立安全的HTTPS网站</span></a></li></ol></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright"> &copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span><span class="with-love"><i class="fa fa-heart"></i></span> <span class="author" itemprop="copyrightHolder">Bomir</span></div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i> 访问用户：<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span><div class="powered-by"></div><span class="site-uv"><i class="fa fa-eye"></i> 访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span> <span class="post-count">博客全站共:80.5k字</span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script><script type="text/javascript">!function(e,t){var n,c=e.getElementsByTagName(t)[0];"function"!=typeof LivereTower&&((n=e.createElement(t)).src="https://cdn-city.livere.com/js/embed.dist.js",n.async=!0,c.parentNode.insertBefore(n,c))}(document,"script")</script><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script type="text/javascript">function ShowGitment(){document.getElementById("gitment-display-button").style.display="none",document.getElementById("gitment-container").style.display="block",new Gitment({id:document.location.href,owner:"Bicomir",repo:"Bicomir.github.io",oauth:{client_id:"6c5e0ad6c2eed3e10798",client_secret:"ce5d97c0db98226836815953baae1063e7440055"}}).render("gitment-container")}</script><script type="text/javascript">
+<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+<style>
+    .pace .pace-progress {
+        background:#9400D3; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #9400D3, 0 0 5px    #9400D3; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #9400D3;    /*上边框颜色*/
+        border-left-color:#9400D3;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+<meta name="theme-color" content="#222">
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|IIosevka:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="web server,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Wallis" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建">
+<meta name="keywords" content="web server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web服务器纵览">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/web服务器纵览/index.html">
+<meta property="og:site_name" content="Wallis">
+<meta property="og:description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/08/mvc_pattern_uml_diagram.jpg">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V11LBpl80UoTHW/Y09f64qra1tZo7bDu3bewbNiAHXlH4*.mHEj6M7RhWA!/m/dL4AAAAAAAAAnull&bo=tAL.AQAAAAARB3k!&rf=photolist&t=5">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11LBpl80UoTHW/cUYa.3fv0UIrm3YQQSjxsPlsVMVdELpbNPNdTQpTKp8!/b/dL4AAAAAAAAA&bo=oQGTAaEBkwEDByI!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11LBpl80UoTHW/dlvFIkYEGBlrUqtBDLNDV*Z.u9ez1g3jeOxgRNcT7p0!/b/dLkAAAAAAAAA&bo=LgG8AQAAAAADB7A!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-08-17T13:34:56.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web服务器纵览">
+<meta name="twitter:description" content="web框架概览1）网络框架及MVC架构 ​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。 注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。  实现：创建">
+<meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/web服务器纵览/">
+
+
+
+
+
+  <title>web服务器纵览 | Wallis</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/Bicomir"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Wallis</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br>
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/web服务器纵览/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">web服务器纵览</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-18T19:21:41+08:00">
+                2019-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/03/18/web服务器纵览/" class="leancloud_visitors" data-flag-title="web服务器纵览">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数:</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计:</span>
+                
+                <span title="字数统计">
+                  3,518
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                
+                <span title="阅读时长">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <meta name="generator" content="Hexo 3.9.0"><h3 id="web框架概览"><a href="#web框架概览" class="headerlink" title="web框架概览"></a>web框架概览</h3><p><strong>1）网络框架及MVC架构</strong></p>
+<p>​    MVC是软件工程中的一种软件架构设计模式，MVC把web应用系统分为如下3个基本部分：模型、视图、控制器，它们各自处理着自己的任务。几乎所有的Python全栈网络框架强制或引导开发者使用MVC架构开发Web应用。</p>
+<p>注：全栈网络框架，是指除了封装网络和线程操作，还提供http栈，数据库的读写管理，HTML模板引擎等一系列功能的网络框架。</p>
+<ul>
+<li><p><img src="http://www.runoob.com/wp-content/uploads/2014/08/MVC1.png" alt="MVC结构">实现：创建一个作为模型的Student模型对象。StudentView是一个把学生详细信息输出到控制台的视图类，StudentController是负责存储数据到Student对象中的控制类，并相应地更新视图StudentView。MVCPatternDemo是使用StudentController来演示MVC模式用法的演示类。</p>
+<p><img src="http://www.runoob.com/wp-content/uploads/2014/08/mvc_pattern_uml_diagram.jpg" alt></p>
+</li>
+<li><p>模型（Model），用于封装与应用程序业务逻辑相关数据的处理，Model层是Web应用程序中处理应用程序的数据逻辑部分。换言之，模型表示企业数据和业务规则（大白话就是后端接口，用于业务处理）。</p>
+</li>
+<li><p>视图（View），负责数据的展示与呈现。</p>
+</li>
+<li><p>控制器（Controller），负责接受用户的输入并调用模型和视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。（可以看做是View的反向实现）</p>
+<p><img src="http://a3.qpic.cn/psb?/V11LBpl80UoTHW/Y09f64qra1tZo7bDu3bewbNiAHXlH4*.mHEj6M7RhWA!/m/dL4AAAAAAAAAnull&bo=tAL.AQAAAAARB3k!&rf=photolist&t=5" alt></p>
+<p>当前的主流服务器都实现了主流语言的可调用接口标准，有如下标准。</p>
+<ol>
+<li><p>CGI（Common Gateway Interface），CGI规范允许Web服务器执行外部程序，并将它们的输出发送给Wb服务器，CGI将Web的一组简单的静态超媒体文档变成一个完整的新交互式媒体。</p>
+</li>
+<li><p>ISAPI（Internet Server Application Program Interface）是微软提供的一套面向Web服务的API接口，它能实现CGI提供的全部功能，并在此基础上进行了扩展（比如提供了过滤应用程序的接口）。</p>
+</li>
+<li><p>WSGI（Web Server Gateway Interface）是一套专门为Python语言制定的网络服务器标准接口。Python Web框架均以WSGI为基础构建。</p>
+<p><img src="http://m.qpic.cn/psb?/V11LBpl80UoTHW/cUYa.3fv0UIrm3YQQSjxsPlsVMVdELpbNPNdTQpTKp8!/b/dL4AAAAAAAAA&bo=oQGTAaEBkwEDByI!&rf=viewer_4" alt></p>
+</li>
+</ol>
+<p>​       一般来说，最简单的服务器端程序可以是直接读取某文件或返回固定的网页内容；稍复杂一些的服务端程序需要处理客户端通过HTTP、URL、HTML传入的参数、动态的执行逻辑代码、在数据库或者缓存中读写数据等一系列操作，才能最终生成调用结果。</p>
+<p>​    Web服务器是连接用户浏览器和Python服务器端程序的中间节点，在网站建立的过程中有着重要的作用。目前主流的Web服务器包括Nginx、Apache、lighthttpd、IIS等。Python服务端程序在Linux使用最广泛的是Nginx。</p>
+<p><strong>2）WSGI接口</strong></p>
+<p>​    WSGI是将Python服务器端程序连接到Web服务器的通用协议。由于WSGI的通用性，出现了独立的WSGI程序，例如uWSGI和Apache的mod_wsgi。</p>
+<p><img src="http://m.qpic.cn/psb?/V11LBpl80UoTHW/dlvFIkYEGBlrUqtBDLNDV*Z.u9ez1g3jeOxgRNcT7p0!/b/dLkAAAAAAAAA&bo=LgG8AQAAAAADB7A!&rf=viewer_4" alt></p>
+<p>​    由上图可知，WSGI的接口可分为两种：一个是与Web服务器接口，另一个是与服务器端程序的接口。WSGI Server与Web服务器的接口包括uwsgi、fastcgi等，服务器端程序的开发者无需学习此部分的详细内容，相反更应该关注WSGI与服务器端程序的接口。</p>
+<p>​    虽然WSGI的设计目标是连接标准的Web服务器（Nginx，apache）与服务器端程序，但WSGI Server本身也可作为Web服务器运行（但WSGI性能方面不佳，WSGI Server一般只用于测试使用，不能用于正式运行）。</p>
+</li>
+</ul>
+<h3 id="Linux-Nginx-uWSGI配-置"><a href="#Linux-Nginx-uWSGI配-置" class="headerlink" title="Linux+Nginx+uWSGI配 置"></a>Linux+Nginx+uWSGI配 置</h3><p>​    Nginx是Python在Linux环境下的首选Web服务器之一（通常作为高性能http和反向代理服务器，广泛运用于天猫、美团、腾讯等大厂），以下演示在Ubuntu Linux中演示Nginx的安装与配置方法。</p>
+<p><strong>1) 安装Nginx</strong> </p>
+<p>在Ubuntu Linux中可以通过如下命令安装Nginx：</p>
+<p><code>sudo apt-get install nginx</code></p>
+<p>安装程序把Nginx以服务的形式安装在系统中，相关的程序及文件路径如下。</p>
+<ul>
+<li>程序文件：放在/usr/sbin/nginx目录中。</li>
+<li>全局配置文件：/etc/nginx/nginx.conf。</li>
+<li>访问日志文件：/var/log/nginx/access.log。</li>
+<li>错误日志文件：/var/log/nginx/err.log。</li>
+<li>站点配置文件：/etc/nginx/sites-enabled/default。</li>
+</ul>
+<p>安装好了，用如下命令启动Nginx服务器：</p>
+<p><code>sudo service nginx start</code></p>
+<p>停止Nginx服务器：</p>
+<p><code>sudo service nginx stop</code></p>
+<p> 查看Nginx服务的状态：</p>
+<p><code>sudo service nginx status</code></p>
+<p>重启Nginx服务器：</p>
+<p><code>sudo service nginx restart</code></p>
+<p><strong>2) Nginx配置文件</strong></p>
+<p>​    Nginx安装后会以默认方式启动，在开发调试的过程中可能需要调整Nginx的运行参数，这些运行参数会通过全局配置文件(nginx.conf)和站点配置文件(sites-enabled)进行设置，对全局配置文件(/etc/nginx/nginx.conf)中的关键可设置参数解析如下：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">user www-data;								 ##定义运行Nginx的用户</span><br><span class="line">worker_processes 4;							 ##Nginx进程数，应设置与系统CPU数量相等的数值</span><br><span class="line">worker_rlimit_nofile 65535;                  ##每个Nginx进程可以打开的最大文件数</span><br><span class="line">events{</span><br><span class="line">    worker_connections 768;                  ##每个Nginx进程允许的最大客户端连接数</span><br><span class="line">    </span><br><span class="line">    #在Nginx接到一个新连接通知后调用accept()来接受尽量多的连接</span><br><span class="line">    multi_accept off;</span><br><span class="line">}</span><br><span class="line">http{</span><br><span class="line">    ##</span><br><span class="line">    # Basic Settings</span><br><span class="line">    ##</span><br><span class="line">    sendfile on;							  ##是否允许文件上传</span><br><span class="line">    client_header_buffer_size 32K;			  ##上传文件大小限制</span><br><span class="line">    tcp_nopush on;							  ##防止网络拥塞</span><br><span class="line">    tcp_nodelay on;                           ##防止网络拥塞</span><br><span class="line">    keepalive_timeout 65;					  ##允许客户端长连接最大秒数</span><br><span class="line">    </span><br><span class="line">    ##Nginx散列表大小。本值越大，占用的内存空间越大，但路由速度很快</span><br><span class="line">    types_hash_max_size 2048;</span><br><span class="line">    </span><br><span class="line">    access_log /var/log/nginx/access.log;	  ##访问日志文件路径名</span><br><span class="line">    error_log  /var/log/nginx/error.log;      ##错误日志文件路径名</span><br><span class="line">    </span><br><span class="line">    ## 如下两条用include命令加载站点配置文件</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line">    include /etc/ngigx/sites-enabled/*; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>​    在每个Nginx服务器中可以运行多个Web站点。每个站点的配置通过站点配置文件设置。每个站点应该以一个单独的配置文件存放在/etc/nginx/sites-enabled目录中，默认站点的配置文件名为/etc/nginx/sites-default，对其中关键内容的解析如下：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">server{</span><br><span class="line">    ##配置站点监听的端口</span><br><span class="line">    listen 80;</span><br><span class="line">    </span><br><span class="line">    root /usr/share/nginx/html;				  ##配置HTTP根页面目录</span><br><span class="line">    index index.html index.htm;				  ##配置HTTP根目录中的默认页面</span><br><span class="line">    </span><br><span class="line">    #站点监听的IP地址，默认的localhost只可用于本机访问，一般需要将其更改为真实IP</span><br><span class="line">    sever_name localhost;</span><br><span class="line">    </span><br><span class="line">    ##location用于配置URL的转发接口</span><br><span class="line">    location /user/{</span><br><span class="line">        ##此处配置http://server_name/user/的转发地址</span><br><span class="line">        proxy_pass http://127.0.0.1:8080;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    #错误页面配置，如下配置定义HTTP 404错误的显示页面 /404.html</span><br><span class="line">    error_page 404 /404.html;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>3) 安装uWSGI及配置</strong> </p>
+<p>​    uWSGI是WSGI在Linux中的一种实现，这样开发者无需自己编写WSGI Server。使用pip命令可以直接安装uWSGI。</p>
+<p><code>pip install uwsgi</code></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">wjq@Ubuntu:~/TornadoWork/tornado_0/temp/cha5$ uwsgi --http-socket :9090 --plugin python --wsgi-file webapp.py</span><br><span class="line">open("./python_plugin.so"): No such file or directory [core/utils.c line 3724]</span><br><span class="line">!!! UNABLE to load uWSGI plugin: ./python_plugin.so: cannot open shared object file: No such file or directory !!!</span><br><span class="line">*** Starting uWSGI 2.0.18 (64bit) on [Sat Mar 16 11:23:32 2019] ***</span><br><span class="line">compiled with version: 4.8.4 on 16 March 2019 02:33:42</span><br><span class="line">os: Linux-4.4.0-124-generic #148~14.04.1-Ubuntu SMP Thu May 3 07:26:53 UTC 2018</span><br><span class="line">nodename: Ubuntu</span><br><span class="line">machine: x86_64</span><br><span class="line">clock source: unix</span><br><span class="line">detected number of CPU cores: 2</span><br><span class="line">current working directory: /home/wjq/TornadoWork/tornado_0/temp/cha5</span><br><span class="line">detected binary path: /usr/local/bin/uwsgi</span><br><span class="line">!!! no internal routing support, rebuild with pcre support !!!</span><br><span class="line">*** WARNING: you are running uWSGI without its master process manager ***</span><br><span class="line">your processes number limit is 11929</span><br><span class="line">your memory page size is 4096 bytes</span><br><span class="line">detected max file descriptor number: 1024</span><br><span class="line">lock engine: pthread robust mutexes</span><br><span class="line">thunder lock: disabled (you can enable it with --thunder-lock)</span><br><span class="line">uwsgi socket 0 bound to TCP address :9090 fd 3</span><br><span class="line">Python version: 2.7.12 (default, Jul 18 2016, 15:07:05)  [GCC 4.8.4]</span><br><span class="line">*** Python threads support is disabled. You can enable it with --enable-threads ***</span><br><span class="line">Python main interpreter initialized at 0x1a33880</span><br><span class="line">your server socket listen backlog is limited to 100 connections</span><br><span class="line">your mercy for graceful operations on workers is 60 seconds</span><br><span class="line">mapped 72920 bytes (71 KB) for 1 cores</span><br><span class="line">*** Operational MODE: single process ***</span><br><span class="line">WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1a33880 pid: 4554 (default app)</span><br><span class="line">*** uWSGI is running in multiple interpreter mode ***</span><br><span class="line">spawned uWSGI worker 1 (and the only) (pid: 4554, cores: 1)</span><br><span class="line">[pid: 4554|app: 0|req: 1/1] 59.68.29.48 () {32 vars in 590 bytes} [Sat Mar 16 11:47:29 2019] GET / => generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br><span class="line">[pid: 4554|app: 0|req: 2/2] 59.68.29.48 () {32 vars in 571 bytes} [Sat Mar 16 11:47:30 2019] GET /favicon.ico => generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br><span class="line">[pid: 4554|app: 0|req: 3/3] 59.68.29.48 () {32 vars in 571 bytes} [Sat Mar 16 11:47:38 2019] GET /favicon.ico => generated 20 bytes in 0 msecs (HTTP/1.1 200) 1 headers in 43 bytes (0 switches on core 0)</span><br></pre></td></tr></tbody></table></figure>
+<p>​         <code>uwsgi --http-socket :9090 --plugin python --wsgi-file webapp.py</code>      </p>
+<p>​    启动时用-http参数指定了监听端口，用–wsgi-file指定了服务端的程序名。如上所示，uWSGI在启动的过程中会输出系统的一些环境信息：服务器名、进程数限制、服务器硬件配置、最大文件句柄数等。除了在uWSGI 启动命令行提供配置参数，uWSGI 还允许通过一个配置文件设置这些配置参数，比如可以编写如下配置文件，保存在文件名uwsgi.ini中：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">http = 9090</span><br><span class="line">wsgi-file = webapp.py</span><br></pre></td></tr></tbody></table></figure>
+<p>​    启动uWSGI时直接指定配置文件即可。</p>
+<p><code>uwsgi uwsgi.ini</code></p>
+<p>除了http和wsgi-file参数，uWSGI还有许多其他参数，常用的如下。</p>
+<ul>
+<li><p>socket: 以WSGI的Socket方式运行，并指定连接地址和端口。该Socket接口是uWSGI与其他Web服务器（Nginx/Apache）等进行对接的方式。</p>
+</li>
+<li><p>chdir: 指定uWSGI 启动后的当前目录。</p>
+</li>
+<li><p>processes: 指定启动服务器端程序的进程数。</p>
+</li>
+<li><p>threads: 指定每个服务器端程序的线程数。即服务器端的总线程数为processes * threads。</p>
+</li>
+<li><p>uid: 指定运行uWSGI的Linux用户id。</p>
+<p>举例，如下配置文件用于以Socket方式启动一个uWSGI服务器，并配置了进程和线程数。</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">socket = 127.0.0.1: 3011</span><br><span class="line">wsgi-file = webapp.py</span><br><span class="line">processes = 4</span><br><span class="line">threads = 3</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>4) 集成Nginx与uWSGI</strong> </p>
+<p>​    直接通过在站点配置文件中为location配置uwsgi_pass,即可将Nginx与uWSGI集成，建立一个基于Nginx+Python的正式站点。针对如下uWSGI接口有：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">socket = 127.0.0.1： 3011</span><br><span class="line">wsgi_file = webapp.py</span><br></pre></td></tr></tbody></table></figure>
+<p>​    Nginx的站点配置文件为：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server{</span><br><span class="line">    listen 80;</span><br><span class="line">}</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 此处改为服务器的真实IP</span></span></span><br><span class="line">	server_name 121.12.134.11;</span><br><span class="line">location /{</span><br><span class="line">    ## 此处IP与Port配置必须与uwsgi接口中参数相同</span><br><span class="line">    uwsgi_pass http://127.0.0.1:3011;</span><br><span class="line">}</span><br><span class="line">'''</span><br><span class="line">可以为一个uWSGI配置多个Nginx Server和location，这样就可以实现多域名访问同一个python程序。</span><br><span class="line">'''</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="建立安全的HTTPS网站"><a href="#建立安全的HTTPS网站" class="headerlink" title="建立安全的HTTPS网站"></a>建立安全的HTTPS网站</h3><p>​    大多数的HTTP站点的协议与数据以明文方式在网络上传输，而HTTPS（HyperText Transfer Protocol over Secure Socket Layer ）是以安全为目标的HTTP通道，即在HTTP下加入SSL层，通过SSL达到数据加密及身份认证的功能。目前大多数银行、证券、交通的网站均以HTTPS方式构建。</p>
+<p>​    OpenSSL是一个强大的免费Socket层密码库，蕴含了主要的密码算法、常用的密钥和证书封装管理功能以及SSL协议。目前大多数网站通过OpenSSL工具搭建HTTPS站点，其步骤如下。</p>
+<ul>
+<li>在服务器中安装OpenSSL工具包。</li>
+<li>生成SSL密钥和证书。</li>
+<li>将证书配置到Web服务器。</li>
+<li>在客户端安装CA证书。</li>
+</ul>
+<p>​       如下记录在Ubuntu 14.04.5 LTS (GNU/Linux 4.4.0-124-generic x86_64)下使用OpenSSL的方法，以及Nginx在Linux下的证书配置方式。类似Linux其他发行版、Windows方法类似。</p>
+<p>​      <strong>1）在服务器中安装OpenSSL工具包</strong></p>
+<p>​    通过如下两条命令安装OpenSSL：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">sudo apt-get install openssl</span></span><br><span class="line"><span class="meta">#</span><span class="bash">sudo apt-get install libssl-dev</span></span><br></pre></td></tr></tbody></table></figure>
+<pre><code>命令运行成功后，OpenSSL命令和配置文件将被安装到Linux系统目录中。
+</code></pre><ul>
+<li><p>OpenSSL命令：/usr/bin/openssl。</p>
+</li>
+<li><p>配置文件：/usr/lib/ssl/*。</p>
+<p><strong>2）生成SSL密钥和证书</strong> </p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过如下步骤生成CA证书ca.crt、服务器密钥文件server.key和服务器证书server.crt:</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">生成CA密钥</span></span><br><span class="line">openssl genrsa -out ca.key 2048</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成CA证书，days参数以天为单位设置证书的有效期。在本过程中会要求输入证书的所在地、公司名、站点名等</span></span><br><span class="line">openssl req -x509 -new -nodes -key ca.key -days 365 -out ca.crt</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成服务器证书RSA的密钥对</span></span><br><span class="line">openssl genrsa -out server.key 2048</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">生成服务器端证书ca.crt</span></span><br><span class="line">openssl x509 -req -in server.csr -CA ca.crt -CAKey ca.key -CAcreateserial -out server.crt -days 365</span><br></pre></td></tr></tbody></table></figure>
+<p>​    上述命令生成服务器端证书时，需要在Common Name(CN)字段中如实输入站点的访问地址。即设若要访问<a href="http://www.abc.com进行访问，则必须定义CN=www.abc.com；如果通过IP地址访问，则需设置CN为具体的IP地址。" target="_blank" rel="noopener">www.abc.com进行访问，则必须定义CN=www.abc.com；如果通过IP地址访问，则需设置CN为具体的IP地址。</a></p>
+<p>​        <strong>3）配置Nginx HTTPS服务器</strong> </p>
+<p>​    在站点配置文件/etc/nginx/sites-enabled/default中添加如下server段，可以定义一个基于HTTPS的接口，该接口的服务器端程序仍旧为uWSGI接口127.0.0.1:3011。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server{</span><br><span class="line">    listen					443;				#HTTPS服务端口</span><br><span class="line">    server_name				0.0.0.0;	        #本机上的所有IP地址</span><br><span class="line">    ssl						on;					#</span><br><span class="line">    ssl_certificate			/etc/nginx/ssl/server.crt;</span><br><span class="line">    ssl_certificate_key		/etc/nginx/ssl/server.key;</span><br><span class="line"></span><br><span class="line">location \ {</span><br><span class="line">    uwsgi_pass http://127.0.0.1:3011;</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>​    其中需要注意的参数ssl_certificate和ssl_certificate_key需要分别指定生成的服务器证书和服务器密钥的全路径文件名。到此，我们就可以使用浏览器访问服务器的443端口进行HTTPS加密通信了。</p>
+
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #8E388E;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    
+  </div>
+  
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Bomir WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Bomir Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web-server/" rel="tag"><i class="fa fa-tag"></i> web server</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/Python多线程/" rel="next" title="Python多线程">
+                <i class="fa fa-chevron-left"></i> Python多线程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/03/浅谈Tornado/" rel="prev" title="浅谈Tornado">
+                浅谈Tornado <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzI2NC8xOTgwNw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image" src="/uploads/wjq1.jpg" alt="Bomir">
+          
+            <p class="site-author-name" itemprop="name">Bomir</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Bicomir" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/Bicomir" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-spinner"></i>
+                  
+                    
+                      豆瓣
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-crosshairs"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-heartbeat"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://bit.baidu.com/" title="百度技术学院" target="_blank">百度技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.liaoxuefeng.com/" title="廖雪峰的官方网站" target="_blank">廖雪峰的官方网站</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.w3cschool.cn/manual" title="W3Cschool参考手册" target="_blank">W3Cschool参考手册</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#web框架概览"><span class="nav-number">1.</span> <span class="nav-text">web框架概览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-Nginx-uWSGI配-置"><span class="nav-number">2.</span> <span class="nav-text">Linux+Nginx+uWSGI配 置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立安全的HTTPS网站"><span class="nav-number">3.</span> <span class="nav-text">建立安全的HTTPS网站</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+
+<div class="copyright">
+  
+  ©  2017 — 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i> 
+  <!-- <i class="fa fa-0"></i>-->
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bomir</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>  
+  <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户：<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  <span class="post-count">博客全站共:64.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: document.location.href, 
+                   owner: 'Bicomir',
+                   repo: 'Bicomir.github.io',
+                   oauth: {
+                       client_id: '6c5e0ad6c2eed3e10798',
+                       client_secret: 'ce5d97c0db98226836815953baae1063e7440055',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
+
+
+
+  
+
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -314,4 +1526,145 @@
         onPopupClose();
       }
     });
-  </script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("xD1cJy6EVeCPN9INhM2B8dqL-gzGzoHsz","TOpXmMEy5YAjevsJA3s0QGqY")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><div class="bg_content"><canvas id="canvas"></canvas></div><script type="text/javascript" src="/js/src/love.js"></script><script type="text/javascript" src="/js/src/dynamic_bg.js"></script></body></html>
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("xD1cJy6EVeCPN9INhM2B8dqL-gzGzoHsz", "TOpXmMEy5YAjevsJA3s0QGqY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+  <!-- next主题中加入动态背景 -->
+<div class="bg_content">
+  <canvas id="canvas"></canvas>
+</div>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+<script type="text/javascript" src="/js/src/dynamic_bg.js"></script>
+
+
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
