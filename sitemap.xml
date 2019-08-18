@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/03/16/Python%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    
+    <lastmod>2019-08-18T03:56:38.303Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/08/17/%E5%88%9D%E8%AF%86%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2019-08-17T14:57:21.283Z</lastmod>
@@ -131,13 +138,6 @@
     <loc>http://yoursite.com/guestbook/index.html</loc>
     
     <lastmod>2019-08-17T11:27:58.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/03/16/Python%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    
-    <lastmod>2019-04-03T09:06:04.963Z</lastmod>
     
   </url>
   
