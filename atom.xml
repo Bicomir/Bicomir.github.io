@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-26T14:21:21.048Z</updated>
+  <updated>2019-08-26T14:29:54.790Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>彻底理解cookie session token</title>
+    <link href="http://yoursite.com/2019/08/26/%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3cookie-session-token/"/>
+    <id>http://yoursite.com/2019/08/26/彻底理解cookie-session-token/</id>
+    <published>2019-08-26T14:29:54.000Z</published>
+    <updated>2019-08-26T14:29:54.790Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>C#语法回顾1</title>
@@ -267,32 +288,6 @@
   </entry>
   
   <entry>
-    <title>前端学习资料</title>
-    <link href="http://yoursite.com/2018/05/06/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    <id>http://yoursite.com/2018/05/06/前端学习资料/</id>
-    <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:36:57.085Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ol><li>前端知识结构 <a href="https://github.com/JacksonTian/fks" target="_blank" rel="noopener">https://github.com/JacksonTian/fks</a></li><li>前端入门：<a href="https://github.com/qiu-deqing/FE-learning" target="_blank" rel="noopener">https://github.com/qiu-deqing/FE-learning</a></li><li>博客：<ul><li><a href="https://www.xuanfengge.com" target="_blank" rel="noopener">https://www.xuanfengge.com</a></li><li><a href="https://www.w3cplus.com/" target="_blank" rel="noopener">https://www.w3cplus.com/</a></li><li><a href="https://www.w3ctech.com/" target="_blank" rel="noopener">https://www.w3ctech.com/</a></li><li><a href="http://www.css88.com/" target="_blank" rel="noopener">http://www.css88.com/</a></li><li><a href="https://www.qianduan.net/" target="_blank" rel="noopener">https://www.qianduan.net/</a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></li><li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/</a></li><li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></li></ul></li><li>书籍：<a href="https://www.xuanfengge.com/fe-books.html" target="_blank" rel="noopener">https://www.xuanfengge.com/fe-books.html</a></li><li><p>公司前端团队</p><ul><li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a></li><li>百度fex <a href="http://fex.baidu.com/" target="_blank" rel="noopener">http://fex.baidu.com/</a></li><li>百度efe <a href="http://efe.baidu.com/" target="_blank" rel="noopener">http://efe.baidu.com/</a></li><li>淘宝FED <a href="http://taobaofed.org/" target="_blank" rel="noopener">http://taobaofed.org/</a></li><li>去哪儿UED <a href="http://ued.qunar.com/" target="_blank" rel="noopener">http://ued.qunar.com/</a></li><li>奇舞团 <a href="https://75team.com/" target="_blank" rel="noopener">https://75team.com/</a></li></ul></li><li><p>开源项目</p><ul><li>Facebook Projects <a href="https://code.facebook.com/projects/web/" target="_blank" rel="noopener">https://code.facebook.com/projects/web/</a></li><li>百度fex <a href="https://github.com/fex-team/" target="_blank" rel="noopener">https://github.com/fex-team/</a></li><li>efe <a href="https://github.com/ecomfe" target="_blank" rel="noopener">https://github.com/ecomfe</a></li><li>alloyteam-github <a href="http://alloyteam.github.io/" target="_blank" rel="noopener">http://alloyteam.github.io/</a></li><li>underscore源码解读 <a href="https://github.com/hanzichi/underscore-analysis" target="_blank" rel="noopener">https://github.com/hanzichi/underscore-analysis</a></li><li>vue源码学习 <a href="https://github.com/answershuto/learnVue" target="_blank" rel="noopener">https://github.com/answershuto/learnVue</a></li></ul></li></ol><p>前端学习资源汇总：<a href="https://jeffjade.com/2016/03/30/104-front-end-tutorial/" target="_blank" rel="noopener">https://jeffjade.com/2016/03/30/104-front-end-tutorial/</a></p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ol&gt;
-&lt;li&gt;前端知识结构 &lt;a href=&quot;https://github.com/JacksonTian/fks&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Jack
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端资料" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JQuery</title>
     <link href="http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2018/05/06/JQuery面试题总结/</id>
@@ -314,6 +309,31 @@
     
     
       <category term="Jquery" scheme="http://yoursite.com/tags/Jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJs简述</title>
+    <link href="http://yoursite.com/2018/05/06/AngularJs/"/>
+    <id>http://yoursite.com/2018/05/06/AngularJs/</id>
+    <published>2018-05-06T09:17:14.000Z</published>
+    <updated>2019-08-17T13:28:53.584Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><h3 id="Angular-的数据绑定采用什么机制？详述原理"><a href="#Angular-的数据绑定采用什么机制？详述原理" class="headerlink" title="Angular 的数据绑定采用什么机制？详述原理"></a>Angular 的数据绑定采用什么机制？详述原理</h3><p>脏检查机制。</p><p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p><p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</p><p>举个栗子</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><button ng-click="val=val+1">increase 1</button></span><br></pre></td></tr></tbody></table></figure><p>click 时会产生一次更新的操作（至少触发两次 $digest 循环）</p><p>按下按钮<br>浏览器接收到一个事件，进入到 angular context<br>$digest 循环开始执行，查询每个 $watch 是否变化<br>由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环<br>新的 $digest 循环未检测到变化<br>浏览器拿回控制器，更新 $scope.val 新值对应的 dom<br>$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</p><h3 id="factory、service-和-provider-是什么关系？"><a href="#factory、service-和-provider-是什么关系？" class="headerlink" title="factory、service 和 provider 是什么关系？"></a>factory、service 和 provider 是什么关系？</h3><p>factory</p><p>把 service 的方法和数据放在一个对象里，并返回这个对象</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.factory('FooService', function(){</span><br><span class="line">    return {</span><br><span class="line">        target: 'factory',</span><br><span class="line">        sayHello: function(){</span><br><span class="line">            return 'hello ' + this.target;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>service</p><p>通过构造函数方式创建 service，返回一个实例化对象</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.service('FooService', function(){</span><br><span class="line">    var self = this;</span><br><span class="line">    this.target = 'service';</span><br><span class="line">    this.sayHello = function(){</span><br><span class="line">        return 'hello ' + self.target;</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>provider</p><p>创建一个可通过 config 配置的 service，$get 中返回的，就是用 factory 创建 service 的内容</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">app.provider('FooService', function(){</span><br><span class="line">    this.configData = 'init data';</span><br><span class="line">    this.setConfigData = function(data){</span><br><span class="line">        if(data){</span><br><span class="line">            this.configData = data;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    this.$get = function(){</span><br><span class="line">        var self = this;</span><br><span class="line">        return {</span><br><span class="line">            target: 'provider',</span><br><span class="line">            sayHello: function(){</span><br><span class="line">                return self.configData + ' hello ' + this.target;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">// 此处注入的是 FooService 的 provider</span><br><span class="line">app.config(function(FooServiceProvider){</span><br><span class="line">    FooServiceProvider.setConfigData('config data');</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，返回其 $get 中定义的内容。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写，你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h3 id=&quot;Angular-的数据绑定采用什么机制？详述原理&quot;&gt;&lt;a href=&quot;#Angular-的数据绑定采用什么机制？详述原理&quot; class=&quot;headerlink&quot; title=&quot;Angular 的数据绑定采用什么机制
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="AngularJs" scheme="http://yoursite.com/tags/AngularJs/"/>
     
   </entry>
   
@@ -420,27 +440,27 @@
   </entry>
   
   <entry>
-    <title>AngularJs简述</title>
-    <link href="http://yoursite.com/2018/05/06/AngularJs/"/>
-    <id>http://yoursite.com/2018/05/06/AngularJs/</id>
+    <title>HelloWorld</title>
+    <link href="http://yoursite.com/2018/05/06/hello-world/"/>
+    <id>http://yoursite.com/2018/05/06/hello-world/</id>
     <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:28:53.584Z</updated>
+    <updated>2019-08-17T13:43:21.301Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><h3 id="Angular-的数据绑定采用什么机制？详述原理"><a href="#Angular-的数据绑定采用什么机制？详述原理" class="headerlink" title="Angular 的数据绑定采用什么机制？详述原理"></a>Angular 的数据绑定采用什么机制？详述原理</h3><p>脏检查机制。</p><p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p><p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</p><p>举个栗子</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><button ng-click="val=val+1">increase 1</button></span><br></pre></td></tr></tbody></table></figure><p>click 时会产生一次更新的操作（至少触发两次 $digest 循环）</p><p>按下按钮<br>浏览器接收到一个事件，进入到 angular context<br>$digest 循环开始执行，查询每个 $watch 是否变化<br>由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环<br>新的 $digest 循环未检测到变化<br>浏览器拿回控制器，更新 $scope.val 新值对应的 dom<br>$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</p><h3 id="factory、service-和-provider-是什么关系？"><a href="#factory、service-和-provider-是什么关系？" class="headerlink" title="factory、service 和 provider 是什么关系？"></a>factory、service 和 provider 是什么关系？</h3><p>factory</p><p>把 service 的方法和数据放在一个对象里，并返回这个对象</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.factory('FooService', function(){</span><br><span class="line">    return {</span><br><span class="line">        target: 'factory',</span><br><span class="line">        sayHello: function(){</span><br><span class="line">            return 'hello ' + this.target;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>service</p><p>通过构造函数方式创建 service，返回一个实例化对象</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.service('FooService', function(){</span><br><span class="line">    var self = this;</span><br><span class="line">    this.target = 'service';</span><br><span class="line">    this.sayHello = function(){</span><br><span class="line">        return 'hello ' + self.target;</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>provider</p><p>创建一个可通过 config 配置的 service，$get 中返回的，就是用 factory 创建 service 的内容</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">app.provider('FooService', function(){</span><br><span class="line">    this.configData = 'init data';</span><br><span class="line">    this.setConfigData = function(data){</span><br><span class="line">        if(data){</span><br><span class="line">            this.configData = data;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    this.$get = function(){</span><br><span class="line">        var self = this;</span><br><span class="line">        return {</span><br><span class="line">            target: 'provider',</span><br><span class="line">            sayHello: function(){</span><br><span class="line">                return self.configData + ' hello ' + this.target;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">// 此处注入的是 FooService 的 provider</span><br><span class="line">app.config(function(FooServiceProvider){</span><br><span class="line">    FooServiceProvider.setConfigData('config data');</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure><p>从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，返回其 $get 中定义的内容。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写，你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h3 id=&quot;Angular-的数据绑定采用什么机制？详述原理&quot;&gt;&lt;a href=&quot;#Angular-的数据绑定采用什么机制？详述原理&quot; class=&quot;headerlink&quot; title=&quot;Angular 的数据绑定采用什么机制
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Che
       
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
     
     
-      <category term="AngularJs" scheme="http://yoursite.com/tags/AngularJs/"/>
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
     
   </entry>
   
@@ -495,27 +515,28 @@
   </entry>
   
   <entry>
-    <title>HelloWorld</title>
-    <link href="http://yoursite.com/2018/05/06/hello-world/"/>
-    <id>http://yoursite.com/2018/05/06/hello-world/</id>
+    <title>前端学习资料</title>
+    <link href="http://yoursite.com/2018/05/06/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>http://yoursite.com/2018/05/06/前端学习资料/</id>
     <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:43:21.301Z</updated>
+    <updated>2019-08-17T13:36:57.085Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ol><li>前端知识结构 <a href="https://github.com/JacksonTian/fks" target="_blank" rel="noopener">https://github.com/JacksonTian/fks</a></li><li>前端入门：<a href="https://github.com/qiu-deqing/FE-learning" target="_blank" rel="noopener">https://github.com/qiu-deqing/FE-learning</a></li><li>博客：<ul><li><a href="https://www.xuanfengge.com" target="_blank" rel="noopener">https://www.xuanfengge.com</a></li><li><a href="https://www.w3cplus.com/" target="_blank" rel="noopener">https://www.w3cplus.com/</a></li><li><a href="https://www.w3ctech.com/" target="_blank" rel="noopener">https://www.w3ctech.com/</a></li><li><a href="http://www.css88.com/" target="_blank" rel="noopener">http://www.css88.com/</a></li><li><a href="https://www.qianduan.net/" target="_blank" rel="noopener">https://www.qianduan.net/</a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></li><li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/</a></li><li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></li></ul></li><li>书籍：<a href="https://www.xuanfengge.com/fe-books.html" target="_blank" rel="noopener">https://www.xuanfengge.com/fe-books.html</a></li><li><p>公司前端团队</p><ul><li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a></li><li>百度fex <a href="http://fex.baidu.com/" target="_blank" rel="noopener">http://fex.baidu.com/</a></li><li>百度efe <a href="http://efe.baidu.com/" target="_blank" rel="noopener">http://efe.baidu.com/</a></li><li>淘宝FED <a href="http://taobaofed.org/" target="_blank" rel="noopener">http://taobaofed.org/</a></li><li>去哪儿UED <a href="http://ued.qunar.com/" target="_blank" rel="noopener">http://ued.qunar.com/</a></li><li>奇舞团 <a href="https://75team.com/" target="_blank" rel="noopener">https://75team.com/</a></li></ul></li><li><p>开源项目</p><ul><li>Facebook Projects <a href="https://code.facebook.com/projects/web/" target="_blank" rel="noopener">https://code.facebook.com/projects/web/</a></li><li>百度fex <a href="https://github.com/fex-team/" target="_blank" rel="noopener">https://github.com/fex-team/</a></li><li>efe <a href="https://github.com/ecomfe" target="_blank" rel="noopener">https://github.com/ecomfe</a></li><li>alloyteam-github <a href="http://alloyteam.github.io/" target="_blank" rel="noopener">http://alloyteam.github.io/</a></li><li>underscore源码解读 <a href="https://github.com/hanzichi/underscore-analysis" target="_blank" rel="noopener">https://github.com/hanzichi/underscore-analysis</a></li><li>vue源码学习 <a href="https://github.com/answershuto/learnVue" target="_blank" rel="noopener">https://github.com/answershuto/learnVue</a></li></ul></li></ol><p>前端学习资源汇总：<a href="https://jeffjade.com/2016/03/30/104-front-end-tutorial/" target="_blank" rel="noopener">https://jeffjade.com/2016/03/30/104-front-end-tutorial/</a></p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Che
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ol&gt;
+&lt;li&gt;前端知识结构 &lt;a href=&quot;https://github.com/JacksonTian/fks&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Jack
       
     
     </summary>
     
-      <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+      <category term="前端资料" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
     
   </entry>
   
