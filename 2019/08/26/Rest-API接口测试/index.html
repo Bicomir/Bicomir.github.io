@@ -136,7 +136,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="REST API,">
 
 
 
@@ -154,14 +154,18 @@
 
 
 
+<meta name="description" content="为什么做接口测试很多系统关联都是基于接口来实现，接口测试可以将复杂的系统关联进行简化。 接口功能比较单一，能够比较好地进行测试覆盖，也相对容易实现自动化持续集成。 接口相对于界面功能，会更底层一些，测试覆盖会更容易。 软件开发生命周期系统立项——&gt; 可行性分析 ——&gt; 系统概要设计 ——&gt; 详细设计 ——&gt; 编码工作 ——&gt; 单元测试  接口测试在单元测试之后，UI测试之前； 接口测试可以获得较高">
+<meta name="keywords" content="REST API">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rest API接口测试">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/Rest-API接口测试/index.html">
 <meta property="og:site_name" content="Wallis">
+<meta property="og:description" content="为什么做接口测试很多系统关联都是基于接口来实现，接口测试可以将复杂的系统关联进行简化。 接口功能比较单一，能够比较好地进行测试覆盖，也相对容易实现自动化持续集成。 接口相对于界面功能，会更底层一些，测试覆盖会更容易。 软件开发生命周期系统立项——&gt; 可行性分析 ——&gt; 系统概要设计 ——&gt; 详细设计 ——&gt; 编码工作 ——&gt; 单元测试  接口测试在单元测试之后，UI测试之前； 接口测试可以获得较高">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-26T14:48:50.538Z">
+<meta property="og:updated_time" content="2019-08-26T14:52:08.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rest API接口测试">
+<meta name="twitter:description" content="为什么做接口测试很多系统关联都是基于接口来实现，接口测试可以将复杂的系统关联进行简化。 接口功能比较单一，能够比较好地进行测试覆盖，也相对容易实现自动化持续集成。 接口相对于界面功能，会更底层一些，测试覆盖会更容易。 软件开发生命周期系统立项——&gt; 可行性分析 ——&gt; 系统概要设计 ——&gt; 详细设计 ——&gt; 编码工作 ——&gt; 单元测试  接口测试在单元测试之后，UI测试之前； 接口测试可以获得较高">
 
 
 
@@ -421,6 +425,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -453,7 +479,7 @@
                   <span class="post-meta-item-text">字数统计:</span>
                 
                 <span title="字数统计">
-                  0
+                  2,112
                 </span>
               
 
@@ -469,7 +495,7 @@
                   <span class="post-meta-item-text">阅读时长 ≈</span>
                 
                 <span title="阅读时长">
-                  1
+                  8
                 </span>
               
             </div>
@@ -490,7 +516,255 @@
       
 
       
-        <meta name="generator" content="Hexo 3.9.0">
+        <meta name="generator" content="Hexo 3.9.0"><h1 id="为什么做接口测试"><a href="#为什么做接口测试" class="headerlink" title="为什么做接口测试"></a>为什么做接口测试</h1><p>很多系统关联都是基于<strong>接口</strong>来实现，接口测试可以将复杂的系统关联进行简化。</p>
+<p>接口功能比较<strong>单一</strong>，能够比较好地进行<strong>测试覆盖</strong>，也相对容易实现<strong>自动化持续集成</strong>。</p>
+<p>接口相对于界面功能，会更底层一些，测试覆盖会更容易。</p>
+<h1 id="软件开发生命周期"><a href="#软件开发生命周期" class="headerlink" title="软件开发生命周期"></a>软件开发生命周期</h1><p>系统立项——> 可行性分析 ——> 系统概要设计 ——> 详细设计 ——> 编码工作 ——> 单元测试</p>
+<ul>
+<li>接口测试在单元测试之后，UI测试之前；</li>
+<li>接口测试可以获得较高的<strong>投资回报</strong>；</li>
+</ul>
+<h1 id="什么是接口测试"><a href="#什么是接口测试" class="headerlink" title="什么是接口测试"></a>什么是接口测试</h1><p>接口测试又称为API测试，Application Programming  Interface.</p>
+<p>接口测试时测试系统组件间接口的一种测试。重点关注<strong>数据</strong>传递。</p>
+<p>接口测试一般会用于多系统间交互开发，或者拥有多个子系统的应用系统开发的测试。</p>
+<h1 id="Web-Service"><a href="#Web-Service" class="headerlink" title="Web Service"></a>Web Service</h1><p>一种跨编程语言和跨操作系统平台的远程调用技术。</p>
+<p>最重要的两种实现方式：SOAP & REST</p>
+<p>Web2.0时代，REST方法得到了广泛的普及。</p>
+<p>SOAP —Simple Object Access Protocol</p>
+<p>交换数据的一种<strong>协议规范</strong>，是一种<strong>轻量</strong>的、<strong>简单</strong>的、基于<strong>XML</strong>的协议。</p>
+<p>REST — Representational State Tranfer</p>
+<p>一种<strong>软件架构</strong>风格，可以降低开发的<strong>复杂性</strong>，提高系统的<strong>可伸缩</strong>性。</p>
+<h2 id="SOAP和REST的区别"><a href="#SOAP和REST的区别" class="headerlink" title="SOAP和REST的区别"></a>SOAP和REST的区别</h2><p>安全性： SOAP会好于REST</p>
+<p>效率和易用性：REST更胜一筹</p>
+<p>成熟度：总的来说，SOAP的成熟性更高，只能用XML，REST适用于各种json,xml等格式输出。</p>
+<p>REST  or RESTFUL</p>
+<p>RESTful是REST的形容词形式，RESTful API指的是REST风格的接口</p>
+<p>一般来说REST<strong>等于</strong>RESTful，区别一个是<strong>名词</strong>一个是<strong>形容词</strong>。</p>
+<h2 id="REST-API"><a href="#REST-API" class="headerlink" title="REST API"></a>REST API</h2><p><strong>出现</strong>：REST最早是Roy Fielding博士发表的论文中提到的</p>
+<p><strong>定义</strong>：简单来说，REST是一种系统架构设计风格（而非标准），一种分布式系统的应用层解决方案（同SOAP不一样，不是协议）</p>
+<p><strong>目的</strong>：Client和Server端进一步解耦</p>
+<p><strong>应用</strong>：最为经典的莫过于GitHub API</p>
+<p>核心思想是资源，（创建）增、（删除）删、（更新）改、（获取）查。</p>
+<h3 id="REST特点总结"><a href="#REST特点总结" class="headerlink" title="REST特点总结"></a>REST特点总结</h3><ul>
+<li><p>面向<strong>资源</strong>的接口设计</p>
+</li>
+<li><p>抽象操作为基础的<strong>CRUD</strong></p>
+<p>（Create，Retrieve，Update，Delete）</p>
+</li>
+<li><p>Http是应用协议而非传输协议</p>
+</li>
+</ul>
+<h3 id="REST-支持的方法"><a href="#REST-支持的方法" class="headerlink" title="REST 支持的方法"></a>REST 支持的方法</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">VeRD</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">HEAD（SELECT）</td>
+<td style="text-align:center">只获取某个资源的头部信息</td>
+</tr>
+<tr>
+<td style="text-align:center">GET（SELECT）</td>
+<td style="text-align:center">获取资源</td>
+</tr>
+<tr>
+<td style="text-align:center">POST（CREATE）</td>
+<td style="text-align:center">创建资源</td>
+</tr>
+<tr>
+<td style="text-align:center">PATCH（UPDATE）</td>
+<td style="text-align:center">更新资源的部分属性（很少用，一般用POST代替）</td>
+</tr>
+<tr>
+<td style="text-align:center">PUT（UPDATE）</td>
+<td style="text-align:center">更新资源，客户端需要提供新建资源的所有属性</td>
+</tr>
+<tr>
+<td style="text-align:center">DELETE（DELETE）</td>
+<td style="text-align:center">删除资源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="补充一些概念："><a href="#补充一些概念：" class="headerlink" title="补充一些概念："></a>补充一些概念：</h3><p><strong>幂等性</strong>（Idempotent）:是一种数学上的概念，在这里表示发送一次或多次请求引起的边界效应是一致的。</p>
+<p>比如说get方法取一个对象，不管是第一次还是取第100次，返回的结果应是一样的，而POST方法不是，所以说GET是幂等方法 ，POST是不幂等方法。</p>
+<p><strong>安全性</strong>：GET、HEAD和OPTIONS均被认为是安全的方法，因为他们旨在实现对数据的获取，并不具有“边界效应”(Side Effect)。</p>
+<h3 id="REST-API接口规范"><a href="#REST-API接口规范" class="headerlink" title="REST API接口规范"></a>REST API接口规范</h3><h4 id="设计规范"><a href="#设计规范" class="headerlink" title="设计规范"></a>设计规范</h4><p><strong>协议</strong>：使用HTTPS协议，确保交互数据的安全；</p>
+<p><strong>域名</strong>：应该尽量将API部署在专用域名之下，如<a href="https://api.example.com；" target="_blank" rel="noopener">https://api.example.com；</a></p>
+<p><strong>版本控制</strong>：将版本号放在URL或者Header中。</p>
+<p><strong>路径</strong>：只能包含名词，不能包含动词；</p>
+<p><strong>过滤信息</strong>：？limit=10 ?offset=10 ?page=1 ?sortby=name；</p>
+<p><strong>Hypermedia API</strong>：在返回结果中提供相关资源的链接，连向其他API方法；</p>
+<p><strong>验证(Authentication</strong>)：确定用户是其声明的身份，比如账户的密码；</p>
+<p><strong>授权(Authorization)</strong> : 保证用户有对请求资源特定操作的权限、比如用户的私人信息只能自己能访问，其他人无法看到；有些特殊的操作只能管理员可以操作，其他用户只有只读的权限等；</p>
+<p><strong>常见HTTP状态码</strong></p>
+<h4 id="返回结果设计："><a href="#返回结果设计：" class="headerlink" title="返回结果设计："></a>返回结果设计：</h4><p>通用错误码，具体产品有具体产品api文档给出。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    "msg":uri_not_found,</span><br><span class="line">    "code":1001,</span><br><span class="line">    "request":"GET V v2 V photo V 132"</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="REST-API接口实例"><a href="#REST-API接口实例" class="headerlink" title="REST API接口实例"></a>REST API接口实例</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">请求形式</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GET  /product</td>
+<td style="text-align:center">列出所有商品</td>
+</tr>
+<tr>
+<td style="text-align:center">POST /product</td>
+<td style="text-align:center">新建一个商品</td>
+</tr>
+<tr>
+<td style="text-align:center">GET /product/ID</td>
+<td style="text-align:center">获取某个指定商品的信息</td>
+</tr>
+<tr>
+<td style="text-align:center">PUT /product/ID</td>
+<td style="text-align:center">更新某个指定商品的信息</td>
+</tr>
+<tr>
+<td style="text-align:center">DELETE /product/ID</td>
+<td style="text-align:center">删除某个商品</td>
+</tr>
+<tr>
+<td style="text-align:center">GET /product/ID/purchase</td>
+<td style="text-align:center">列出某个指定商品的所有投资者</td>
+</tr>
+<tr>
+<td style="text-align:center">GET /product/ID/purchase/ID</td>
+<td style="text-align:center">获取某个指定商品的指定投资者信息</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="接口测试流程"><a href="#接口测试流程" class="headerlink" title="接口测试流程"></a>接口测试流程</h1><h2 id="手动测试"><a href="#手动测试" class="headerlink" title="手动测试"></a>手动测试</h2><p>测试方法</p>
+<ul>
+<li>借助工具完成</li>
+<li>拼接参数执行请求</li>
+</ul>
+<h2 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h2><p>编写自动化脚本实现（常见Python或Java）</p>
+<p>一劳永逸，加入回归测试集合</p>
+<p>需要一定编码经验</p>
+<h2 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h2><ul>
+<li><p>Postman</p>
+</li>
+<li><p>JMeter</p>
+<p>JMeter通常用于性能测试，压力测试，也可以用作接口测试。</p>
+</li>
+<li><p>RestClient等等</p>
+</li>
+</ul>
+<h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><h3 id="测试覆盖"><a href="#测试覆盖" class="headerlink" title="测试覆盖"></a>测试覆盖</h3><ul>
+<li>业务流程；</li>
+<li>边界值，特殊字符；</li>
+<li>参数类型，必选项，可选项等；</li>
+</ul>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><h3 id="测试覆盖-1"><a href="#测试覆盖-1" class="headerlink" title="测试覆盖"></a>测试覆盖</h3><p>并发数（逐步加压的方式）</p>
+<p>吞吐量，tps</p>
+<p>出错率等</p>
+<h2 id="安全测试"><a href="#安全测试" class="headerlink" title="安全测试"></a>安全测试</h2><h3 id="测试覆盖-2"><a href="#测试覆盖-2" class="headerlink" title="测试覆盖"></a>测试覆盖</h3><p>敏感数据加密</p>
+<p>恶意攻击</p>
+<h3 id="REST-API测试步骤"><a href="#REST-API测试步骤" class="headerlink" title="REST API测试步骤"></a>REST API测试步骤</h3><ol>
+<li>了解接口格式</li>
+<li>编写测试用例</li>
+<li>测试用例评审</li>
+<li>开始测试</li>
+<li>完成测试报告</li>
+</ol>
+<p>第一轮测试，第二轮测试，直到达到测试结束条件，完成测试报告提交，测试流程结束。</p>
+<h2 id="写一个RestAPI测试计划"><a href="#写一个RestAPI测试计划" class="headerlink" title="写一个RestAPI测试计划"></a>写一个RestAPI测试计划</h2><h3 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h3><p>(1)</p>
+<p>GET ： <a href="http://localhost:8080/MyWebSite/user/" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: 空</p>
+<p>Response： 返回所有USer对象</p>
+<p>Status Code： 200</p>
+<p>(2)</p>
+<p>GET ： <a href="http://localhost:8080/MyWebSite/user/{id}" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/{id}</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: 空</p>
+<p>Response： 返回指定id的USer对象</p>
+<p>Status Code： 200</p>
+<p>(3)</p>
+<p>POST ： <a href="http://localhost:8080/MyWebSite/user/" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: name(String类型，不可空不可重复)，age(int类型，在0-100之间)，salary(double类型)</p>
+<p>Response：新加User对象</p>
+<p>Status Code： 201（新资源被创建）</p>
+<p>(4)</p>
+<p>PUT ： <a href="http://localhost:8080/MyWebSite/user/{id}" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/{id}</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: name(String类型，不可空不可重复)，age(int类型，在0-100之间)，salary(double类型)</p>
+<p>Response：修改id对应的User对象</p>
+<p>Status Code： 200</p>
+<p>(5)</p>
+<p>DELETE ： <a href="http://localhost:8080/MyWebSite/user/{id}" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/{id}</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: 空</p>
+<p>Response：删除id对应的User对象</p>
+<p>Status Code： 204</p>
+<p>(6)</p>
+<p>DELETE ： <a href="http://localhost:8080/MyWebSite/user/" target="_blank" rel="noopener">http://localhost:8080/MyWebSite/user/</a></p>
+<p>Header: Content-Type = application/json</p>
+<p>Body: 空</p>
+<p>Response：删除所有的User对象</p>
+<p>Status Code： 204</p>
+<p><strong>错误返回设计：</strong></p>
+<p>Code：4     Message：找不到指定id对象</p>
+<p>Code：5     Message：对象已经存在</p>
+<p>Code：6     Message：参数不匹配</p>
+<h3 id="测试计划"><a href="#测试计划" class="headerlink" title="测试计划"></a>测试计划</h3><ul>
+<li><p><strong>业务流程 - GET：</strong></p>
+<p>正向用例：返回所有对象和返回某一个对象</p>
+<p>负向用例：一个不存在的id，URL输入不正确</p>
+</li>
+<li><p><strong>业务流程 - POST：</strong></p>
+<p>正向用例：输入正确参数新加一个对象（特殊字符，中文等）</p>
+<p>负向用例：</p>
+<p>1.参数name为空/重复</p>
+<p>2.参数age为0/-1/100/101/字符串/null/空</p>
+<p>3.参数salary为整数/带小数/负数/null/空</p>
+</li>
+<li><p><strong>业务路程 - PUT：</strong></p>
+<p>正向用例：输入正确参数修改一个对象（特殊字符，中文等）</p>
+<p>负向用例：</p>
+<p>1.参数id为空/无效值</p>
+<p>2.参数name为空/重复</p>
+<p>3.参数age为0/-1/100/101/字符串/null/空</p>
+<p>4.参数salary为整数/带小数/负数/null/空</p>
+</li>
+<li><p><strong>业务路程 - DELETE：</strong></p>
+<p>正向用例：删除所有对象和删除某一个对象</p>
+<p>负向用例：</p>
+<p>1.一个不存在的id</p>
+<p>2.URL输入不正确</p>
+</li>
+</ul>
+<h3 id="发现的问题"><a href="#发现的问题" class="headerlink" title="发现的问题"></a>发现的问题</h3><ul>
+<li><p>PUT请求没有做name不为空和重复的限制，类似其他域字段也未做控制和验证；</p>
+</li>
+<li><p>DELETE请求没有具体的返回结果，终端用户无法判断操作是否成功；</p>
+</li>
+<li><p>URL设计规范，没有https不够安全；</p>
+</li>
+<li><p>域名没有api的体现，没有版本的控制；</p>
+</li>
+<li><p>没有一些过滤信息，如laravel，sortby,不支持排序</p>
+<p>?limit=10：指定返回记录的数量<br>?offset=10：指定返回记录的开始位置。<br>?page=2&per_page=100：指定第几页，以及每页的记录数。<br>?sortby=name&order=asc：指定返回结果按照哪个属性排序，以及排序顺序。<br>?animal_type_id=1：指定筛选条件</p>
+</li>
+<li><p>没有登录验证；</p>
+</li>
+<li><p>通用错误码设计过于简单，只有一个数字；</p>
+</li>
+<li><p>返回结果的设计不够友好，比较简单；</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -543,6 +817,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/REST-API/" rel="tag"><i class="fa fa-tag"></i> REST API</a>
+          
+        </div>
       
 
       
@@ -642,8 +922,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image" src="/uploads/wjq1.jpg" alt="Bomir">
@@ -670,7 +959,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -681,7 +970,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -812,6 +1101,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么做接口测试"><span class="nav-number">1.</span> <span class="nav-text">为什么做接口测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件开发生命周期"><span class="nav-number">2.</span> <span class="nav-text">软件开发生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是接口测试"><span class="nav-number">3.</span> <span class="nav-text">什么是接口测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-Service"><span class="nav-number">4.</span> <span class="nav-text">Web Service</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SOAP和REST的区别"><span class="nav-number">4.1.</span> <span class="nav-text">SOAP和REST的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REST-API"><span class="nav-number">4.2.</span> <span class="nav-text">REST API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#REST特点总结"><span class="nav-number">4.2.1.</span> <span class="nav-text">REST特点总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REST-支持的方法"><span class="nav-number">4.2.2.</span> <span class="nav-text">REST 支持的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充一些概念："><span class="nav-number">4.2.3.</span> <span class="nav-text">补充一些概念：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REST-API接口规范"><span class="nav-number">4.2.4.</span> <span class="nav-text">REST API接口规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设计规范"><span class="nav-number">4.2.4.1.</span> <span class="nav-text">设计规范</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回结果设计："><span class="nav-number">4.2.4.2.</span> <span class="nav-text">返回结果设计：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#REST-API接口实例"><span class="nav-number">4.2.4.3.</span> <span class="nav-text">REST API接口实例</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口测试流程"><span class="nav-number">5.</span> <span class="nav-text">接口测试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#手动测试"><span class="nav-number">5.1.</span> <span class="nav-text">手动测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化测试"><span class="nav-number">5.2.</span> <span class="nav-text">自动化测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试工具"><span class="nav-number">5.3.</span> <span class="nav-text">测试工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能测试"><span class="nav-number">5.4.</span> <span class="nav-text">功能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试覆盖"><span class="nav-number">5.4.1.</span> <span class="nav-text">测试覆盖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能测试"><span class="nav-number">5.5.</span> <span class="nav-text">性能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试覆盖-1"><span class="nav-number">5.5.1.</span> <span class="nav-text">测试覆盖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全测试"><span class="nav-number">5.6.</span> <span class="nav-text">安全测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试覆盖-2"><span class="nav-number">5.6.1.</span> <span class="nav-text">测试覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REST-API测试步骤"><span class="nav-number">5.6.2.</span> <span class="nav-text">REST API测试步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个RestAPI测试计划"><span class="nav-number">5.7.</span> <span class="nav-text">写一个RestAPI测试计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求描述"><span class="nav-number">5.7.1.</span> <span class="nav-text">需求描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试计划"><span class="nav-number">5.7.2.</span> <span class="nav-text">测试计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发现的问题"><span class="nav-number">5.7.3.</span> <span class="nav-text">发现的问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -860,7 +1165,7 @@
       <i class="fa fa-eye"></i>
       访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
     </span>
-  <span class="post-count">博客全站共:74.1k字</span>
+  <span class="post-count">博客全站共:76.2k字</span>
 </div>
 
         
