@@ -384,6 +384,419 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/26/C#语法回顾1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bomir">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/wjq1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wallis">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/26/C#语法回顾1/" itemprop="url">C#语法回顾1</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-26T22:19:05+08:00">
+                2019-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/08/26/C#语法回顾1/" class="leancloud_visitors" data-flag-title="C#语法回顾1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数:</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计:</span>
+                
+                <span title="字数统计">
+                  6,051
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 ≈</span>
+                
+                <span title="阅读时长">
+                  24
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <meta name="generator" content="Hexo 3.9.0"><h1 id="C-重载与重写"><a href="#C-重载与重写" class="headerlink" title="C# 重载与重写"></a>C# 重载与重写</h1><h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p><strong>构造函数：</strong></p>
+<p>构造函数是一种特殊的方法，主要用来创建对象时初始化对象，即为对象成员变量赋初始值，总与new运算符一起使用再创建对象的语句中。特别的一个类中可有多个构造函数，可根据其参数的不同或参数类型的不同开区分它们，即构造函数的重载。</p>
+<p><strong>重写：</strong></p>
+<p>当一个子类继承一个父类，而子类中的方法与父类中的方法的名称，参数个数，类型都完全一致时，就称子类中的这个方法重写了父类的方法。</p>
+<p><strong>重载：</strong></p>
+<p>一个类中的方法与另一个方法同名，但是其参数表不同，这种方法称之为重载方法。</p>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p><strong>重写：</strong></p>
+<p>通常，派生类继承基类的方法。因此，在调用对象继承方法的时候，调用和执行的是基类的实现。但是，有时需要对派生类中的继承方法有不同的实现。例如，假设动物类存在“跑”的方法，从中派生出马和狗，马和狗的跑得形态是各不相同的，因此同样方法需要两种不同的实现，这就需要”重新编写”基类中的方法。”重写”基类方法就是修改它的实现或者说在派生类中重新编写。</p>
+<p><strong>重载：</strong></p>
+<p>在一个类中用相同的名称但是不同的参数类型创建一个以上的过程、实例构造函数或属性。</p>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">区别\ 名称</th>
+<th style="text-align:center">重载</th>
+<th style="text-align:center">重写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">范围</td>
+<td style="text-align:center">同一个类</td>
+<td style="text-align:center">不同的类</td>
+</tr>
+<tr>
+<td style="text-align:center">方法名</td>
+<td style="text-align:center">相同</td>
+<td style="text-align:center">相同</td>
+</tr>
+<tr>
+<td style="text-align:center">参数列表</td>
+<td style="text-align:center">必须不同，与参数列表顺序无关</td>
+<td style="text-align:center">相同</td>
+</tr>
+<tr>
+<td style="text-align:center">修饰符</td>
+<td style="text-align:center">无关</td>
+<td style="text-align:center">大于父类方法</td>
+</tr>
+<tr>
+<td style="text-align:center">抛出父类没有的异常</td>
+<td style="text-align:center">可以</td>
+<td style="text-align:center">不可以</td>
+</tr>
+<tr>
+<td style="text-align:center">返回类型</td>
+<td style="text-align:center">不同</td>
+<td style="text-align:center">相同</td>
+</tr>
+<tr>
+<td style="text-align:center">与面向对象</td>
+<td style="text-align:center">多态</td>
+<td style="text-align:center">继承</td>
+</tr>
+</tbody>
+</table>
+<p><strong>重载特征：</strong> </p>
+<p>I.方法名必须相同 </p>
+<p>II.参数列表必须不相同，与参数列表的顺序无关 </p>
+<p>III.返回值类型可以不相同</p>
+<p>用于在给定了参数列表和一组候选函数成员的情况下，选择一个最佳函数成员来实施调用。 </p>
+<p><strong>重写特征：</strong></p>
+<p>重写就是子类重写父类的方法，在调用的时候，子类的方法会覆盖父类的方法，也就是会调用子类的方法。在父类中的方法必须有修饰符virtual，而在子类的方法中必须指明override；</p>
+<p>发生方法重写的两个方法返回值，方法名，参数列表必须完全一致（必须具有相同的方法名和参数列表，返回值类型必须相同或者其子类）；</p>
+<p>子类抛出的异常不能超过父类相应的方法抛出的异常；</p>
+<p>子类方法的访问级别不能低于父类相应方法的访问级别（public，package，protected， private），不能缩小被重写方法的访问权限；</p>
+<p>方法体不同。</p>
+<p><strong><em>重写格式：</em></strong> </p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">父类中： </span><br><span class="line"></span><br><span class="line">public virtual void myMethod()</span><br><span class="line"></span><br><span class="line">{ </span><br><span class="line">  // *********</span><br><span class="line">} </span><br><span class="line"></span><br><span class="line">子类中： </span><br><span class="line"></span><br><span class="line">public override void myMethod() </span><br><span class="line"></span><br><span class="line">{ </span><br><span class="line">  // *********</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>重写以后，用父类对象和子类对象访问myMethod()方法，结果都是访问在子类中重新定义的方法，父类的方法相当于被覆盖掉了。</p>
+<ul>
+<li>子类中为满足自己的需要来重复定义某个方法的不同实现。</li>
+<li>通过使用override关键字来实现覆写。</li>
+<li>只有虚方法和抽象方法才能被覆写。</li>
+</ul>
+<p>要求（<strong>三相同</strong>）即相同的方法名称，相同的参数列表，相同的返回值类型。</p>
+<h1 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h1><h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><ul>
+<li>lambda表达式是一个匿名函数，用它可以简化代码，常常用做委托，回调；</li>
+<li>lambda表达式都使用运算符 => ,当见到这个符号，基本上是一个lambda表达式；</li>
+<li>lambda运算符的左边时输入参数(),  =>  ,右边时表达式或语句块；</li>
+<li>lambda表达式，是可以访问到外部变量的，可以将此表达式分配给委托类型；</li>
+</ul>
+<h3 id="Lambda运算符"><a href="#Lambda运算符" class="headerlink" title="Lambda运算符"></a>Lambda运算符</h3><p>​         为研究Lambda表达式，新建一个SimpleLambdaExpression的控制台应用程序。现在，考虑泛型List<t>类型的FindAll()方法，此方法需要System.Predicate<t>的泛型委托，它用于包装任何接受类型为T的输入参数并且返回布尔值的方法。在Program类型中增加一个方法，叫做TraditionalDelegateSyntax()，它与System.Predicate</t></t></p>
+<p><t>类型交互，找出整数List<t>中的偶数。</t></t></p>
+<p><strong>case1: 使用传统委托方式</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line">namespace SimpleLambdaExpression</span><br><span class="line">{</span><br><span class="line">    class Program</span><br><span class="line">    {</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        {</span><br><span class="line">            Console.WriteLine("**** Fun With Lambdas ****");</span><br><span class="line">            TraditionalDelegateSyntax();</span><br><span class="line">            Console.ReadLine();</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        static void TraditionalDelegateSyntax()</span><br><span class="line">        {</span><br><span class="line">            // 创建整数列表</span><br><span class="line">            List<int> list = new List<int>();</int></int></span><br><span class="line">            list.AddRange(new int[] {20, 1, 4, 8, 9 , 44 });</span><br><span class="line"></span><br><span class="line">            // 使用传统委托语法调用FindAll()</span><br><span class="line">            Predicate<int> callback = new Predicate<int>(IsEvenNumber);</int></int></span><br><span class="line">            List<int> evenNumbers = list.FindAll(callback);</int></span><br><span class="line"></span><br><span class="line">            Console.WriteLine("Here are your even numbers:");</span><br><span class="line">            foreach (int evenNumber in evenNumbers)</span><br><span class="line">            {</span><br><span class="line">                Console.Write("{0} \t", evenNumber);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            Console.WriteLine();</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        // Predicate<>委托的目标</span><br><span class="line">        static bool IsEvenNumber(int i)</span><br><span class="line">        {</span><br><span class="line">            // 这是一个偶数吗？</span><br><span class="line">            return (i % 2) == 0;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>分析：以上代码可以按预期工作，但IsEvenNumber()方法只会在有限的环境中被调用，而且，如果调用FindAll()，就需要完整的方法定义。但如果用匿名方法来代替，代码就简洁许多。考虑下面Program类型的新方法。</p>
+<p><strong>Case2: Program类型的新方法</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static void AnonymousMethodSyntax()</span><br><span class="line">{</span><br><span class="line">    // 建立整数列表</span><br><span class="line">    List<int> list = new List<int>();</int></int></span><br><span class="line">    list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });</span><br><span class="line"></span><br><span class="line">    // 现在使用匿名方法</span><br><span class="line">    List<int> evenNumbers = list.FindAll(delegate(int i) { return (i % 2) == 0; });</int></span><br><span class="line">    Console.WriteLine("Here are your even numbers:");</span><br><span class="line">    foreach (int evenNumber in evenNumbers)</span><br><span class="line">    {</span><br><span class="line">        Console.Write("{0} \t", evenNumber);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    Console.WriteLine();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>分析：以上的代码并不是首先创建一个Predicate<t>委托类型，然后再编写一个独立方法，而是使用了一个匿名方法。这个方向是正确的，但是仍然需要使用关键字delegate（或者是一个强类型的Predicate<t>），而且还需要保证输入参数是百分百匹配的。我们认为这样的，定义匿名方法的代码还是有些冗长。可以使用Lambda表达式进一步来简化方法FindAll()的调用，使用新的语法时，底层的委托语法将会消失得无影无踪，请看下面的代码：</t></t></p>
+<p><strong>Case3：Lambda表达式</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">static void LambdaExpessionSyntax()</span><br><span class="line">{</span><br><span class="line">    // 建立整数列表</span><br><span class="line">    List<int> list = new List<int>();</int></int></span><br><span class="line">    list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });</span><br><span class="line"></span><br><span class="line">    // 现在使用Lambda表达式</span><br><span class="line">    List<int> evenNumbers = list.FindAll(i => (i % 2 == 0));</int></span><br><span class="line">    foreach (int evenNumber in evenNumbers)</span><br><span class="line">    {</span><br><span class="line">        Console.Write("{0} \t", evenNumber);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    Console.WriteLine();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>我们将奇怪的语句传递给FindAll方法中，这些语句也就是Lambda表达式，这时候不需要用Predicate<t>（或关键字delegate），而只用一个简单的lambda表达式即可。</t></p>
+<p>在深入Lambda表达式之前，我们需要知道Lambda可以应用于任何匿名方法可以应用的场景，而且比匿名方法更节省编码时间。但实际上，C#编译器只是把表达式翻译成使用委托Predicate<t>的普通匿名方法而已（可以使用isdasm.exe和reflector.ex进行验证），如下面的代码：</t></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Lambda表达式</span><br><span class="line"> List<int> evenNumbers = list.FindAll(i => (i % 2 == 0));</int></span><br><span class="line">被编译进下面的C#代码：</span><br><span class="line">// 变成了匿名方法</span><br><span class="line">List<int> evenNumbers = list.FindAll(delegate(int i) { return (i % 2) == 0; });</int></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="剖析Lambda表达式"><a href="#剖析Lambda表达式" class="headerlink" title="剖析Lambda表达式"></a>剖析Lambda表达式</h3><p>Lambda形式可以理解为：Arguments ToProcess => StatementsToProcessThem </p>
+<p><code>List<int> evenNumbers = list.FindAll(i => (i % 2 == 0));</int></code></p>
+<p>// ‘ i ’是参数列表</p>
+<p>// （i % 2 == 0）就是处理“i”的表达式</p>
+<p>Lambda表达式的参数可以是<strong>显式类型化</strong>的也可以是<strong>隐式类型化</strong>的。现在，表示参数i的数据类型（整型）时隐式类型化的。编译器可以根据整个Lambda表达式的上下文和底层委托推断出i是一个整型。尽管如此，我们也可以显式定义表达式每一个参数的类型，如下用包围数据类型和变量即可：</p>
+<p>// 现在，显式的定义参数类型</p>
+<p><code>List<int> evenNumbers = list.FindAll((int i) => (i % 2 == 0));</int></code></p>
+<p>为保持风格一致，隐式还可以使用括号写成如下：</p>
+<p><code>List<int> evenNumbers = list.FindAll((i) => (i % 2 == 0));</int></code></p>
+<h3 id="多语句处理参数"><a href="#多语句处理参数" class="headerlink" title="多语句处理参数"></a>多语句处理参数</h3><p>我们第一个Lambda表达式是一个求布尔类型值语句，但是我们知道很多委托目标需要执行多条代码执行，C#允许使用一系列的代码语句来定义Lambda表达式。当表达式必须使用多行代码处理参数时，你可以使用花括号限定范围。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">static void LambdaExpressionSyntax()</span><br><span class="line">{</span><br><span class="line">    // 创建整数列表</span><br><span class="line">    List<int> list = new List<int>();</int></int></span><br><span class="line">    list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });</span><br><span class="line"></span><br><span class="line">    // 现在使用语句块来编写Lambda表达式</span><br><span class="line">    List<int> evenNumbers = list.FindAll((i) =>{</int></span><br><span class="line">        Console.WriteLine("value of i is currently: {0}",i);</span><br><span class="line">        bool isEven = ((i % 2) == 0);</span><br><span class="line">        return isEven;</span><br><span class="line">    });</span><br><span class="line">    Console.WriteLine("Here are your even numbers:");</span><br><span class="line">    foreach (int evenNumber in evenNumbers)</span><br><span class="line">    {</span><br><span class="line">        Console.Write("{0} \t", evenNumber);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="使用Lambda表达式重写CarDelegate示例"><a href="#使用Lambda表达式重写CarDelegate示例" class="headerlink" title="使用Lambda表达式重写CarDelegate示例"></a>使用Lambda表达式重写CarDelegate示例</h3><p>推荐使用Lambda表达式是因为它为我们提供了一种简单明了的方式进行匿名函数的定义（由此间接地简化了关于委托的编码操作），以Lambda表达式重写CarDelegate示例，以下展示项目的Program类的简化版本，它使用传统的委托语法响应每一个回调：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine("**** More Fun With Lambdas ****");</span><br><span class="line">    // 创建一个car对象</span><br><span class="line">    Car c1 = new Car("SlugBug", 100, 10);</span><br><span class="line"></span><br><span class="line">    // 传统的委托语法</span><br><span class="line">    c1.OnAboutToBlow(new Car.AboutToBlow(CarAboutToBlow));</span><br><span class="line">    c1.OnExploded(new Car.Exploded(CarExploded));</span><br><span class="line"></span><br><span class="line">    // 加速（将会激发事件）</span><br><span class="line">    Console.WriteLine("\n **** Speeding Up ****");</span><br><span class="line">    for(int i = 0; i < 6; i++)</span><br><span class="line">        c1.SpeedUp(20);</span><br><span class="line">    Console.ReadLine();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">// 委托目标</span><br><span class="line">public static void CarAboutToBlow(string msg)</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine(msg);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">public static void CarExploded(string msg)</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine(msg);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>用匿名方法重新写的Main();</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine("**** More Fun With Lambdas ****");</span><br><span class="line">    // 创建一个car对象</span><br><span class="line">    Car c1 = new Car("SlugBug", 100, 10);</span><br><span class="line"></span><br><span class="line">    // 现在使用匿名方法</span><br><span class="line">    c1.OnAboutToBlow(delegate(string msg){ Console.WriteLine(msg);});</span><br><span class="line">    c1.OnExploded(delegate(string msg){ Console.WriteLine(msg);});</span><br><span class="line"></span><br><span class="line">    // 加速（将会激发事件）</span><br><span class="line">    Console.WriteLine("\n **** Speeding Up ****");</span><br><span class="line">    for(int i = 0; i < 6; i++)</span><br><span class="line">        c1.SpeedUp(20);</span><br><span class="line">    Console.ReadLine();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>用Lambda表达式重写Main();</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">{</span><br><span class="line">    Console.WriteLine("**** More Fun With Lambdas ****");</span><br><span class="line">    // 创建一个car对象</span><br><span class="line">    Car c1 = new Car("SlugBug", 100, 10);</span><br><span class="line"></span><br><span class="line">    // 现在使用匿名方法</span><br><span class="line">    c1.OnAboutToBlow(msg => { Console.WriteLine(msg);});</span><br><span class="line">    c1.OnExploded(msg => { Console.WriteLine(msg);});</span><br><span class="line"></span><br><span class="line">    // 加速（将会激发事件）</span><br><span class="line">    Console.WriteLine("\n **** Speeding Up ****");</span><br><span class="line">    for(int i = 0; i < 6; i++)</span><br><span class="line">        c1.SpeedUp(20);</span><br><span class="line">    Console.ReadLine();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="含有多个（或零个）参数的Lambda表达式"><a href="#含有多个（或零个）参数的Lambda表达式" class="headerlink" title="含有多个（或零个）参数的Lambda表达式"></a>含有多个（或零个）参数的Lambda表达式</h3><p>以上都是编写的Lambda表达式都只含有一个参数，实际上，Lambda表达式可以处理多个参数或者不提供任何参数，我们创建一个LambdaExpressionMultiplePrams来说明问题。假设SimpleMath有以下更新：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleMath</span><br><span class="line">{</span><br><span class="line">    public delegate void MathMessage(string msg, int result);</span><br><span class="line"></span><br><span class="line">    private MathMessage mmDelegate;</span><br><span class="line"></span><br><span class="line">    public delegate string VerySimpleDelegate();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 处理多个参数的Lambda</span><br><span class="line">    public void SetMathHandler(MathMessage target)</span><br><span class="line">    {</span><br><span class="line">        mmDelegate = target;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void Add(int x, int y)</span><br><span class="line">    {</span><br><span class="line">        if (mmDelegate != null)</span><br><span class="line">        {</span><br><span class="line">            mmDelegate.Invoke("Adding has complete!", x + y);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    // 处理0个参数的Lambda</span><br><span class="line">    public void SetZeroHandler()</span><br><span class="line">    {</span><br><span class="line">        VerySimpleDelegate v = new VerySimpleDelegate(() => { return "Enjoy your string"; });</span><br><span class="line">        Console.WriteLine(v.Invoke());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>我们可以看到，委托MathMessage需要两个参数，使用Lambda表达式的Main如下所示：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">{</span><br><span class="line">    // 使用Lambda表达式来注册委托</span><br><span class="line">    SimpleMath m = new SimpleMath();</span><br><span class="line"></span><br><span class="line">    m.SetMathHandler((msg, result) =></span><br><span class="line">    {</span><br><span class="line">        Console.WriteLine("Message: {0},Result: {1}", msg, result);</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    // 执行Lambda表达式</span><br><span class="line">    m.Add(100, 10);</span><br><span class="line">    m.SetZeroHandler();</span><br><span class="line">    </span><br><span class="line">    Console.ReadLine();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>​        这旨在让我们理解Lambda表达式的整体角色和它是如何以“函数方式”，匿名方法和委托状态共同工作的，尽管需要一些时间来适应新的Lambda表达式（=>）,不过要始终记住Lambda表达式可简化为：Arguments ToProcess => StatementsToProcessThem 的简单形式，并且在LINQ编程模型中使用了许多Lambda表达式来简化代码。</p>
+<h2 id="可空表达式-？"><a href="#可空表达式-？" class="headerlink" title="可空表达式 ？"></a>可空表达式 ？</h2><h3 id="单问号-？"><a href="#单问号-？" class="headerlink" title="单问号 ？"></a><strong>单问号 ？</strong></h3><p>?: 单问号用于对 int,double,bool 等无法直接赋值为 null 的数据类型进行 null 的赋值，意思是这个数据类型是 NullAble 类型的。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int? i = 3 </span><br><span class="line">等同于</span><br><span class="line">Nullable<int> i = new Nullable<int>(3);</int></int></span><br><span class="line"></span><br><span class="line">int i; //默认值0</span><br><span class="line">int? ii; //默认值null</span><br></pre></td></tr></tbody></table></figure>
+<p>在此表达式出现之前，当我们得到一个对象并想使用这个对象，需判断该对象是否为null，否则使用对象时就会抛出<code>NullReferenceException</code> 异常（<strong>未将对象引用设置到对象的实例</strong>），如下例：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void Main(string[] args)</span><br><span class="line">{</span><br><span class="line">    var user = GetUser(1);</span><br><span class="line">    if(user == null)</span><br><span class="line">    {</span><br><span class="line">        //这里可以自定义</span><br><span class="line">        throw new NullReferenceException("指定的用户没有找到");</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    //当 user 对象不是 null 时，我们才可以这样</span><br><span class="line">    var name = user.Name;</span><br><span class="line">    var password = user.Password;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>现在使用可空表达式(?.)，作用就是当对象为null时，就不去访问后面点的对象，如下代码:</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static void Main(string [] args)</span><br><span class="line">{</span><br><span class="line">    var user = GetUser(1);</span><br><span class="line">    var name = user?.Name;</span><br><span class="line">    var password = user?.PassWord;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>?.表达式将声明对象转换成了可为空类型</strong></p>
+<p>上面的代码时字符串，那如果时int类型又会是怎样？</p>
+<p><code>int? age = user?.Age;</code></p>
+<p>数据类型后面加一个问号，表示该类型可以是 null。你可以通过该对象的 <code>HasValue</code> 属性做一个判断，表示该对象有值，然后再使用该对象的 <code>Value</code> 属性获取到值。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int? age = user?.Age;</span><br><span class="line">if(age.HasValue)</span><br><span class="line">{</span><br><span class="line">	Console.Write(age.value);    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>再举一个例子：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public event EventHandler OnEventChange; // 声明一个事件</span><br><span class="line">//...中间忽略</span><br><span class="line"></span><br><span class="line">//不使用可空表达式时</span><br><span class="line">if(OnEventChange != null) // 判断该时间是否被订阅</span><br><span class="line">{</span><br><span class="line">    OnEventChange();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">//使用可空表达式</span><br><span class="line">OnEventChange?.Invoke();</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>总结：</strong></p>
+<p>很明显可空表达式减少了一层判断，明显减少了我们的代码量，也提高了我们的效率。但是需要我们选择性使用，不要滥用。</p>
+<h3 id="双问号"><a href="#双问号" class="headerlink" title="双问号 ??"></a><strong>双问号 ??</strong></h3><p>??: 双问号??可用于在判断一个变量在为null时返回一个指定的值， 具体来讲，??叫做null合并运算符，如果此运算符的左操作数不为 null，则此运算符将返回左操作数；否则返回右操作数。可以用来给变量设置默认值。特别提醒： 记住和空有关的时候，才要去用?? 。如果不会有空的判断，就别用了。因为这个是空的合并运算符。也有人说??是？：的语法糖而已，但是实际上？？进行了很大改进，能够更好的支持表达式。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">namespace CalculatorApplication</span><br><span class="line">{</span><br><span class="line">   class NullablesAtShow</span><br><span class="line">   {</span><br><span class="line">         </span><br><span class="line">      static void Main(string[] args)</span><br><span class="line">      {      </span><br><span class="line">         double? num1 = null;</span><br><span class="line">         double? num2 = 3.14157;</span><br><span class="line">         double num3;</span><br><span class="line">         num3 = num1 ?? 5.34;      // num1 如果为空值则返回 5.34</span><br><span class="line">         Console.WriteLine("num3 的值： {0}", num3);</span><br><span class="line">         num3 = num2 ?? 5.34;</span><br><span class="line">         Console.WriteLine("num3 的值： {0}", num3);  // 返回3.14157</span><br><span class="line">         Console.ReadLine();</span><br><span class="line">      }</span><br><span class="line">   }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>还有这个例子：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 用??</span><br><span class="line">Func<string> f = () => GetName() ?? "test2";</string></span><br><span class="line">// 不用两个??，写条件表达式</span><br><span class="line">Func<string> f1 = () =></string></span><br><span class="line">{</span><br><span class="line">    var temp = GetName();</span><br><span class="line">    return temp != null ? GetName():"test2";</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>实际上，??在复合情形中，更好用。</p>
+<p>还有如何把第一个表达式，用?和??进行合并。</p>
+<p><code>var flag = tt == null ? 1: tt.Name</code></p>
+<h3 id="C-可空类型-Nullable"><a href="#C-可空类型-Nullable" class="headerlink" title="C# 可空类型(Nullable)"></a>C# 可空类型(Nullable)</h3><p>C#提供了一个特殊的数据类型， <strong>nullable</strong> 类型（可空类型）, 可空类型可以表示其基础值类型正常范围内的值，再加上一个 null 值。</p>
+<p>例如，Nullable< Int32 >，读作”可空的 Int32”，可以被赋值为 -2,147,483,648 到 2,147,483,647 之间的任意值，也可以被赋值为 null 值。类似的，Nullable< bool > 变量可以被赋值为 true 或 false 或 null。</p>
+<p>在处理数据库和其他包含可能未赋值的元素的数据类型时，将 null 赋值给数值类型或布尔型的功能特别有用。例如，数据库中的布尔型字段可以存储值 true 或 false，或者，该字段也可以未定义。</p>
+<p>声明一个nullable类型（可空类型）的语法如下：</p>
+<p><code><data_type> ? <variable_name> = null;</variable_name></data_type></code></p>
+<p>下面的示例展示可空数据类型的用法：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int? num1 = null;</span><br><span class="line">int? num2 = 45;</span><br><span class="line">double? num3 = new double?();</span><br><span class="line">double? num4 = 3.14157;</span><br><span class="line"></span><br><span class="line">bool? boolval = new bool?(); // 空的布尔值</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>基础学习参见<a href="https://www.runoob.com/csharp/csharp-regular-expressions.html" target="_blank" rel="noopener">菜鸟教程 正则表达式</a></p>
+<h1 id="Partial-class说明"><a href="#Partial-class说明" class="headerlink" title="Partial class说明"></a>Partial class说明</h1><h2 id="partial-class基础"><a href="#partial-class基础" class="headerlink" title="partial class基础"></a>partial class基础</h2><p>C# 2.0就可以将类，结构或接口的定义分拆到两个或多个源文件中，在类声明前添加partial关键字即可。</p>
+<p>例如：下面的PartialTest类</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class PartialTest</span><br><span class="line">{</span><br><span class="line">　　string Str_FieldTest; </span><br><span class="line">　　int Int_FieldTest; </span><br><span class="line">　　public void DoTest() </span><br><span class="line">　　{ </span><br><span class="line">　　　　Debug.Print("Test"); </span><br><span class="line">　　}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>可在不同的源文件中拆写成下面形式：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">partial class PartialTest</span><br><span class="line">{</span><br><span class="line">    string Str_FieldTest;</span><br><span class="line">    int Int_FieldTest;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>另一个文件中写：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">partial class PartialTest</span><br><span class="line">{</span><br><span class="line">    public void DoTest()</span><br><span class="line">    {</span><br><span class="line">    Debug.Print("Test");</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><strong>什么情况下使用分部类</strong></li>
+</ul>
+<ol>
+<li>处理大型项目时，使一个类分布于多个独立文件中可以让多位程序员同时对该类进行处理（相当于支持并行处理，很实用）；</li>
+<li>使用自动生成的源时，无需重新创建源文件便可把代码添加到类中。可以观察到Visual Studio在创建Windows窗体，Web窗体都使用此方法。你不用编辑Visual Studio所创建的文件，便可创建使用这些类的代码。换句话说：系统会自动创建一个文件（一般记录的是窗体及窗体中的控件的属性），另一个或几个文件记录的是用户自己编写的代码。这两部分分开可以使结构显得非常清晰，用户只需关注自己负责的那部分就行了（需要的话，这两部分可以互相调用）。等到了编辑运行的时候，系统会自动将这两部分合成一个文件。</li>
+</ol>
+<ul>
+<li><strong>使用Partial需要注意以下情况</strong></li>
+</ul>
+<ol>
+<li>使用partial关键字表明可在命名空间内定义该类，结构或接口的其他部分；</li>
+<li>所有部分都必须使用partial关键字；</li>
+<li>各个部分必须具有相同的可访问性，如public，private等；</li>
+<li>如果任意部分声明为抽象的，则整个类型都被视为抽象的；</li>
+<li>如果将任意部分声明为密封的，则整个类型都被视为密封的；</li>
+<li>如果任意部分声明继承基类时，则整个类型都将继承该类；</li>
+<li>各个部分可以指定不同的基接口，最终类型将实现所有分部声明所列出的全部接口；</li>
+<li>在某一分部定义中声明的任何类、结构或接口成员可供所有其他部分使用；</li>
+<li>嵌套类型可以是分部的，即使它们所嵌套于的类型本身并不是分部的也如此。如下所示：</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Container</span><br><span class="line">{</span><br><span class="line">    partial class Nested</span><br><span class="line">    {</span><br><span class="line">        void Test1();</span><br><span class="line">    }</span><br><span class="line">    partial class Nested</span><br><span class="line">    {</span><br><span class="line">        void Test2();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><strong>使用分部类的一些限制</strong></li>
+</ul>
+<ol>
+<li>要作为同一类型的各个部分的所有分部类型定义都必须使用partial 进行修饰。如下所示：</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public partial class A { }</span><br><span class="line">public class A { } // Error, must also be marked partial</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>partial 修饰符只能出现在紧靠关键字class、struct 或interface前面的位置(枚举或其它类型都不能使用partial)；</li>
+<li>要成为同一类型的各个部分的所有分部类型定义都必须在同一程序集和同一模块（.exe 或.dll 文件）中进行定义。分部定义不能跨越多个模块；</li>
+<li>类名和泛型类型参数在所有的分部类型定义中都必须匹配。泛型类型可以是分部的。每个分部声明都必须以相同的顺序使用相同的参数名。</li>
+</ol>
+<h2 id="partial-class扩展功能新思路"><a href="#partial-class扩展功能新思路" class="headerlink" title="partial class扩展功能新思路"></a>partial class扩展功能新思路</h2><p>开闭原则：“对修改封闭，对扩展开放”。在面向对象的系统中，通过类的继承实现扩展。.net中提供的partial class提供了扩展类的新思路。</p>
+<ul>
+<li><strong>应用场景</strong></li>
+</ul>
+<p>可以使用partial class的场景很多。这里分析一个ORM的例子。</p>
+<p>系统中有一个Cat类，属性ID、Age、Weight都需要存储到数据库中，一个信息系统中常见的需求。通过读取数据库的结构，可以用工具生成Cat类的代码。并且ORM框架支持了从数据库信息生成Cat对象。</p>
+<p>现在的Cat什么动作都没有，客户说，我们需要一个Miaow()的函数。这时就需要对ORM生成的Cat类进行扩展了。</p>
+<p>可以肯定地一点是，我们不能修改自动生成的代码，因为这会牵涉到数据库结构与代码同步的问题。解决这个需求有两种方法：继承方式扩展，partial class扩展。</p>
+<ul>
+<li><strong>继承方式扩展</strong></li>
+</ul>
+<p>工具自动生成一个CatBase类，这个类只有属性，嵌入到ORM框架中。既然需要扩展功能，很容易想到对这个基类继承，于是有了Cat类。Cat类如愿以偿地有了Miaow()函数。</p>
+<p>以前系统中用的是CatBase的实例，现在创建CatBase实例的地方需要改为创建Cat的实例。这个问题让ORM框架解决吧。</p>
+<p>客户的需求实现了，我们自己的代码生成也没有遭到破坏，任务完成。</p>
+<ul>
+<li><strong>partial class扩展</strong></li>
+</ul>
+<p>partial class简单地说就是可以将一个类的代码写到两个或多个代码文件中。编译器在编译的过程中将这几个文件组合起来一起编译。一个很酷的技术。</p>
+<p>工具生成的Cat类仍然不变。既然需要增加函数，那么在新建一个代码文件，将Miaow()函数写出来就可以。需要做的仅仅是将类的声明由class改为partial class，任务完成。</p>
+<ul>
+<li><strong>对比分析</strong></li>
+</ul>
+<p>两种思路都可以实现需求。孰优孰劣需要仔细分析一下。</p>
+<p>实例创建：partial class更加简洁。</p>
+<p>系统复杂度：对于系统来说，partial class方式下只存在一个类，而继承方式有两个类。</p>
+<p>继承逻辑：从逻辑上讲，Cat并不需要一个基类CatBase，这样做仅仅是因为在代码构建过程中的一个限制。</p>
+<p>维护性：两种方式下都会存在两个代码文件，维护成本并没有区别。</p>
+<p>可读性：两个Cat文件确实让人费解。</p>
+<p>整体上说，使用partial class方式的代码编写会更优雅一些。</p>
+<p>“继承”的这种方式比较符合传统的思维习惯，而partial class到底是不是满足开闭原则呢，这点确实不好说。不过在软件构建上，我是一个实用主义者，哪种方式好用就用哪一种。</p>
+<p>在ORM的场景中，partial class更加好一些，但有的时候，两个类之间确实就存在继承关系，那么就必须用到继承了。虽然绝大多数情况下，都需要继承方式，但是既然有了partial class技术，我们在做设计时也需要考虑这个思路。</p>
+<p>可以看到在VS，Form，Dataset中都使用了partial class方式，原理和这个一样。但是要将这个原理推广到“业务实体”中，可能在理解上需要有所突破。</p>
+<p>使用partial class确实会带来可读性的损失，尤其是一个类分布在很多个文件中的时候，所以文件的命名最好是有一个规范来保证。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li>C#与.net3.5高级程序设计(第4版)</li>
+<li><a href="https://blog.csdn.net/playermaker57/article/details/79443627" target="_blank" rel="noopener">C# 6.0语法 可空表达式 ?</a></li>
+<li><a href="https://www.cnblogs.com/qtiger/p/11177036.html" target="_blank" rel="noopener">C# 基础知识之Partial</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+  <div>
+    
+  </div>
+  
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/17/初识机器学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -3971,210 +4384,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/06/AngularJs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bomir">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/wjq1.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wallis">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/AngularJs/" itemprop="url">AngularJs简述</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T17:17:14+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/05/06/AngularJs/" class="leancloud_visitors" data-flag-title="AngularJs简述">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数:</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计:</span>
-                
-                <span title="字数统计">
-                  643
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 ≈</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <meta name="generator" content="Hexo 3.9.0"><h3 id="Angular-的数据绑定采用什么机制？详述原理"><a href="#Angular-的数据绑定采用什么机制？详述原理" class="headerlink" title="Angular 的数据绑定采用什么机制？详述原理"></a>Angular 的数据绑定采用什么机制？详述原理</h3><p>脏检查机制。</p>
-<p>双向数据绑定是 AngularJS 的核心机制之一。当 view 中有任何数据变化时，会更新到 model ，当 model 中数据有变化时，view 也会同步更新，显然，这需要一个监控。</p>
-<p>原理就是，Angular 在 scope 模型上设置了一个 监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</p>
-<p>举个栗子</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><button ng-click="val=val+1">increase 1</button></span><br></pre></td></tr></tbody></table></figure>
-<p>click 时会产生一次更新的操作（至少触发两次 $digest 循环）</p>
-<p>按下按钮<br>浏览器接收到一个事件，进入到 angular context<br>$digest 循环开始执行，查询每个 $watch 是否变化<br>由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环<br>新的 $digest 循环未检测到变化<br>浏览器拿回控制器，更新 $scope.val 新值对应的 dom<br>$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</p>
-<h3 id="factory、service-和-provider-是什么关系？"><a href="#factory、service-和-provider-是什么关系？" class="headerlink" title="factory、service 和 provider 是什么关系？"></a>factory、service 和 provider 是什么关系？</h3><p>factory</p>
-<p>把 service 的方法和数据放在一个对象里，并返回这个对象</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.factory('FooService', function(){</span><br><span class="line">    return {</span><br><span class="line">        target: 'factory',</span><br><span class="line">        sayHello: function(){</span><br><span class="line">            return 'hello ' + this.target;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-<p>service</p>
-<p>通过构造函数方式创建 service，返回一个实例化对象</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">app.service('FooService', function(){</span><br><span class="line">    var self = this;</span><br><span class="line">    this.target = 'service';</span><br><span class="line">    this.sayHello = function(){</span><br><span class="line">        return 'hello ' + self.target;</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-<p>provider</p>
-<p>创建一个可通过 config 配置的 service，$get 中返回的，就是用 factory 创建 service 的内容</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">app.provider('FooService', function(){</span><br><span class="line">    this.configData = 'init data';</span><br><span class="line">    this.setConfigData = function(data){</span><br><span class="line">        if(data){</span><br><span class="line">            this.configData = data;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    this.$get = function(){</span><br><span class="line">        var self = this;</span><br><span class="line">        return {</span><br><span class="line">            target: 'provider',</span><br><span class="line">            sayHello: function(){</span><br><span class="line">                return self.configData + ' hello ' + this.target;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line">// 此处注入的是 FooService 的 provider</span><br><span class="line">app.config(function(FooServiceProvider){</span><br><span class="line">    FooServiceProvider.setConfigData('config data');</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
-<p>从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，返回其 $get 中定义的内容。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写，你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-  <div>
-    
-  </div>
-  
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   
 
   
@@ -4226,7 +4435,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -4237,7 +4446,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -4248,7 +4457,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -4427,7 +4636,7 @@
       <i class="fa fa-eye"></i>
       访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
     </span>
-  <span class="post-count">博客全站共:64.6k字</span>
+  <span class="post-count">博客全站共:70.7k字</span>
 </div>
 
         
