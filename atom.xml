@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-26T14:34:18.448Z</updated>
+  <updated>2019-08-26T14:48:50.538Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rest API接口测试</title>
+    <link href="http://yoursite.com/2019/08/26/Rest-API%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://yoursite.com/2019/08/26/Rest-API接口测试/</id>
+    <published>2019-08-26T14:48:50.000Z</published>
+    <updated>2019-08-26T14:48:50.538Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>彻底理解cookie session token</title>
@@ -293,20 +314,19 @@
   </entry>
   
   <entry>
-    <title>前端学习资料</title>
-    <link href="http://yoursite.com/2018/05/06/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    <id>http://yoursite.com/2018/05/06/前端学习资料/</id>
+    <title>JQuery</title>
+    <link href="http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/05/06/JQuery面试题总结/</id>
     <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:36:57.085Z</updated>
+    <updated>2019-08-17T13:33:05.995Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><ol><li>前端知识结构 <a href="https://github.com/JacksonTian/fks" target="_blank" rel="noopener">https://github.com/JacksonTian/fks</a></li><li>前端入门：<a href="https://github.com/qiu-deqing/FE-learning" target="_blank" rel="noopener">https://github.com/qiu-deqing/FE-learning</a></li><li>博客：<ul><li><a href="https://www.xuanfengge.com" target="_blank" rel="noopener">https://www.xuanfengge.com</a></li><li><a href="https://www.w3cplus.com/" target="_blank" rel="noopener">https://www.w3cplus.com/</a></li><li><a href="https://www.w3ctech.com/" target="_blank" rel="noopener">https://www.w3ctech.com/</a></li><li><a href="http://www.css88.com/" target="_blank" rel="noopener">http://www.css88.com/</a></li><li><a href="https://www.qianduan.net/" target="_blank" rel="noopener">https://www.qianduan.net/</a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></li><li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/</a></li><li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></li></ul></li><li>书籍：<a href="https://www.xuanfengge.com/fe-books.html" target="_blank" rel="noopener">https://www.xuanfengge.com/fe-books.html</a></li><li><p>公司前端团队</p><ul><li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a></li><li>百度fex <a href="http://fex.baidu.com/" target="_blank" rel="noopener">http://fex.baidu.com/</a></li><li>百度efe <a href="http://efe.baidu.com/" target="_blank" rel="noopener">http://efe.baidu.com/</a></li><li>淘宝FED <a href="http://taobaofed.org/" target="_blank" rel="noopener">http://taobaofed.org/</a></li><li>去哪儿UED <a href="http://ued.qunar.com/" target="_blank" rel="noopener">http://ued.qunar.com/</a></li><li>奇舞团 <a href="https://75team.com/" target="_blank" rel="noopener">https://75team.com/</a></li></ul></li><li><p>开源项目</p><ul><li>Facebook Projects <a href="https://code.facebook.com/projects/web/" target="_blank" rel="noopener">https://code.facebook.com/projects/web/</a></li><li>百度fex <a href="https://github.com/fex-team/" target="_blank" rel="noopener">https://github.com/fex-team/</a></li><li>efe <a href="https://github.com/ecomfe" target="_blank" rel="noopener">https://github.com/ecomfe</a></li><li>alloyteam-github <a href="http://alloyteam.github.io/" target="_blank" rel="noopener">http://alloyteam.github.io/</a></li><li>underscore源码解读 <a href="https://github.com/hanzichi/underscore-analysis" target="_blank" rel="noopener">https://github.com/hanzichi/underscore-analysis</a></li><li>vue源码学习 <a href="https://github.com/answershuto/learnVue" target="_blank" rel="noopener">https://github.com/answershuto/learnVue</a></li></ul></li></ol><p>前端学习资源汇总：<a href="https://jeffjade.com/2016/03/30/104-front-end-tutorial/" target="_blank" rel="noopener">https://jeffjade.com/2016/03/30/104-front-end-tutorial/</a></p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><h3 id="1-jQuery-extend-和jQuery-fn-extend"><a href="#1-jQuery-extend-和jQuery-fn-extend" class="headerlink" title="==1. jQuery extend()和jQuery.fn.extend()=="></a>==1. jQuery extend()和jQuery.fn.extend()==</h3><ol><li><p>两者调用方式不同：</p><pre><code>jQuery.extend(),一般由传入的全局函数来调用，主要是用来拓展个全局函数，如$.init()，$.ajax();jQuery.fn.extend(),一般由具体的实例对象来调用，可以用来拓展个选择器，例如$.fn.each();</code></pre></li><li><p>两者的主要功能作用不同：</p><pre><code>jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。jQuery.fn.extend(object);给jQuery对象添加方法</code></pre></li><li><p>大部分插件都是用jQuery.fn.extend()</p></li></ol></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ol&gt;
-&lt;li&gt;前端知识结构 &lt;a href=&quot;https://github.com/JacksonTian/fks&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Jack
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h3 id=&quot;1-jQuery-extend-和jQuery-fn-extend&quot;&gt;&lt;a href=&quot;#1-jQuery-extend-和jQuery-fn-extend&quot; class=&quot;headerlink&quot; title=&quot;=
       
     
     </summary>
@@ -314,7 +334,7 @@
       <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端资料" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
+      <category term="Jquery" scheme="http://yoursite.com/tags/Jquery/"/>
     
   </entry>
   
@@ -421,6 +441,31 @@
   </entry>
   
   <entry>
+    <title>HelloWorld</title>
+    <link href="http://yoursite.com/2018/05/06/hello-world/"/>
+    <id>http://yoursite.com/2018/05/06/hello-world/</id>
+    <published>2018-05-06T09:17:14.000Z</published>
+    <updated>2019-08-17T13:43:21.301Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Che
+      
+    
+    </summary>
+    
+      <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
+    
+    
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AngularJs简述</title>
     <link href="http://yoursite.com/2018/05/06/AngularJs/"/>
     <id>http://yoursite.com/2018/05/06/AngularJs/</id>
@@ -442,31 +487,6 @@
     
     
       <category term="AngularJs" scheme="http://yoursite.com/tags/AngularJs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JQuery</title>
-    <link href="http://yoursite.com/2018/05/06/JQuery%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2018/05/06/JQuery面试题总结/</id>
-    <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:33:05.995Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><h3 id="1-jQuery-extend-和jQuery-fn-extend"><a href="#1-jQuery-extend-和jQuery-fn-extend" class="headerlink" title="==1. jQuery extend()和jQuery.fn.extend()=="></a>==1. jQuery extend()和jQuery.fn.extend()==</h3><ol><li><p>两者调用方式不同：</p><pre><code>jQuery.extend(),一般由传入的全局函数来调用，主要是用来拓展个全局函数，如$.init()，$.ajax();jQuery.fn.extend(),一般由具体的实例对象来调用，可以用来拓展个选择器，例如$.fn.each();</code></pre></li><li><p>两者的主要功能作用不同：</p><pre><code>jQuery.extend(object); 为扩展jQuery类本身，为自身添加新的方法。jQuery.fn.extend(object);给jQuery对象添加方法</code></pre></li><li><p>大部分插件都是用jQuery.fn.extend()</p></li></ol></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h3 id=&quot;1-jQuery-extend-和jQuery-fn-extend&quot;&gt;&lt;a href=&quot;#1-jQuery-extend-和jQuery-fn-extend&quot; class=&quot;headerlink&quot; title=&quot;=
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="Jquery" scheme="http://yoursite.com/tags/Jquery/"/>
     
   </entry>
   
@@ -521,27 +541,28 @@
   </entry>
   
   <entry>
-    <title>HelloWorld</title>
-    <link href="http://yoursite.com/2018/05/06/hello-world/"/>
-    <id>http://yoursite.com/2018/05/06/hello-world/</id>
+    <title>前端学习资料</title>
+    <link href="http://yoursite.com/2018/05/06/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>http://yoursite.com/2018/05/06/前端学习资料/</id>
     <published>2018-05-06T09:17:14.000Z</published>
-    <updated>2019-08-17T13:43:21.301Z</updated>
+    <updated>2019-08-17T13:36:57.085Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></tbody></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ol><li>前端知识结构 <a href="https://github.com/JacksonTian/fks" target="_blank" rel="noopener">https://github.com/JacksonTian/fks</a></li><li>前端入门：<a href="https://github.com/qiu-deqing/FE-learning" target="_blank" rel="noopener">https://github.com/qiu-deqing/FE-learning</a></li><li>博客：<ul><li><a href="https://www.xuanfengge.com" target="_blank" rel="noopener">https://www.xuanfengge.com</a></li><li><a href="https://www.w3cplus.com/" target="_blank" rel="noopener">https://www.w3cplus.com/</a></li><li><a href="https://www.w3ctech.com/" target="_blank" rel="noopener">https://www.w3ctech.com/</a></li><li><a href="http://www.css88.com/" target="_blank" rel="noopener">http://www.css88.com/</a></li><li><a href="https://www.qianduan.net/" target="_blank" rel="noopener">https://www.qianduan.net/</a></li><li><a href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/</a></li><li><a href="http://javascript.ruanyifeng.com/" target="_blank" rel="noopener">http://javascript.ruanyifeng.com/</a></li><li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">http://es6.ruanyifeng.com/</a></li></ul></li><li>书籍：<a href="https://www.xuanfengge.com/fe-books.html" target="_blank" rel="noopener">https://www.xuanfengge.com/fe-books.html</a></li><li><p>公司前端团队</p><ul><li>腾讯 AlloyTeam <a href="http://www.alloyteam.com/" target="_blank" rel="noopener">http://www.alloyteam.com/</a></li><li>百度fex <a href="http://fex.baidu.com/" target="_blank" rel="noopener">http://fex.baidu.com/</a></li><li>百度efe <a href="http://efe.baidu.com/" target="_blank" rel="noopener">http://efe.baidu.com/</a></li><li>淘宝FED <a href="http://taobaofed.org/" target="_blank" rel="noopener">http://taobaofed.org/</a></li><li>去哪儿UED <a href="http://ued.qunar.com/" target="_blank" rel="noopener">http://ued.qunar.com/</a></li><li>奇舞团 <a href="https://75team.com/" target="_blank" rel="noopener">https://75team.com/</a></li></ul></li><li><p>开源项目</p><ul><li>Facebook Projects <a href="https://code.facebook.com/projects/web/" target="_blank" rel="noopener">https://code.facebook.com/projects/web/</a></li><li>百度fex <a href="https://github.com/fex-team/" target="_blank" rel="noopener">https://github.com/fex-team/</a></li><li>efe <a href="https://github.com/ecomfe" target="_blank" rel="noopener">https://github.com/ecomfe</a></li><li>alloyteam-github <a href="http://alloyteam.github.io/" target="_blank" rel="noopener">http://alloyteam.github.io/</a></li><li>underscore源码解读 <a href="https://github.com/hanzichi/underscore-analysis" target="_blank" rel="noopener">https://github.com/hanzichi/underscore-analysis</a></li><li>vue源码学习 <a href="https://github.com/answershuto/learnVue" target="_blank" rel="noopener">https://github.com/answershuto/learnVue</a></li></ul></li></ol><p>前端学习资源汇总：<a href="https://jeffjade.com/2016/03/30/104-front-end-tutorial/" target="_blank" rel="noopener">https://jeffjade.com/2016/03/30/104-front-end-tutorial/</a></p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Che
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ol&gt;
+&lt;li&gt;前端知识结构 &lt;a href=&quot;https://github.com/JacksonTian/fks&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Jack
       
     
     </summary>
     
-      <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+      <category term="前端资料" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E8%B5%84%E6%96%99/"/>
     
   </entry>
   
